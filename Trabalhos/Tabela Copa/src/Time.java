@@ -227,6 +227,19 @@ public class Time {
 
     }
 
+
+    public void setBandeira(ImageIcon bandeira){
+
+        this.bandeira = bandeira;
+
+    }
+
+    public void setCaminhoBandeira(String caminhoBandeira){
+
+        this.caminhoBandeira = caminhoBandeira;
+
+    }
+
     //Métodos
 
     public void definePontos(){    //Define a quantidade de pontos baseado nos atributos
