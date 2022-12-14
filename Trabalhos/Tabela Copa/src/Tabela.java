@@ -375,7 +375,6 @@ public class Tabela {
     private JLabel GP4H;
     private JLabel GC4H;
     private JLabel SG4H;
-    private JPanel MataMata;
     private JButton enviarBotaoGrupoA;
     private JButton enviarBotaoGrupoB;
     private JButton enviarBotaoGrupoC;
@@ -668,6 +667,7 @@ public class Tabela {
     private JLabel C2H;
     private JLabel C3H;
     private JLabel C4H;
+    private JScrollPane MataMata;
 
     private void Reset(){
 
@@ -2747,6 +2747,8 @@ public class Tabela {
     }
 
     public Tabela() {
+
+        MataMata.createHorizontalScrollBar();
 
         Icon catar = new ImageIcon(System.getProperty("user.dir") + "/icons/catar.png");
 
