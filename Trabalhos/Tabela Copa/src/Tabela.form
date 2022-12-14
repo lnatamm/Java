@@ -6736,6 +6736,7 @@
                   <component id="a5575" class="javax.swing.JTextField" binding="Penaltis1Final">
                     <constraints>
                       <grid row="6" column="11" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="50" height="-1"/>
                         <preferred-size width="10" height="-1"/>
                       </grid>
                     </constraints>
@@ -6756,6 +6757,7 @@
                   <component id="33b46" class="javax.swing.JTextField" binding="Penaltis1Terceiro">
                     <constraints>
                       <grid row="15" column="11" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="50" height="-1"/>
                         <preferred-size width="10" height="-1"/>
                       </grid>
                     </constraints>
@@ -6922,6 +6924,7 @@
                   <component id="2056a" class="javax.swing.JTextField" binding="Penaltis2Final">
                     <constraints>
                       <grid row="6" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="50" height="-1"/>
                         <preferred-size width="10" height="-1"/>
                       </grid>
                     </constraints>
@@ -6950,6 +6953,7 @@
                   <component id="8ec23" class="javax.swing.JTextField" binding="Penaltis2Terceiro">
                     <constraints>
                       <grid row="15" column="13" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="50" height="-1"/>
                         <preferred-size width="10" height="-1"/>
                       </grid>
                     </constraints>
