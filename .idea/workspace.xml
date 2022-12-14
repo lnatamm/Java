@@ -5,40 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c07461-277d-4484-bee4-e235d45bdacb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/BatalhaDePomekons/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/BatalhaDePomekons/Pomekon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/BobConduite/Cabo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/BobConduite/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Camisetas/Aluno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Camisetas/Camisa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Camisetas/ComparadorAluno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Camisetas/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/ColecaoDePomekons/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/ColecaoDePomekons/Mestre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/ColecaoDePomekons/Pomedex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/ColecaoDePomekons/Pomekon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/FalhaNoMotor/Comparador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/FalhaNoMotor/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/FalhaNoMotor/Motor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Lanche/Cardapio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Lanche/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Lanche/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Lanche/Produto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/PulaSapo/Cano.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/PulaSapo/Fase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/PulaSapo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/PulaSapo/Sapo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/SaltosOrnamentais/Competidor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/SaltosOrnamentais/Juiz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/SaltosOrnamentais/Julgamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/SaltosOrnamentais/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/SaltosOrnamentais/Salto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Televisao/ControleRemoto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Televisao/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Televisao/Televisao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/TuristasNoParqueHuacachina/Jipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/TuristasNoParqueHuacachina/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/VariasNotasComValidacao/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "D:/Repositorio/Java",
+    "last_opened_file_path": "D:/NoRepositorio/Java/Trabalhos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671000575965</updated>
-      <workItem from="1671000577215" duration="797000" />
+      <workItem from="1671000577215" duration="1125000" />
     </task>
     <servers />
   </component>
