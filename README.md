@@ -1,2 +1,2 @@
 # Java
-Exercícios Trabalhas e Provas feitos em Java
+Exercícios Provas e Trabalhos em Java
