@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="786194ea-8fbb-4603-8b2a-839aaef07dca" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -7,8 +10,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ItVFX2g0EOYynSVQUZJw6S6s9r" />
   <component name="ProjectViewState">
@@ -21,7 +34,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "D:/NoRepositorio/Java/Trabalhos",
+    "last_opened_file_path": "D:/NoRepositorio/Java/Trabalhos/Tabela Copa",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -34,6 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671000762096</updated>
       <workItem from="1671000763157" duration="72000" />
+      <workItem from="1671001725453" duration="307000" />
     </task>
     <servers />
   </component>
