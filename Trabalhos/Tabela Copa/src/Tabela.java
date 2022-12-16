@@ -2163,7 +2163,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas1.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas1.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas1.getText()) - Integer.parseInt(Penaltis2Oitavas1.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas1.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas1.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas1.getText()) - Integer.parseInt(Penaltis2Oitavas1.getText())) == 1) {
 
                                         conferePenaltisOitavas1();
 
@@ -2318,7 +2318,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas2.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas2.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas2.getText()) - Integer.parseInt(Penaltis2Oitavas2.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas2.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas2.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas2.getText()) - Integer.parseInt(Penaltis2Oitavas2.getText())) == 1) {
 
                                         conferePenaltisOitavas2();
 
@@ -2474,7 +2474,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas3.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas3.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas3.getText()) - Integer.parseInt(Penaltis2Oitavas3.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas3.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas3.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas3.getText()) - Integer.parseInt(Penaltis2Oitavas3.getText())) == 1) {
 
                                         conferePenaltisOitavas3();
 
@@ -2629,7 +2629,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas4.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas4.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas4.getText()) - Integer.parseInt(Penaltis2Oitavas4.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas4.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas4.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas4.getText()) - Integer.parseInt(Penaltis2Oitavas4.getText())) == 1) {
 
                                         conferePenaltisOitavas4();
 
@@ -2785,7 +2785,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas5.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas5.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas5.getText()) - Integer.parseInt(Penaltis2Oitavas5.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas5.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas5.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas5.getText()) - Integer.parseInt(Penaltis2Oitavas5.getText())) == 1) {
 
                                         conferePenaltisOitavas5();
 
@@ -2941,7 +2941,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas6.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas6.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas6.getText()) - Integer.parseInt(Penaltis2Oitavas6.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas6.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas6.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas6.getText()) - Integer.parseInt(Penaltis2Oitavas6.getText())) == 1) {
 
                                         conferePenaltisOitavas6();
 
@@ -3097,7 +3097,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas7.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas7.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas7.getText()) - Integer.parseInt(Penaltis2Oitavas7.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas7.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas7.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas7.getText()) - Integer.parseInt(Penaltis2Oitavas7.getText())) == 1) {
 
                                         conferePenaltisOitavas7();
 
@@ -3253,7 +3253,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Oitavas8.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas8.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas8.getText()) - Integer.parseInt(Penaltis2Oitavas8.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Oitavas8.getText()) >= 5 && Integer.parseInt(Penaltis2Oitavas8.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Oitavas8.getText()) - Integer.parseInt(Penaltis2Oitavas8.getText())) == 1) {
 
                                         conferePenaltisOitavas1();
 
@@ -3409,7 +3409,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Quartas1.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas1.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas1.getText()) - Integer.parseInt(Penaltis2Quartas1.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Quartas1.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas1.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas1.getText()) - Integer.parseInt(Penaltis2Quartas1.getText())) == 1) {
 
                                         conferePenaltisQuartas1();
 
@@ -3564,7 +3564,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Quartas2.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas2.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas2.getText()) - Integer.parseInt(Penaltis2Quartas2.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Quartas2.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas2.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas2.getText()) - Integer.parseInt(Penaltis2Quartas2.getText())) == 1) {
 
                                         conferePenaltisQuartas2();
 
@@ -3719,7 +3719,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Quartas3.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas3.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas3.getText()) - Integer.parseInt(Penaltis2Quartas3.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Quartas3.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas3.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas3.getText()) - Integer.parseInt(Penaltis2Quartas3.getText())) == 1) {
 
                                         conferePenaltisQuartas3();
 
@@ -3874,7 +3874,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Quartas4.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas4.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas4.getText()) - Integer.parseInt(Penaltis2Quartas4.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Quartas4.getText()) >= 5 && Integer.parseInt(Penaltis2Quartas4.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Quartas4.getText()) - Integer.parseInt(Penaltis2Quartas4.getText())) == 1) {
 
                                         conferePenaltisQuartas4();
 
@@ -4029,7 +4029,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Semi1.getText()) >= 5 && Integer.parseInt(Penaltis2Semi1.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Semi1.getText()) - Integer.parseInt(Penaltis2Semi1.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Semi1.getText()) >= 5 && Integer.parseInt(Penaltis2Semi1.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Semi1.getText()) - Integer.parseInt(Penaltis2Semi1.getText())) == 1) {
 
                                         conferePenaltisSemi1();
 
@@ -4196,7 +4196,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Semi2.getText()) >= 5 && Integer.parseInt(Penaltis2Semi2.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Semi2.getText()) - Integer.parseInt(Penaltis2Semi2.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Semi2.getText()) >= 5 && Integer.parseInt(Penaltis2Semi2.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Semi2.getText()) - Integer.parseInt(Penaltis2Semi2.getText())) == 1) {
 
                                         conferePenaltisSemi2();
 
@@ -4363,7 +4363,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Final.getText()) >= 5 && Integer.parseInt(Penaltis2Final.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Final.getText()) - Integer.parseInt(Penaltis2Final.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Final.getText()) >= 5 && Integer.parseInt(Penaltis2Final.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Final.getText()) - Integer.parseInt(Penaltis2Final.getText())) == 1) {
 
                                         conferePenaltisFinal();
 
@@ -4517,7 +4517,7 @@ public class Tabela {
 
                                     }
 
-                                    else if (Integer.parseInt(Penaltis1Terceiro.getText()) >= 5 && Integer.parseInt(Penaltis2Terceiro.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Terceiro.getText()) - Integer.parseInt(Penaltis2Terceiro.getText())) == 2) {
+                                    else if (Integer.parseInt(Penaltis1Terceiro.getText()) >= 5 && Integer.parseInt(Penaltis2Terceiro.getText()) >= 5 && Math.abs(Integer.parseInt(Penaltis1Terceiro.getText()) - Integer.parseInt(Penaltis2Terceiro.getText())) == 1) {
 
                                         conferePenaltisTerceiro();
 
