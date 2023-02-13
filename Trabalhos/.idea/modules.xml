@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Algebra e Geometria Computacional/Algebra e Geometria Computacional.iml" filepath="$PROJECT_DIR$/Algebra e Geometria Computacional/Algebra e Geometria Computacional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Calculadora Proposicional/Calculadora Proposicional.iml" filepath="$PROJECT_DIR$/Calculadora Proposicional/Calculadora Proposicional.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Trabalhos.iml" filepath="$PROJECT_DIR$/.idea/Trabalhos.iml" />
     </modules>
   </component>
