@@ -2,17 +2,17 @@ public class Calculadora {
 
     private Interpretador interpretador;
 
-    private String[] operadores;
-
     private String resposta;
+
+    private String[] operadores;
 
     public Calculadora(){
 
         this.interpretador = new Interpretador();
 
-        defineOperadores();
-
         this.resposta = "";
+
+        defineOperadores();
 
     }
 
@@ -20,19 +20,17 @@ public class Calculadora {
 
         this.interpretador = interpretador;
 
-        defineOperadores();
-
         this.resposta = "";
+
+        defineOperadores();
 
     }
 
-    public Calculadora(Interpretador interpretador, String[] operadores, String resposta){
+    public Calculadora(Interpretador interpretador, String[] operadores){
 
         this.interpretador = interpretador;
 
         this.operadores = operadores;
-
-        this.resposta = resposta;
 
     }
 
@@ -42,15 +40,15 @@ public class Calculadora {
 
     }
 
-    public String[] getOperadores(){
-
-        return this.operadores;
-
-    }
-
     public String getResposta(){
 
         return this.resposta;
+
+    }
+
+    public String[] getOperadores(){
+
+        return this.operadores;
 
     }
 
@@ -60,15 +58,15 @@ public class Calculadora {
 
     }
 
-    public void setOperadores(String[] operadores){
-
-        this.operadores = operadores;
-
-    }
-
     public void setResposta(String resposta){
 
         this.resposta = resposta;
+
+    }
+
+    public void setOperadores(String[] operadores){
+
+        this.operadores = operadores;
 
     }
 

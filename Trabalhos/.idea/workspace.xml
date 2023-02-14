@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786194ea-8fbb-4603-8b2a-839aaef07dca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Calculadora Proposicional/src/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculadora Proposicional/src/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculadora Proposicional/src/Calculadora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculadora Proposicional/src/Interpretador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculadora Proposicional/src/Interpretador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculadora Proposicional/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculadora Proposicional/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,9 @@
       <workItem from="1671001725453" duration="307000" />
       <workItem from="1671036154047" duration="41000" />
       <workItem from="1676239734290" duration="1278000" />
-      <workItem from="1676300670690" duration="2165000" />
+      <workItem from="1676300670690" duration="2259000" />
+      <workItem from="1676303626794" duration="593000" />
+      <workItem from="1676384427271" duration="3964000" />
     </task>
     <servers />
   </component>
