@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="786194ea-8fbb-4603-8b2a-839aaef07dca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora Proposicional/src/Calculadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculadora Proposicional/src/Calculadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora Proposicional/src/Interpretador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculadora Proposicional/src/Interpretador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora Proposicional/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculadora Proposicional/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "D:/Repositorio/Java/Trabalhos",
+    "last_opened_file_path": "D:/Repositorio/Java/Trabalhos/Tabela Copa",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,7 +47,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Algebra e Geometria Computacional" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Calculadora Proposicional" />
@@ -60,6 +64,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -82,7 +87,9 @@
       <workItem from="1676388777558" duration="60000" />
       <workItem from="1676389287157" duration="30000" />
       <workItem from="1676389792525" duration="1748000" />
-      <workItem from="1676476247218" duration="8959000" />
+      <workItem from="1676476247218" duration="9526000" />
+      <workItem from="1676497713402" duration="2649000" />
+      <workItem from="1676501353830" duration="566000" />
     </task>
     <servers />
   </component>
