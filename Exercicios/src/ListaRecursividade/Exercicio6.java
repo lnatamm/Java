@@ -2,7 +2,7 @@ package ListaRecursividade;
 
 public class Exercicio6 {
 
-    public static int f(int x, int n){
+    public static double f(double x, double n){
 
         if(n == 0){
 
@@ -10,15 +10,37 @@ public class Exercicio6 {
 
         }
 
-        else if(n >= 1){
+        else if(n == 1){
 
-            return x * f(x, n - 1);
+            return x;
+
+        }
+
+        else if(n == 2){
+
+            return x * x;
+
+        }
+
+        else if(n > 2){
+
+            if(n % 2 == 0){
+
+                return f(f(x, (n / 2)), 2);
+
+            }
+
+            else {
+
+                return x * f(x, n - 1);
+
+            }
 
         }
 
         else {
 
-            return 1 / f(x, Math.abs(n));
+            return 1 / f(x, -n);
 
         }
 
@@ -26,7 +48,7 @@ public class Exercicio6 {
 
     public static void main(String[] args) {
 
-        System.out.println(f(2, -1));
+        System.out.println(f(2, -3));
 
     }
 

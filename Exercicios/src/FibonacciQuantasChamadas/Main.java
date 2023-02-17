@@ -8,6 +8,8 @@ public class Main {
 
     public static int fib(int n){
 
+        x++;
+
         if(n == 0){
 
             return 0;
@@ -22,7 +24,6 @@ public class Main {
 
         else if(n > 1){
 
-            x+=2;
             return fib(n - 1) + fib(n - 2);
 
         }
@@ -48,7 +49,7 @@ public class Main {
             int k = Integer.parseInt(sc.next());
             int r = fib(k);
 
-            System.out.println(String.format("fib(%d) = %d calls = %d", k, x, r));
+            System.out.println(String.format("fib(%d) = %d calls = %d", k, x - 1, r));
 
         }
 
