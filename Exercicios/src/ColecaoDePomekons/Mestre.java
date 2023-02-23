@@ -1,11 +1,9 @@
 package ColecaoDePomekons;
-
-import java.util.*;
 public class Mestre {
 
-    private ArrayList<Pomekon> listaPomekons = new ArrayList<>();
+    private ListaEstatica<Pomekon> listaPomekons = new ListaEstatica();
 
-    public Mestre(ArrayList<Pomekon> colecao){
+    public Mestre(ListaEstatica<Pomekon> colecao){
 
         this.listaPomekons = colecao;
 
@@ -17,13 +15,13 @@ public class Mestre {
 
     }
 
-    public ArrayList<Pomekon> getListaPomekons(){
+    public ListaEstatica<Pomekon> getListaPomekons(){
 
         return this.listaPomekons;
 
     }
 
-    public void setColecao(ArrayList<Pomekon> colecao){
+    public void setColecao(ListaEstatica<Pomekon> colecao){
 
         this.listaPomekons = colecao;
 
@@ -35,9 +33,9 @@ public class Mestre {
 
     }
 
-    public HashSet<String> getColecaoPomekons(){
+    public ListaHash<String> getColecaoPomekons(){
 
-        HashSet<String> colecaoPomekons = new HashSet<String>();
+        ListaHash<String> colecaoPomekons = new ListaHash();
 
         for(int i = 0; i < listaPomekons.size(); i++){
 

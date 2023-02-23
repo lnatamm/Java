@@ -1,6 +1,6 @@
-package Listas;
+package ColecaoDePomekons;
 
-public class ListaEstatica {
+public class ListaEstatica <T>{
 
     private Object[] v;
 
@@ -16,25 +16,25 @@ public class ListaEstatica {
 
     private void createEspace(){
 
-        Object[] auxV = this.v;
+        Object[] aux = this.v;
 
-        this.v = new Object[v.length + v.length / 2];
+        this.v = new Object[cont + cont / 2];
 
-        for(int i = 0; i < auxV.length; i++){
+        for(int i = 0; i < cont; i++){
 
-            this.v[i] = auxV[i];
+            this.v[i] = aux[i];
 
         }
 
     }
 
-    public void add(Object n){
+    public void add(T n){
 
-        try {
+        try{
 
             this.v[cont] = n;
 
-            cont++;
+            this.cont++;
 
         }
 
@@ -48,7 +48,7 @@ public class ListaEstatica {
 
     }
 
-    public void add(int i, Object n){
+    public void add(int i, T n){
 
         try{
 
@@ -86,11 +86,11 @@ public class ListaEstatica {
 
     }
 
-    public boolean contains(Object n){
+    public boolean contains(T n){
 
         for(int i = 0; i < this.cont; i ++){
 
-            if(this.v[i] == n){
+            if(this.v[i].equals(n)){
 
                 return true;
 
@@ -128,13 +128,13 @@ public class ListaEstatica {
 
     }
 
-    public Object get(int i){
+    public T get(int i){
 
-        return this.v[i];
+        return (T)this.v[i];
 
     }
 
-    public int indexOf(Object n){
+    public int indexOf(T n){
 
         for(int i = 0; i < this.cont; i ++){
 
@@ -147,16 +147,6 @@ public class ListaEstatica {
         }
 
         return -1;
-
-    }
-
-    public void show(){
-
-        for(int i = 0; i < this.cont; i++){
-
-            System.out.println(this.v[i] + " ");
-
-        }
 
     }
 
