@@ -7,6 +7,21 @@ public class Main {
 
     public static void main(String[] args) {
 
+        ListaDinamica lista = new ListaDinamica();
+
+        lista.add("1");
+        lista.add("4");
+        lista.add("5");
+        lista.add("7");
+        lista.show();
+        lista.add("6");
+        lista.show();
+        lista.remove("6");
+        lista.show();
+        lista.remove(3);
+        lista.show();
+        System.out.println(lista.get(0));
+
         /*Scanner sc = new Scanner(System.in);
 
         ListaEstatica lista = new ListaEstatica();
@@ -105,7 +120,7 @@ public class Main {
 
         }*/
 
-        ListaEstatica lista = new ListaEstatica();
+        /*ListaEstatica lista = new ListaEstatica();
 
         lista.add(1);
         lista.add(2);
@@ -147,7 +162,7 @@ public class Main {
 
         lista.clear();
 
-        lista.show();
+        lista.show();*/
 
     }
 
