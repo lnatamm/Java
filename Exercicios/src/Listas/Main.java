@@ -16,7 +16,7 @@ public class Main {
         lista.show();
         lista.add("6");
         lista.show();
-        lista.remove("6");
+        System.out.println(lista.contains("4"));
         lista.show();
         lista.remove(3);
         lista.show();

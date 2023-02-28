@@ -1,12 +1,12 @@
-package Listas;
+package ListaDeCompras;
 
-public class ListaDinamica {
+public class Lista {
 
     private Node head;
 
     private Node tail;
 
-    public ListaDinamica(){
+    public Lista(){
 
         this.head = null;
 
@@ -14,9 +14,9 @@ public class ListaDinamica {
 
     }
 
-    public void add(Object n){
+    public void add(String s){
 
-        Node node = new Node(n);
+        Node node = new Node(s);
 
         if(this.head == null){
 
@@ -25,7 +25,7 @@ public class ListaDinamica {
 
         }
 
-        else{
+        else {
 
             this.tail.setNext(node);
             this.tail = node;
@@ -34,20 +34,22 @@ public class ListaDinamica {
 
     }
 
-    public void add(int i, Object n){
+    public void add(int i, String s){
 
-        Node node = new Node(n);
+        Node node = new Node(s);
 
         Node aux = this.head;
 
         if(i == 0){
 
-            if (this.head == null) {
+            if(this.head == null){
 
                 this.head = node;
                 this.tail = node;
 
-            } else {
+            }
+
+            else {
 
                 node.setNext(this.head);
                 this.head = node;
@@ -56,9 +58,9 @@ public class ListaDinamica {
 
         }
 
-        else{
+        else {
 
-            if (this.head == null) {
+            if(this.head == null){
 
                 throw new IndexOutOfBoundsException();
 
@@ -73,7 +75,6 @@ public class ListaDinamica {
                         try {
 
                             node.setNext(aux.getNext());
-
                             aux.setNext(node);
 
                         }
@@ -84,7 +85,7 @@ public class ListaDinamica {
 
                     }
 
-                    else{
+                    else {
 
                         aux = aux.getNext();
 
@@ -100,11 +101,11 @@ public class ListaDinamica {
 
     public int size(){
 
-        Node aux = this.head;
-
         int cont = 0;
 
-        while (aux != null){
+        Node aux = this.head;
+
+        while(aux != null){
 
             cont++;
 
@@ -123,13 +124,13 @@ public class ListaDinamica {
 
     }
 
-    public boolean contains(Object n){
+    public boolean contains(String s){
 
         Node aux = this.head;
 
-        while(aux != null){
+        while (aux != null){
 
-            if(aux.getData().equals(n)){
+            if(aux.getData().equals(s)){
 
                 return true;
 
@@ -143,13 +144,13 @@ public class ListaDinamica {
 
     }
 
-    public void remove(Object n){
+    public void remove(String s){
 
         Node aux = this.head;
 
         while (aux.getNext() != null){
 
-            if(aux.getNext().getData().equals(n)){
+            if(aux.getNext().getData().equals(s)){
 
                 aux.setNext(aux.getNext().getNext());
 
@@ -169,37 +170,33 @@ public class ListaDinamica {
 
         if(i == 0){
 
-            if (this.head == null) {
-
-                throw new NullPointerException();
-
-            } else {
+            try {
 
                 this.head = this.head.getNext();
 
             }
 
-        }
-
-        else {
-
-            for(int j = 0; j < i; j++){
-
-                if(j == (i - 1)){
-
-                    aux.setNext(aux.getNext().getNext());
-
-                }
-
-                aux = aux.getNext();
+            catch (NullPointerException e){
 
             }
 
         }
 
+        for(int j = 0; j < i; j++){
+
+            if(j == (i - 1)){
+
+                aux.setNext(aux.getNext().getNext());
+
+            }
+
+            aux = aux.getNext();
+
+        }
+
     }
 
-    public Object get(int i){
+    public String get(int i){
 
         Node aux = this.head;
 
@@ -213,15 +210,15 @@ public class ListaDinamica {
 
     }
 
-    public int indexOf(Object n){
+    public int indexOf(String s){
 
         Node aux = this.head;
 
         int cont = 0;
 
-        while (aux != null){
+        while(aux != null){
 
-            if(aux.getData().equals(n)){
+            if(aux.getData().equals(s)){
 
                 return cont;
 
@@ -234,6 +231,11 @@ public class ListaDinamica {
         }
 
         return -1;
+
+    }
+
+    public void sort(){
+
 
     }
 

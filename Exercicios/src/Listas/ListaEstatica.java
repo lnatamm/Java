@@ -138,7 +138,7 @@ public class ListaEstatica {
 
         for(int i = 0; i < this.cont; i ++){
 
-            if(this.v[i] == n){
+            if(this.v[i].equals(n)){
 
                 return i;
 
