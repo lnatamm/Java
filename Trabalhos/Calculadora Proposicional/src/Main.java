@@ -3,23 +3,41 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static int input(Scanner sc){
+
+        try{
+
+            return Integer.parseInt(sc.nextLine());
+
+        }
+
+        catch (NumberFormatException e){
+
+            return input(sc);
+
+        }
+
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Bem Vindo a Calculadora Proposicional! Aqui você poderá analisar fórmulas e descobrir se elas são Tautologias, Contigências ou Contradições");
 
-        int controle = 1;
+        boolean erro = true;
 
-        while (controle == 1){
+        while (erro) {
 
-            boolean erro = true;
+            int controle = 1;
 
-            while(erro) {
+            int tabela = 0;
+
+            while (controle == 1) {
 
                 try {
 
-                    System.out.println("Digite a fórmula: (ou: ^ | e: v | se: → | se, somente se: ↔)");
+                    System.out.println("Digite a fórmula: (ou: ∨ | e: ∧ | se: → | se, somente se: ↔)");
 
                     String formula = sc.nextLine();
 
@@ -27,21 +45,47 @@ public class Main {
 
                     Calculadora calculadora = new Calculadora(interpretador);
 
-                    erro = false;
+                    System.out.println();
 
-                    System.out.println("A fórmula " + formula + " é uma " + calculadora.getResposta());
+                    System.out.println("O que deseja fazer? (1 - Definir os valores das proposições | !1 - Gerar a tabela verdade");
+
+                    tabela = input(sc);
+
+                    if(tabela == 1){
+
+                        calculadora.calcula();
+
+                        System.out.println();
+
+                        System.out.println("A fórmula " + formula + " é " + calculadora.getResposta());
+
+                        System.out.println();
+
+                        System.out.println("Esta fórmula é " + calculadora.tabelaVerdade());
+
+                    }
+
+                    else {
+
+                        System.out.println();
+
+                        System.out.println("Esta fórmula é " + calculadora.tabelaVerdade());
+
+                    }
 
                     System.out.println();
 
                     System.out.println("Deseja continuar? Sim(1) Não(!1)");
 
-                    controle = Integer.parseInt(sc.nextLine());
+                    controle = input(sc);
 
-                }
+                    erro = false;
 
-                catch (InputMismatchException e){
+                } catch (InputMismatchException e) {
 
                     System.out.println(e.getMessage());
+
+                    erro = true;
 
                 }
 

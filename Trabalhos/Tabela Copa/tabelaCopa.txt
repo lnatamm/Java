@@ -62,22 +62,22 @@
 0;0;0;0
 0;0;0;0
 0;0;0;0
-1A;
-2B;
-1C;
-2D;
-1E;
-2F;
-1G;
-2H;
-1B;
-2A;
-1D;
-2C;
-1F;
-2E;
-1H;
-2G;
+Equador;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/equador.png
+Inglaterra;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/inglaterra.png
+Argentina;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/argentina.png
+Austrália;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/australia.png
+Japão;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/japao.png
+Bélgica;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/belgica.png
+Camarões;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/camaroes.png
+Coréia;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/coreia do sul.png
+Estados Unidos;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/eua.png
+Catar;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/catar.png
+Tunísia;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/tunisia.png
+Polônia;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/polonia.png
+Canadá;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/canada.png
+Costa Rica;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/costa rica.png
+Portugal;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/portugal.png
+Suíça;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/suica.png
 A definir;
 A definir;
 A definir;
@@ -96,35 +96,35 @@ A definir;
 A definir;
 A definir;
 A definir;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
-A definir;0;0;0;0;0;0;0;
+Equador;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/equador.png
+Catar;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/catar.png
+Senegal;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/senegal.png
+Holanda;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/holanda.png
+Estados Unidos;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/eua.png
+Inglaterra;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/inglaterra.png
+Gales;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/gales.png
+Irã;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/ira.png
+Argentina;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/argentina.png
+Polônia;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/polonia.png
+México;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/mexico.png
+Arabia Saudita;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/arabia saudita.png
+Tunísia;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/tunisia.png
+Austrália;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/australia.png
+França;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/franca.png
+Dinamarca;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/dinamarca.png
+Japão;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/japao.png
+Costa Rica;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/costa rica.png
+Alemanha;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/alemanha.png
+Espanha;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/espanha.png
+Canadá;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/canada.png
+Bélgica;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/belgica.png
+Croácia;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/croacia.png
+Marrocos;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/marrocos.png
+Camarões;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/camaroes.png
+Suíça;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/suica.png
+Brasil;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/brasil.png
+Sérvia;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/servia.png
+Portugal;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/portugal.png
+Coréia;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/coreia do sul.png
+Uruguai;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/uruguai.png
+Gana;0;3;0;0;0;0;3;D:\Repositorio\Java\Trabalhos\Tabela Copa/icons/gana.png
