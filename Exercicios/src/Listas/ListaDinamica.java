@@ -6,11 +6,15 @@ public class ListaDinamica {
 
     private Node tail;
 
+    private int cont;
+
     public ListaDinamica(){
 
         this.head = null;
 
         this.tail = null;
+
+        this.cont = 0;
 
     }
 
@@ -23,12 +27,16 @@ public class ListaDinamica {
             this.head = node;
             this.tail = node;
 
+            this.cont++;
+
         }
 
         else{
 
             this.tail.setNext(node);
             this.tail = node;
+
+            this.cont++;
 
         }
 
@@ -47,10 +55,14 @@ public class ListaDinamica {
                 this.head = node;
                 this.tail = node;
 
+                this.cont++;
+
             } else {
 
                 node.setNext(this.head);
                 this.head = node;
+
+                this.cont++;
 
             }
 
@@ -76,6 +88,8 @@ public class ListaDinamica {
 
                             aux.setNext(node);
 
+                            this.cont++;
+
                         }
 
                         catch (NullPointerException e){
@@ -100,19 +114,7 @@ public class ListaDinamica {
 
     public int size(){
 
-        Node aux = this.head;
-
-        int cont = 0;
-
-        while (aux != null){
-
-            cont++;
-
-            aux = aux.getNext();
-
-        }
-
-        return cont;
+        return this.cont;
 
     }
 
