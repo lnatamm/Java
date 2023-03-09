@@ -68,7 +68,16 @@ public class ListaDinamica {
 
         }
 
-        else{
+        else if(i == cont){
+
+            this.tail.setNext(node);
+            this.tail = node;
+
+            this.cont++;
+
+        }
+
+        else {
 
             if (this.head == null) {
 
@@ -149,17 +158,39 @@ public class ListaDinamica {
 
         Node aux = this.head;
 
-        while (aux.getNext() != null){
+        if(this.head.getData().equals(n)){
 
-            if(aux.getNext().getData().equals(n)){
+            this.head = this.head.getNext();
 
-                aux.setNext(aux.getNext().getNext());
+        }
 
-                break;
+        else if(this.tail.getData().equals(n)){
+
+            while (aux.getNext() != this.tail){
+
+                aux = aux.getNext();
 
             }
 
-            aux = aux.getNext();
+            this.tail = aux;
+
+        }
+
+        else {
+
+            while (aux.getNext() != null) {
+
+                if (aux.getNext().getData().equals(n)) {
+
+                    aux.setNext(aux.getNext().getNext());
+
+                    break;
+
+                }
+
+                aux = aux.getNext();
+
+            }
 
         }
 
@@ -180,6 +211,18 @@ public class ListaDinamica {
                 this.head = this.head.getNext();
 
             }
+
+        }
+
+        else if(i == cont - 1){
+
+            while (aux.getNext() != this.tail){
+
+                aux = aux.getNext();
+
+            }
+
+            this.tail = aux;
 
         }
 

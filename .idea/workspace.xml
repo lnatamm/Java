@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33c07461-277d-4484-bee4-e235d45bdacb" name="Changes" comment="" />
+    <list default="true" id="33c07461-277d-4484-bee4-e235d45bdacb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trabalhos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Trabalhos/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "C:/Users/elenildo.femm/Desktop/Repositorio/Java",
+    "last_opened_file_path": "D:/Repositorio/Java/Trabalhos/Calculadora Proposicional",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,6 +58,8 @@
       <updated>1671000575965</updated>
       <workItem from="1671000577215" duration="1125000" />
       <workItem from="1678040408731" duration="52000" />
+      <workItem from="1678042657972" duration="27000" />
+      <workItem from="1678210480279" duration="76000" />
     </task>
     <servers />
   </component>

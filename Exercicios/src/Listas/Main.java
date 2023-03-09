@@ -16,9 +16,10 @@ public class Main {
         lista.show();
         lista.add("6");
         lista.show();
+        lista.add(5, "12");
         System.out.println(lista.contains("4"));
         lista.show();
-        lista.remove(3);
+        lista.remove("12");
         lista.show();
         System.out.println(lista.get(0));
 
