@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c07461-277d-4484-bee4-e235d45bdacb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaOrdenada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/DoubleNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/DoubleNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaDuplamente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaDuplamente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaCircular.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaCircular.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/Node.java" afterDir="false" />
     </list>
@@ -101,11 +97,59 @@
       <workItem from="1678042657972" duration="27000" />
       <workItem from="1678210480279" duration="76000" />
       <workItem from="1678449523411" duration="1767000" />
-      <workItem from="1678451965383" duration="5137000" />
+      <workItem from="1678451965383" duration="5243000" />
+      <workItem from="1678470864292" duration="1853000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Exercicios/src/Listas/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Exercicios/src/Listas/Main.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Exercicios/src/Listas/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Exercicios/src/Listas/Main.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Exercicios/src/Listas/Main.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Exercicios/src/Listas/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Exercicios/src/Listas/Main.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="lista.tail" />
+        <watch expression="lista.tail" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

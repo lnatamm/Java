@@ -20,7 +20,7 @@ public class Node<T extends Comparable<T>> {
 
     }
 
-    public Node getNext(){
+    public Node<T> getNext(){
 
         return this.next;
 
