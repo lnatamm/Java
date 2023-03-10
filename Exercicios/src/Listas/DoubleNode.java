@@ -1,6 +1,6 @@
 package Listas;
 
-public class DoubleNode<T> {
+public class DoubleNode<T extends Comparable<T>>{
 
     private T data;
 

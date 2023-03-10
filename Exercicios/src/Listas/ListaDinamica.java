@@ -1,6 +1,6 @@
 package Listas;
 
-public class ListaDinamica <T> {
+public class ListaDinamica <T extends Comparable<T>> {
 
     private Node<T> head;
 

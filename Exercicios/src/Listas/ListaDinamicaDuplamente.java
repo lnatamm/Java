@@ -1,6 +1,6 @@
 package Listas;
 
-public class ListaDinamicaDuplamente<T> {
+public class ListaDinamicaDuplamente<T extends Comparable<T>> {
 
     private DoubleNode<T> head;
 
@@ -52,6 +52,7 @@ public class ListaDinamicaDuplamente<T> {
             this.head.setPrevious(node);
             node.setNext(this.head);
             this.head = node;
+            this.cont++;
 
         }
 
@@ -60,6 +61,7 @@ public class ListaDinamicaDuplamente<T> {
             node.setPrevious(this.tail);
             this.tail.setNext(node);
             this.tail = node;
+            this.cont++;
 
         }
 

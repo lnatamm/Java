@@ -7,15 +7,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ListaDinamicaDuplamente<Integer> lista = new ListaDinamicaDuplamente<>();
+       ListaDinamicaOrdenada<String> lista = new ListaDinamicaOrdenada<String>();
 
-        lista.add(1);
-        lista.add(2);
-        lista.add(3);
-        lista.add(4);
-        lista.add(5);
-        lista.add(4, 7);
-        lista.add(8);
+        lista.add("E");
+        lista.add("D");
+        lista.add("A");
+        lista.add("F");
+        lista.add("C");
+        lista.add("B");
+        lista.remove(0);
+        System.out.println(lista.toString());
+        lista.remove(4);
+        System.out.println(lista.toString());
+        lista.remove(2);
+        System.out.println(lista.toString());
 
         /*
 

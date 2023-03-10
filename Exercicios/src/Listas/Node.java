@@ -1,6 +1,6 @@
 package Listas;
 
-public class Node<T>{
+public class Node<T extends Comparable<T>> {
 
     private T data;
 
@@ -37,5 +37,4 @@ public class Node<T>{
         this.next = next;
 
     }
-
 }

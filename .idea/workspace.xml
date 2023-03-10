@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c07461-277d-4484-bee4-e235d45bdacb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaOrdenada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Trabalhos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Trabalhos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/DoubleNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/DoubleNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaDuplamente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaDuplamente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +37,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "D:/Repositorio/Java/Trabalhos/Calculadora Proposicional",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/elenildo.femm/Desktop/Repositorio/Java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Exercicio6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ListaRecursividade.Exercicio6" />
+      <module name="Exercicios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ListaRecursividade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Listas.Main" />
+      <module name="Exercicios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Listas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Exercicio6" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,6 +100,8 @@
       <workItem from="1678040408731" duration="52000" />
       <workItem from="1678042657972" duration="27000" />
       <workItem from="1678210480279" duration="76000" />
+      <workItem from="1678449523411" duration="1767000" />
+      <workItem from="1678451965383" duration="5137000" />
     </task>
     <servers />
   </component>
