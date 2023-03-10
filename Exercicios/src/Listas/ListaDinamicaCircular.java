@@ -170,6 +170,14 @@ public class ListaDinamicaCircular<T extends Comparable<T>>{
 
     }
 
+    public void clear(){
+
+        head = null;
+        tail = null;
+        cont = 0;
+
+    }
+
     public T get(int i){
 
         Node<T> aux = head;
