@@ -1,6 +1,6 @@
 package Listas;
 
-public class ListaEstatica {
+public class ListaEstatica<T> {
 
     private Object[] v;
 
@@ -8,7 +8,7 @@ public class ListaEstatica {
 
     public ListaEstatica(){
 
-        this.v = new Object[10];
+        this.v = (T[]) new Object[10];
 
         this.cont = 0;
 
@@ -28,7 +28,7 @@ public class ListaEstatica {
 
     }
 
-    public void add(Object n){
+    public void add(T n){
 
         try {
 
@@ -48,7 +48,7 @@ public class ListaEstatica {
 
     }
 
-    public void add(int i, Object n){
+    public void add(int i, T n){
 
         try{
 
@@ -86,11 +86,11 @@ public class ListaEstatica {
 
     }
 
-    public boolean contains(Object n){
+    public boolean contains(T n){
 
         for(int i = 0; i < this.cont; i ++){
 
-            if(this.v[i] == n){
+            if(this.v[i].equals(n)){
 
                 return true;
 
@@ -102,9 +102,27 @@ public class ListaEstatica {
 
     }
 
-    public void remove(){
+    public void remove(T n){
 
-        this.cont--;
+        try{
+
+            for(int i = 0; i < cont; i++){
+
+                if(v[i].equals(n)){
+
+                    v[i] = v[i + 1];
+
+                }
+
+                cont--;
+
+            }
+
+        }
+
+        catch (ArrayIndexOutOfBoundsException e){
+
+        }
 
     }
 
@@ -128,13 +146,13 @@ public class ListaEstatica {
 
     }
 
-    public Object get(int i){
+    public T get(int i){
 
-        return this.v[i];
+        return (T)this.v[i];
 
     }
 
-    public int indexOf(Object n){
+    public int indexOf(T n){
 
         for(int i = 0; i < this.cont; i ++){
 
@@ -150,13 +168,18 @@ public class ListaEstatica {
 
     }
 
-    public void show(){
+    @Override
+    public String toString(){
+
+        String string = "";
 
         for(int i = 0; i < this.cont; i++){
 
-            System.out.println(this.v[i] + " ");
+            string += v[i] + " ";
 
         }
+
+        return string;
 
     }
 

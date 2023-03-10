@@ -75,8 +75,162 @@ public class ListaDinamicaDuplamente<T extends Comparable<T>> {
 
             }
 
+            aux.getPrevious().setNext(node);
+            node.setPrevious(aux.getPrevious());
+            aux.setPrevious(node);
+            node.setNext(aux);
+            cont++;
 
         }
+
+    }
+
+    public int size(){
+
+        return cont;
+
+    }
+
+    public void clear(){
+
+        head = null;
+        tail = null;
+        cont = 0;
+
+    }
+
+    public void remove(T n){
+
+        if(head.getData().equals(n)){
+
+            head = head.getNext();
+
+        }
+
+        else if(tail.getData().equals(n)){
+
+            tail = tail.getPrevious();
+
+        }
+
+        else {
+
+            DoubleNode<T> aux = head;
+
+            while (!aux.getData().equals(n)){
+
+                aux = aux.getNext();
+
+            }
+
+            aux.getPrevious().setNext(aux.getNext());
+
+        }
+
+    }
+
+    public void remove(int i){
+
+        if(i == 0){
+
+            head = head.getNext();
+
+        }
+
+        else if(i == cont){
+
+            tail = tail.getPrevious();
+
+        }
+
+        else {
+
+            DoubleNode<T> aux = head;
+
+            for(int j = 0; j < i; j++){
+
+                aux = aux.getNext();
+
+            }
+
+            aux.getPrevious().setNext(aux.getNext());
+
+        }
+
+    }
+
+    public T get(int i){
+
+        DoubleNode<T> aux = head;
+
+        for(int j = 0; j < i; j++){
+
+            aux = aux.getNext();
+
+        }
+
+        return aux.getData();
+
+    }
+
+    public boolean contains(T n){
+
+        DoubleNode<T> aux = head;
+
+        while (aux != null){
+
+            if(aux.getData().equals(n)){
+
+                return true;
+
+            }
+
+            aux = aux.getNext();
+
+        }
+
+        return false;
+
+    }
+
+    public int indexOf(T n){
+
+        DoubleNode<T> aux = head;
+
+        int cnt = 0;
+
+        while (aux != null){
+
+            if(aux.getData().equals(n)){
+
+                return cnt;
+
+            }
+
+            cnt++;
+
+        }
+
+        return - 1;
+
+    }
+
+    @Override
+    public String toString(){
+
+        DoubleNode<T> aux = head;
+
+        String string = "";
+
+        while(aux != null){
+
+            string += aux.getData() + " ";
+
+            aux = aux.getNext();
+
+        }
+
+        return string;
 
     }
 

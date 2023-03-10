@@ -7,7 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-       ListaDinamicaOrdenada<String> lista = new ListaDinamicaOrdenada<String>();
+
+        ListaDinamicaDuplamente<Integer> lista = new ListaDinamicaDuplamente<>();
+
+        lista.add(1);
+        lista.add(2);
+        lista.add(3);
+        lista.add(4);
+        lista.add(1, 5);
+        System.out.println(lista);
+
+        /*
+        ListaDinamicaOrdenada<String> lista = new ListaDinamicaOrdenada<String>();
 
         lista.add("E");
         lista.add("D");
@@ -21,26 +32,26 @@ public class Main {
         System.out.println(lista.toString());
         lista.remove(2);
         System.out.println(lista.toString());
+        */
 
         /*
-
         ListaDinamica lista = new ListaDinamica();
 
         lista.add("1");
         lista.add("4");
         lista.add("5");
         lista.add("7");
-        lista.show();
+        System.out.println(lista);
         lista.add("6");
-        lista.show();
+        System.out.println(lista);
         lista.add(5, "12");
         System.out.println(lista.contains("4"));
-        lista.show();
-        lista.remove("12");
-        lista.show();
+        System.out.println(lista);
+        lista.remove(5);
+        System.out.println(lista);
         System.out.println(lista.get(0));
-
         */
+
 
         /*Scanner sc = new Scanner(System.in);
 
@@ -139,8 +150,8 @@ public class Main {
             n = Integer.parseInt(sc.next());
 
         }*/
-
-        /*ListaEstatica lista = new ListaEstatica();
+/*
+        ListaEstatica<Integer> lista = new ListaEstatica();
 
         lista.add(1);
         lista.add(2);
@@ -154,27 +165,27 @@ public class Main {
         lista.add(7);
         lista.add(4);
 
-        lista.show();
+        System.out.println(lista);
 
-        lista.add(3, "Adicionando");
+        lista.add(3, 10);
 
-        lista.show();
+        System.out.println(lista);
 
         lista.remove(2);
 
-        lista.show();
+        System.out.println(lista);
 
         lista.remove(5);
 
-        lista.show();
+        System.out.println(lista);
 
-        lista.remove();
+        lista.remove((Integer)4);
 
-        lista.show();
+        System.out.println(lista);
 
-        System.out.println(lista.contains("Teste"));
+        System.out.println(lista.contains(10));
 
-        System.out.println(lista.indexOf("Teste"));
+        System.out.println(lista.indexOf(10));
 
         System.out.println(lista.size());
 
@@ -182,8 +193,8 @@ public class Main {
 
         lista.clear();
 
-        lista.show();*/
-
+        System.out.println(lista);
+*/
     }
 
 }

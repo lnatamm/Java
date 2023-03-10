@@ -87,31 +87,21 @@ public class ListaDinamica <T extends Comparable<T>> {
 
             else {
 
-                for(int j = 0; j < i; j++){
+                for(int j = 0; j < i - 1; j++){
 
-                    if(j == (i - 1)){
+                    aux = aux.getNext();
 
-                        try {
+                }
 
-                            node.setNext(aux.getNext());
+                try{
 
-                            aux.setNext(node);
+                    node.setNext(aux.getNext());
+                    aux.setNext(node);
+                    cont++;
 
-                            this.cont++;
+                }
 
-                        }
-
-                        catch (NullPointerException e){
-
-                        }
-
-                    }
-
-                    else{
-
-                        aux = aux.getNext();
-
-                    }
+                catch (NullPointerException e){
 
                 }
 
@@ -131,6 +121,7 @@ public class ListaDinamica <T extends Comparable<T>> {
 
         this.head = null;
         this.tail = null;
+        cont = 0;
 
     }
 
@@ -154,7 +145,7 @@ public class ListaDinamica <T extends Comparable<T>> {
 
     }
 
-    public void remove(Object n){
+    public void remove(T n){
 
         Node<T> aux = this.head;
 
@@ -172,25 +163,20 @@ public class ListaDinamica <T extends Comparable<T>> {
 
             }
 
+            aux.setNext(null);
             this.tail = aux;
 
         }
 
         else {
 
-            while (aux.getNext() != null) {
-
-                if (aux.getNext().getData().equals(n)) {
-
-                    aux.setNext(aux.getNext().getNext());
-
-                    break;
-
-                }
+            while (!aux.getNext().getData().equals(n)) {
 
                 aux = aux.getNext();
 
             }
+
+            aux.setNext(aux.getNext().getNext());
 
         }
 
@@ -214,7 +200,7 @@ public class ListaDinamica <T extends Comparable<T>> {
 
         }
 
-        else if(i == cont - 1){
+        else if(i == cont){
 
             while (aux.getNext() != this.tail){
 
@@ -282,19 +268,22 @@ public class ListaDinamica <T extends Comparable<T>> {
 
     }
 
-    public void show(){
+    @Override
+    public String toString(){
 
         Node<T> aux = this.head;
 
+        String string = "";
+
         while(aux != null){
 
-            System.out.print(aux.getData() + " ");
+            string += aux.getData() + " ";
 
             aux = aux.getNext();
 
         }
 
-        System.out.println();
+        return string;
 
     }
 
