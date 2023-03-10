@@ -1,10 +1,10 @@
 package Listas;
 
-public class ListaDinamica {
+public class ListaDinamica <T> {
 
-    private Node head;
+    private Node<T> head;
 
-    private Node tail;
+    private Node<T> tail;
 
     private int cont;
 
@@ -18,9 +18,9 @@ public class ListaDinamica {
 
     }
 
-    public void add(Object n){
+    public void add(T n){
 
-        Node node = new Node(n);
+        Node<T> node = new Node<T>(n);
 
         if(this.head == null){
 
@@ -42,11 +42,11 @@ public class ListaDinamica {
 
     }
 
-    public void add(int i, Object n){
+    public void add(int i, T n){
 
-        Node node = new Node(n);
+        Node<T> node = new Node<T>(n);
 
-        Node aux = this.head;
+        Node<T> aux = this.head;
 
         if(i == 0){
 
@@ -136,7 +136,7 @@ public class ListaDinamica {
 
     public boolean contains(Object n){
 
-        Node aux = this.head;
+        Node<T> aux = this.head;
 
         while(aux != null){
 
@@ -156,7 +156,7 @@ public class ListaDinamica {
 
     public void remove(Object n){
 
-        Node aux = this.head;
+        Node<T> aux = this.head;
 
         if(this.head.getData().equals(n)){
 
@@ -198,7 +198,7 @@ public class ListaDinamica {
 
     public void remove(int i){
 
-        Node aux = this.head;
+        Node<T> aux = this.head;
 
         if(i == 0){
 
@@ -244,9 +244,9 @@ public class ListaDinamica {
 
     }
 
-    public Object get(int i){
+    public T get(int i){
 
-        Node aux = this.head;
+        Node<T> aux = this.head;
 
         for(int j = 0; j < i; j++){
 
@@ -258,9 +258,9 @@ public class ListaDinamica {
 
     }
 
-    public int indexOf(Object n){
+    public int indexOf(T n){
 
-        Node aux = this.head;
+        Node<T> aux = this.head;
 
         int cont = 0;
 
@@ -284,7 +284,7 @@ public class ListaDinamica {
 
     public void show(){
 
-        Node aux = this.head;
+        Node<T> aux = this.head;
 
         while(aux != null){
 

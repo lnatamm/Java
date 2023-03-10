@@ -7,6 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
 
+        ListaDinamicaDuplamente<Integer> lista = new ListaDinamicaDuplamente<>();
+
+        lista.add(1);
+        lista.add(2);
+        lista.add(3);
+        lista.add(4);
+        lista.add(5);
+        lista.add(4, 7);
+        lista.add(8);
+
+        /*
+
         ListaDinamica lista = new ListaDinamica();
 
         lista.add("1");
@@ -22,6 +34,8 @@ public class Main {
         lista.remove("12");
         lista.show();
         System.out.println(lista.get(0));
+
+        */
 
         /*Scanner sc = new Scanner(System.in);
 

@@ -1,12 +1,12 @@
 package Listas;
 
-public class Node {
+public class Node<T>{
 
-    private Object data;
+    private T data;
 
-    private Node next;
+    private Node<T> next;
 
-    public Node(Object data){
+    public Node(T data){
 
         this.data = data;
 
@@ -14,7 +14,7 @@ public class Node {
 
     }
 
-    public Object getData() {
+    public T getData() {
 
         return this.data;
 
@@ -26,13 +26,13 @@ public class Node {
 
     }
 
-    public void setData(Object data){
+    public void setData(T data){
 
         this.data = data;
 
     }
 
-    public void setNext(Node next){
+    public void setNext(Node<T> next){
 
         this.next = next;
 
