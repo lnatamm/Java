@@ -1,17 +1,30 @@
 package ListaDeCompras;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Lista l = new Lista();
+        Scanner sc = new Scanner(System.in);
 
-        l.add("Morango");
-        l.add("Abacaxi");
-        l.add("Cenoura");
-        l.add("Banana");
-        l.sort();
-        l.show();
+        Lista<String> lista;
+
+        int n = Integer.parseInt(sc.nextLine());
+
+        for(int i = 0; i < n; i++){
+
+            lista = new Lista<>();
+
+            for(String j : sc.nextLine().split(" ")){
+
+                lista.add(j);
+
+            }
+
+            System.out.println(lista);
+
+        }
 
     }
 

@@ -1,95 +1,68 @@
 package ListaDeCompras;
 
-public class Lista {
+public class Lista<T extends Comparable<T>> {
 
-    private Node head;
+    private Node<T> head;
 
-    private Node tail;
+    private Node<T> tail;
+
+    private int cont;
+
+    private Lista<T> duplicados;
 
     public Lista(){
 
-        this.head = null;
+        head = null;
 
-        this.tail = null;
+        tail = null;
 
-    }
-
-    public void add(String s){
-
-        Node node = new Node(s);
-
-        if(this.head == null){
-
-            this.head = node;
-            this.tail = node;
-
-        }
-
-        else {
-
-            this.tail.setNext(node);
-            this.tail = node;
-
-        }
+        cont = 0;
 
     }
 
-    public void add(int i, String s){
+    public void add(T n){
 
-        Node node = new Node(s);
+        if(!contains(n)) {
 
-        Node aux = this.head;
+            Node<T> node = new Node<>(n);
 
-        if(i == 0){
+            if (head == null) {
 
-            if(this.head == null){
+                head = node;
+                tail = node;
+                cont++;
 
-                this.head = node;
-                this.tail = node;
+            } else {
 
-            }
+                if (head.getData().compareTo(node.getData()) >= 0) {
 
-            else {
+                    node.setNext(head);
+                    head.setPrevious(node);
+                    head = node;
+                    cont++;
 
-                node.setNext(this.head);
-                this.head = node;
+                } else if (tail.getData().compareTo(node.getData()) <= 0) {
 
-            }
+                    node.setPrevious(tail);
+                    tail.setNext(node);
+                    tail = node;
+                    cont++;
 
-        }
+                } else {
 
-        else {
+                    Node<T> aux = head;
 
-            if(this.head == null){
-
-                throw new IndexOutOfBoundsException();
-
-            }
-
-            else {
-
-                for(int j = 0; j < i; j++){
-
-                    if(j == (i - 1)){
-
-                        try {
-
-                            node.setNext(aux.getNext());
-                            aux.setNext(node);
-
-                        }
-
-                        catch (NullPointerException e){
-
-                        }
-
-                    }
-
-                    else {
+                    while (aux.getData().compareTo(node.getData()) <= 0) {
 
                         aux = aux.getNext();
 
                     }
+
+                    aux.getPrevious().setNext(node);
+                    node.setPrevious(aux.getPrevious());
+                    node.setNext(aux);
+                    aux.setPrevious(node);
+                    cont++;
 
                 }
 
@@ -101,36 +74,25 @@ public class Lista {
 
     public int size(){
 
-        int cont = 0;
-
-        Node aux = this.head;
-
-        while(aux != null){
-
-            cont++;
-
-            aux = aux.getNext();
-
-        }
-
         return cont;
 
     }
 
     public void clear(){
 
-        this.head = null;
-        this.tail = null;
+        head = null;
+        tail = null;
+        cont = 0;
 
     }
 
-    public boolean contains(String s){
+    public boolean contains(T n){
 
-        Node aux = this.head;
+        Node<T> aux = head;
 
         while (aux != null){
 
-            if(aux.getData().equals(s)){
+            if(aux.getData().equals(n)){
 
                 return true;
 
@@ -144,21 +106,31 @@ public class Lista {
 
     }
 
-    public void remove(String s){
+    public void remove(T n){
 
-        Node aux = this.head;
+        Node<T> aux = head;
 
-        while (aux.getNext() != null){
+        if(head.getData().equals(n)){
 
-            if(aux.getNext().getData().equals(s)){
+            head = head.getNext();
 
-                aux.setNext(aux.getNext().getNext());
+        }
 
-                break;
+        else if(tail.getData().equals(n)){
+
+            tail = tail.getPrevious();
+
+        }
+
+        else {
+
+            while(!aux.getData().equals(n)){
+
+                aux = aux.getNext();
 
             }
 
-            aux = aux.getNext();
+            aux.getPrevious().setNext(aux.getNext());
 
         }
 
@@ -166,39 +138,37 @@ public class Lista {
 
     public void remove(int i){
 
-        Node aux = this.head;
-
         if(i == 0){
 
-            try {
-
-                this.head = this.head.getNext();
-
-            }
-
-            catch (NullPointerException e){
-
-            }
+            head = head.getNext();
 
         }
 
-        for(int j = 0; j < i; j++){
+        else if(i == cont){
 
-            if(j == (i - 1)){
+            tail = tail.getPrevious();
 
-                aux.setNext(aux.getNext().getNext());
+        }
+
+        else {
+
+            Node<T> aux = head;
+
+            for(int j = 0; j < i; j++){
+
+                aux = aux.getNext();
 
             }
 
-            aux = aux.getNext();
+            aux.getPrevious().setNext(aux.getNext());
 
         }
 
     }
 
-    public String get(int i){
+    public T get(int i){
 
-        Node aux = this.head;
+        Node<T> aux = head;
 
         for(int j = 0; j < i; j++){
 
@@ -210,22 +180,21 @@ public class Lista {
 
     }
 
-    public int indexOf(String s){
+    public int indexOf(T n){
 
-        Node aux = this.head;
+        Node<T> aux = head;
 
         int cont = 0;
 
         while(aux != null){
 
-            if(aux.getData().equals(s)){
+            if(aux.getData().equals(n)){
 
                 return cont;
 
             }
 
             aux = aux.getNext();
-
             cont++;
 
         }
@@ -234,24 +203,30 @@ public class Lista {
 
     }
 
-    public void sort(){
+    public Lista<T> getDuplicados(){
 
+        return duplicados;
 
     }
 
-    public void show(){
+    @Override
+    public String toString(){
 
-        Node aux = this.head;
+        Node<T> aux = head;
 
-        while(aux != null){
+        String string = "";
 
-            System.out.print(aux.getData() + " ");
+        while(aux.getNext() != null){
+
+            string += aux.getData() + " ";
 
             aux = aux.getNext();
 
         }
 
-        System.out.println();
+        string += aux.getData();
+
+        return string;
 
     }
 

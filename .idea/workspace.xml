@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c07461-277d-4484-bee4-e235d45bdacb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaCircular.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaCircular.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaDuplamenteCircular.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaDuplamenteCircular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/ListaDeCompras/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/ListaDeCompras/Lista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/ListaDeCompras/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/ListaDeCompras/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/ListaDeCompras/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/ListaDeCompras/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaOrdenada.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercicios/src/Listas/ListaDinamicaOrdenada.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +51,26 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ListaDeCompras.Main">
     <configuration name="Exercicio6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ListaRecursividade.Exercicio6" />
       <module name="Exercicios" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ListaRecursividade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListaDeCompras.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ListaDeCompras.Main" />
+      <module name="Exercicios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ListaDeCompras.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ListaDeCompras.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Exercicio6" />
       </list>
@@ -96,7 +113,7 @@
       <workItem from="1678210480279" duration="76000" />
       <workItem from="1678449523411" duration="1767000" />
       <workItem from="1678451965383" duration="5243000" />
-      <workItem from="1678470864292" duration="3312000" />
+      <workItem from="1678470864292" duration="5652000" />
     </task>
     <servers />
   </component>
@@ -106,7 +123,7 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="Application">
-        <watch expression="lista.tail" />
+        <watch expression="lista.tail" language="JAVA" />
         <watch expression="lista.tail" />
       </configuration>
     </watches-manager>

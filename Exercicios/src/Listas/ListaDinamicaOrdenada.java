@@ -171,6 +171,7 @@ public class ListaDinamicaOrdenada <T extends Comparable<T>>{
     public int indexOf(T n){
 
         DoubleNode<T> aux = head;
+
         int cnt = 0;
 
         while (aux != null){
@@ -181,6 +182,7 @@ public class ListaDinamicaOrdenada <T extends Comparable<T>>{
 
             }
 
+            aux = aux.getNext();
             cnt++;
 
         }

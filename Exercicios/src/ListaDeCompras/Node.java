@@ -1,40 +1,56 @@
 package ListaDeCompras;
 
-public class Node {
+public class Node<T extends Comparable<T>> {
 
-    private String data;
+    private T data;
 
-    private Node next;
+    private Node<T> next;
 
-    public Node(String data){
+    private Node<T> previous;
+
+    public Node(T data){
 
         this.data = data;
 
         this.next = null;
 
-    }
-
-    public String getData() {
-
-        return this.data;
+        this.previous = null;
 
     }
 
-    public Node getNext(){
+    public T getData() {
 
-        return this.next;
+        return data;
 
     }
 
-    public void setData(String data) {
+    public Node<T> getNext(){
+
+        return next;
+
+    }
+
+    public Node<T> getPrevious(){
+
+        return previous;
+
+    }
+
+    public void setData(T data) {
 
         this.data = data;
 
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<T> next) {
 
         this.next = next;
+
+    }
+
+    public void setPrevious(Node<T> previous){
+
+        this.previous = previous;
 
     }
 
