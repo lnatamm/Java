@@ -7,14 +7,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ListaDinamicaOrdenadaCircular<Integer> lista = new ListaDinamicaOrdenadaCircular<>();
+        /*ListaDinamicaOrdenadaCircular<Integer> lista = new ListaDinamicaOrdenadaCircular<>();
 
         lista.add(1);
         lista.add(7);
         lista.add(9);
         lista.add(2);
         lista.add(3);
-        System.out.println(lista);
+        System.out.println(lista);*/
 
         /*
         ListaDinamicaCircular<Integer> lista = new ListaDinamicaCircular();
@@ -26,16 +26,16 @@ public class Main {
         lista.add(5);
         System.out.println(lista);
         */
-        /*
+
         ListaDinamicaDuplamente<Integer> lista = new ListaDinamicaDuplamente<>();
 
         lista.add(1);
         lista.add(2);
         lista.add(3);
         lista.add(4);
-        lista.add(1, 5);
+        lista.add(4, 5);
         System.out.println(lista);
-        */
+
 
         /*
         ListaDinamicaOrdenada<String> lista = new ListaDinamicaOrdenada<String>();

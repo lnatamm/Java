@@ -56,7 +56,7 @@ public class ListaDinamicaDuplamente<T extends Comparable<T>> {
 
         }
 
-        else if(i == cont - 1){
+        else if(i == cont){
 
             node.setPrevious(this.tail);
             this.tail.setNext(node);
