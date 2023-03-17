@@ -44,6 +44,12 @@ public class Calculadora {
 
         }
 
+        else {
+
+            throw new InputMismatchException("A fórmula não é uma FBF");
+
+        }
+
     }
 
     public Calculadora(Interpretador interpretador, ArrayList<String> operadores, String negador){
@@ -222,7 +228,7 @@ public class Calculadora {
 
                     catch (IndexOutOfBoundsException e){ //Tratamento de excessão IndexOutOfBounds, caso entre é evidente que é uma FBF
 
-                        return true;
+                        return cnt == 0;
 
                     }
 
