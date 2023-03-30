@@ -12,6 +12,11 @@ public class Main {
         fila.add(4);
         fila.add(5);
         System.out.println(fila);
+        fila.poll();
+        System.out.println(fila);
+        fila.poll();
+        System.out.println(fila);
+        System.out.println(fila.peek());
 
     }
 

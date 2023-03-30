@@ -92,6 +92,7 @@ public class Fila<T> {
         while (curr.getNext() != null){
 
             s += curr.getData() + " ";
+            curr = curr.getNext();
 
         }
 
