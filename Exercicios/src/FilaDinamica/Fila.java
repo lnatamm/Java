@@ -24,7 +24,7 @@ public class Fila<T> {
 
     }
 
-    public void add(T data){
+    public void enqueue(T data){
 
         Node<T> node = new Node<>(data);
 
@@ -45,7 +45,7 @@ public class Fila<T> {
 
     }
 
-    public T poll(){
+    public T dequeue(){
 
         Node<T> node;
 
