@@ -108,19 +108,23 @@ public class Fila<T> {
 
         }
 
-        else{
+        else if(end < start){
 
             if(start + 1 == v.length){
                 
-                start = 0;
+                if(end != 0){
 
-            }
+                    start = 0;
 
-            else if(start == end){
+                }
 
-                start = 0;
-                end = -1;
-                return null;
+                else{
+
+                    start = 0;
+                    end = -1;
+                    return null;
+
+                }
 
             }
 
@@ -129,6 +133,14 @@ public class Fila<T> {
                 start++;
 
             }
+
+        }
+
+        else{
+
+            start = 0;
+            end = -1;
+            return null;
 
         }
 
@@ -141,6 +153,8 @@ public class Fila<T> {
 
         String s = "";
 
+        if(end != -1){
+
         if(end > start){
 
             for(int i = start; i <= end; i++){
@@ -151,10 +165,12 @@ public class Fila<T> {
 
         }
 
-        else if(end == -1){
+        else if(end < start){
 
-            return s;
+        }
 
+        else{
+            
         }
 
         else{
