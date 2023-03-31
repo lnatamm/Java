@@ -31,20 +31,20 @@ public class Lista<T> implements Iterable<T>{
 
         Node<T> node = new Node(t);
 
-        if(this.head == null){
+        if(head == null){
 
-            this.head = node;
-            this.tail = node;
-            this.cont++;
+            head = node;
+            tail = node;
+            cont++;
             return true;
 
         }
 
         else{
 
-            this.tail.setNext(node);
-            this.tail = node;
-            this.cont++;
+            tail.setNext(node);
+            tail = node;
+            cont++;
             return true;
 
         }
@@ -55,23 +55,21 @@ public class Lista<T> implements Iterable<T>{
 
         Node<T> node = new Node(n);
 
-        Node<T> aux = this.head;
+        Node<T> aux = head;
 
         if(i == 0){
 
-            if (this.head == null) {
+            if (head == null) {
 
-                this.head = node;
-                this.tail = node;
-
-                this.cont++;
+                head = node;
+                tail = node;
+                cont++;
 
             } else {
 
-                node.setNext(this.head);
-                this.head = node;
-
-                this.cont++;
+                node.setNext(head);
+                head = node;
+                cont++;
 
             }
 
@@ -79,16 +77,15 @@ public class Lista<T> implements Iterable<T>{
 
         else if(i == cont){
 
-            this.tail.setNext(node);
-            this.tail = node;
-
-            this.cont++;
+            tail.setNext(node);
+            tail = node;
+            cont++;
 
         }
 
         else {
 
-            if (this.head == null) {
+            if (head == null) {
 
                 throw new IndexOutOfBoundsException();
 
@@ -122,15 +119,15 @@ public class Lista<T> implements Iterable<T>{
 
     public void clear(){
 
-        this.head = null;
-        this.tail = null;
+        head = null;
+        tail = null;
         cont = 0;
 
     }
 
     public boolean contains(T n){
 
-        Node<T> aux = this.head;
+        Node<T> aux = head;
 
         while(aux != null){
 
@@ -150,24 +147,24 @@ public class Lista<T> implements Iterable<T>{
 
     public void remove(T n){
 
-        Node<T> aux = this.head;
+        Node<T> aux = head;
 
-        if(this.head.getData().equals(n)){
+        if(head.getData().equals(n)){
 
-            this.head = this.head.getNext();
+            head = head.getNext();
 
         }
 
-        else if(this.tail.getData().equals(n)){
+        else if(tail.getData().equals(n)){
 
-            while (aux.getNext() != this.tail){
+            while (aux.getNext() != tail){
 
                 aux = aux.getNext();
 
             }
 
             aux.setNext(null);
-            this.tail = aux;
+            tail = aux;
 
         }
 
@@ -187,17 +184,17 @@ public class Lista<T> implements Iterable<T>{
 
     public void remove(int i){
 
-        Node<T> aux = this.head;
+        Node<T> aux = head;
 
         if(i == 0){
 
-            if (this.head == null) {
+            if (head == null) {
 
                 throw new NullPointerException();
 
             } else {
 
-                this.head = this.head.getNext();
+                head = head.getNext();
 
             }
 
@@ -205,13 +202,13 @@ public class Lista<T> implements Iterable<T>{
 
         else if(i == cont){
 
-            while (aux.getNext() != this.tail){
+            while (aux.getNext() != tail){
 
                 aux = aux.getNext();
 
             }
 
-            this.tail = aux;
+            tail = aux;
 
         }
 
@@ -235,7 +232,7 @@ public class Lista<T> implements Iterable<T>{
 
     public T get(int i){
 
-        Node<T> aux = this.head;
+        Node<T> aux = head;
 
         for(int j = 0; j < i; j++){
 
@@ -249,7 +246,7 @@ public class Lista<T> implements Iterable<T>{
 
     public int indexOf(T n){
 
-        Node<T> aux = this.head;
+        Node<T> aux = head;
 
         int cont = 0;
 
@@ -274,7 +271,7 @@ public class Lista<T> implements Iterable<T>{
     @Override
     public String toString(){
 
-        Node<T> aux = this.head;
+        Node<T> aux = head;
 
         String string = "";
 

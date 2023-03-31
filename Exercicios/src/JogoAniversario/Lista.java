@@ -1,12 +1,12 @@
-package Listas;
+package JogoAniversario;
 
-public class ListaEstatica<T> {
+public class Lista<T> {
 
     private Object[] v;
 
     private int cont;
 
-    public ListaEstatica(){
+    public Lista(){
 
         this.v = (T[]) new Object[10];
 
