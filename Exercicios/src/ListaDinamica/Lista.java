@@ -152,6 +152,9 @@ public class Lista<T> implements Iterable<T>{
         if(head.getData().equals(n)){
 
             head = head.getNext();
+            if(head == null){
+                tail = null;
+            }
 
         }
 
@@ -180,6 +183,8 @@ public class Lista<T> implements Iterable<T>{
 
         }
 
+        cont--;
+
     }
 
     public void remove(int i){
@@ -195,6 +200,9 @@ public class Lista<T> implements Iterable<T>{
             } else {
 
                 head = head.getNext();
+                if(head == null){
+                    tail = null;
+                }
 
             }
 
@@ -227,6 +235,8 @@ public class Lista<T> implements Iterable<T>{
             }
 
         }
+
+        cont--;
 
     }
 

@@ -133,10 +133,16 @@ public class Lista<T> implements Iterable<T>{
 
         if(head.getData().equals(n)){
 
-            head = head.getNext();
-            head.setPrev(tail);
-            tail.setNext(head);
-            cont--;
+            if(!head.equals(tail)) {
+                head = head.getNext();
+                head.setPrev(tail);
+                tail.setNext(head);
+            }
+
+            else {
+                head = null;
+                tail = null;
+            }
 
         }
 
@@ -145,7 +151,6 @@ public class Lista<T> implements Iterable<T>{
             tail = tail.getPrev();
             tail.setNext(head);
             head.setPrev(tail);
-            cont--;
 
         }
 
@@ -160,9 +165,10 @@ public class Lista<T> implements Iterable<T>{
             }
 
             aux.getPrev().setNext(aux.getNext());
-            cont--;
 
         }
+
+        cont--;
 
     }
 
@@ -170,11 +176,15 @@ public class Lista<T> implements Iterable<T>{
 
         if(i == 0){
 
-            head = head.getNext();
-            head.setPrev(tail);
-            tail.setNext(head);
-            cont--;
-
+            if(!head.equals(tail)) {
+                head = head.getNext();
+                head.setPrev(tail);
+                tail.setNext(head);
+            }
+            else {
+                head = null;
+                tail = null;
+            }
         }
 
         else if(i == cont){
@@ -182,7 +192,6 @@ public class Lista<T> implements Iterable<T>{
             tail = tail.getPrev();
             tail.setNext(head);
             head.setPrev(tail);
-            cont--;
 
         }
 
@@ -197,9 +206,10 @@ public class Lista<T> implements Iterable<T>{
             }
 
             aux.getPrev().setNext(aux.getNext());
-            cont--;
 
         }
+
+        cont--;
 
     }
 

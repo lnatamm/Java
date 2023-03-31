@@ -168,9 +168,14 @@ public class Lista<T> implements Iterable<T>{
 
         if(i == 0){
 
-            head = head.getNext();
-            tail.setNext(head);
-            cont--;
+            if(!head.equals(tail)) {
+                head = head.getNext();
+                tail.setNext(head);
+            }
+            else {
+                head = null;
+                tail = null;
+            }
 
         }
 
@@ -186,7 +191,6 @@ public class Lista<T> implements Iterable<T>{
 
             aux.setNext(head);
             tail = aux;
-            cont--;
 
         }
 
@@ -201,9 +205,10 @@ public class Lista<T> implements Iterable<T>{
             }
 
             aux.setNext(aux.getNext().getNext());
-            cont--;
 
         }
+
+        cont--;
 
     }
 

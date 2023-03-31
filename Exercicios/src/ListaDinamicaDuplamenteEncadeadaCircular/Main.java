@@ -10,6 +10,11 @@ public class Main {
         lista.add(3);
         lista.add(4);
         lista.add(5);
+        lista.remove(0);
+        lista.remove(0);
+        lista.remove(0);
+        lista.remove(0);
+        lista.remove(0);
         for (Integer i: lista) {
             System.out.println(i);
         }

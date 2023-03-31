@@ -1,6 +1,6 @@
-package FilaDinamica;
+package FilaDinamicaDePrioridadeOrdenada;
 
-import java.util.*;
+import java.util.EmptyStackException;
 
 public class Fila<T> {
 
@@ -14,7 +14,7 @@ public class Fila<T> {
 
         first = null;
         last = null;
-        cont = 0;
+        cont++;
 
     }
 
@@ -24,26 +24,57 @@ public class Fila<T> {
 
     }
 
-    public void enqueue(T data){
+    public void enqueue(T data, int priority){
 
-        Node<T> node = new Node<>(data);
+        Node<T> node = new Node(data, priority);
 
         if(first == null){
 
             first = node;
             last = node;
+            cont++;
 
         }
 
         else {
 
-            node.setPrev(last);
-            last.setNext(node);
-            last = node;
+            if(first.getPriority() > node.getPriority()){
+
+                node.setNext(first);
+                first.setPrev(node);
+                first = node;
+                cont++;
+
+            }
+
+            else if(last.getPriority() <= node.getPriority()){
+
+                node.setPrev(last);
+                last.setNext(node);
+                last = node;
+                cont++;
+
+            }
+
+            else {
+
+                Node<T> aux = first;
+
+                while (aux.getPriority() <= node.getPriority()){
+
+                    aux = aux.getNext();
+
+                }
+
+                aux.getPrev().setNext(node);
+                node.setPrev(aux.getPrev());
+                node.setNext(aux);
+                aux.setPrev(node);
+                cont++;
+
+            }
 
         }
-
-        cont++;
 
     }
 
@@ -61,14 +92,6 @@ public class Fila<T> {
 
             node = first;
             first = first.getNext();
-            try {
-                first.setPrev(null);
-            }
-            catch (NullPointerException e){
-                first = null;
-                last = null;
-            }
-
             cont--;
             return node.getData();
 

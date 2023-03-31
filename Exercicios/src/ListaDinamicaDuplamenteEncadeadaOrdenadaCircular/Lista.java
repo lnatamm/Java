@@ -154,9 +154,15 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>{
 
         if(i == 0){
 
-            head = head.getNext();
-            head.setPrev(tail);
-            tail.setNext(head);
+            if(!head.equals(tail)) {
+                head = head.getNext();
+                head.setPrev(tail);
+                tail.setNext(head);
+            }
+            else {
+                head = null;
+                tail = null;
+            }
 
         }
 
@@ -181,6 +187,8 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>{
             aux.getPrev().setNext(aux.getNext());
 
         }
+
+        cont--;
 
     }
 
