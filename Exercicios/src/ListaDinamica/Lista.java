@@ -1,6 +1,8 @@
 package ListaDinamica;
 
-public class Lista<T>{
+import java.util.Iterator;
+
+public class Lista<T> implements Iterable<T>{
 
     private Node<T> head;
 
@@ -285,6 +287,13 @@ public class Lista<T>{
         }
 
         return string;
+
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+     
+        return new ListaIterator<>(head);
 
     }
 
