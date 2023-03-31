@@ -1,6 +1,8 @@
 package ListaDinamicaDuplamenteEncadeadaOrdenadaCircular;
 
-public class Lista<T extends Comparable<T>> {
+import java.util.Iterator;
+
+public class Lista<T extends Comparable<T>> implements Iterable<T>{
 
     private Node<T> head;
 
@@ -237,4 +239,8 @@ public class Lista<T extends Comparable<T>> {
 
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new ListaIterator<T>(head, cont);
+    }
 }

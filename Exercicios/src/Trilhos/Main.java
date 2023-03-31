@@ -85,7 +85,7 @@ public class Main {
                 tamanho = Integer.parseInt(sc.next());
 
                 System.out.println();
-                
+
             }
 
         }

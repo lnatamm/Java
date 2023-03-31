@@ -1,6 +1,8 @@
 package ListaDinamicaDuplamenteEncadeada;
 
-public class Lista<T> {
+import java.util.Iterator;
+
+public class Lista<T> implements Iterable<T>{
 
     private Node<T> head;
 
@@ -236,4 +238,8 @@ public class Lista<T> {
 
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new ListaIterator<T>(head);
+    }
 }

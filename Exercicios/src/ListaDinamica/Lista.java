@@ -290,7 +290,7 @@ public class Lista<T> implements Iterable<T>{
     @Override
     public Iterator<T> iterator() {
      
-        return new ListaIterator<>(head);
+        return new ListaIterator<T>(head);
 
     }
 
