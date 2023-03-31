@@ -1,7 +1,6 @@
 package Trilhos;
 
-import java.util.EmptyStackException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -84,10 +83,9 @@ public class Main {
             else {
 
                 tamanho = Integer.parseInt(sc.next());
-                if(tamanho != 0){
-                    System.out.println();
-                }
 
+                System.out.println();
+                
             }
 
         }
