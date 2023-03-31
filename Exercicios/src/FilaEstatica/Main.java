@@ -18,16 +18,8 @@ public class Main {
         fila.enqueue(9);
         fila.enqueue(10);
         fila.enqueue(11);
-        fila.dequeue();
-        fila.dequeue();
-        fila.dequeue();
-        fila.dequeue();
-        fila.dequeue();
-        fila.dequeue();
-        fila.dequeue();
-        fila.dequeue();
-        fila.dequeue();
-        System.out.println(fila);
+        fila.enqueue(12);
+        System.out.println(fila.size());
 
     }
 

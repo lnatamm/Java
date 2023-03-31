@@ -8,11 +8,14 @@ public class Fila<T> {
 
     private int start;
 
+    private int cont;
+
     public Fila(){
 
         v = (T[])new Object[10];
         end = -1;
         start = 0;
+        cont = 0;
 
     }
 
@@ -53,7 +56,9 @@ public class Fila<T> {
     }
 
     public int size(){
-        return end - start + 1;
+
+        return cont;
+
     }
 
     public void enqueue(T data){
@@ -61,6 +66,7 @@ public class Fila<T> {
             if(start != 0){
                 end = 0;
                 v[end] = data;
+                cont++;
             }
             else{
                 createEspace();
@@ -72,12 +78,14 @@ public class Fila<T> {
 
             end++;
             v[end] = data;
+            cont++;
 
         }
         else{
             if(end + 1 != start && end + 1 != v.length){
                 end++;
                 v[end] = data;
+                cont++;
             }
             else{
                 createEspace();
@@ -92,9 +100,10 @@ public class Fila<T> {
 
         if(end > start){
 
-            if(start + 1 != end){
+            if(start != end){
 
                 start++;
+                cont--;
 
             }
 
@@ -102,6 +111,7 @@ public class Fila<T> {
 
                 start = 0;
                 end = -1;
+                cont = 0;
                 return null;
 
             }
@@ -112,25 +122,15 @@ public class Fila<T> {
 
             if(start + 1 == v.length){
                 
-                if(end != 0){
-
-                    start = 0;
-
-                }
-
-                else{
-
-                    start = 0;
-                    end = -1;
-                    return null;
-
-                }
+                start = 0;
+                cont--;
 
             }
 
             else{
 
                 start++;
+                cont--;
 
             }
 
@@ -140,9 +140,12 @@ public class Fila<T> {
 
             start = 0;
             end = -1;
+            cont = 0;
             return null;
 
         }
+
+        System.out.println();
 
         return aux;
 
@@ -153,37 +156,37 @@ public class Fila<T> {
 
         String s = "";
 
-        if(end != -1){
+        if(end != -1) {
 
-        if(end > start){
+            if (end > start) {
 
-            for(int i = start; i <= end; i++){
+                for (int i = start; i <= end; i++) {
 
-                s += v[i] + " ";
+                    s += v[i] + " ";
 
-            }
-
-        }
-
-        else if(end < start){
-
-        }
-
-        else{
-            
-        }
-
-        else{
-
-            for(int i = start; i < v.length; i++){
-                
-                s += v[i] + " ";
+                }
 
             }
 
-            for(int i = 0; i <= end; i++){
+            else if(end < start){
 
-                s += v[i] + " ";
+                for (int i = start; i < v.length; i++) {
+
+                    s += v[i] + " ";
+
+                }
+
+                for (int i = 0; i <= end; i++) {
+
+                    s += v[i] + " ";
+
+                }
+
+            }
+
+            else {
+
+                s += v[start];
 
             }
 

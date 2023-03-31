@@ -6,15 +6,15 @@ public class Main {
 
         Fila<Integer> fila = new Fila<>();
 
-        fila.add(1);
-        fila.add(2);
-        fila.add(3);
-        fila.add(4);
-        fila.add(5);
+        fila.enqueue(1);
+        fila.enqueue(2);
+        fila.enqueue(3);
+        fila.enqueue(4);
+        fila.enqueue(5);
         System.out.println(fila);
-        fila.poll();
+        fila.dequeue();
         System.out.println(fila);
-        fila.poll();
+        fila.dequeue();
         System.out.println(fila);
         System.out.println(fila.peek());
 
