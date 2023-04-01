@@ -208,7 +208,7 @@ public class Lista<T> implements Iterable<T>{
 
         }
 
-        else if(i == cont){
+        else if(i == cont - 1){
 
             while (aux.getNext() != tail){
 

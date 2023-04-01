@@ -130,6 +130,13 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>{
         else if(tail.getData().equals(n)){
 
             tail = tail.getPrev();
+            try {
+                tail.setNext(null);
+            }
+            catch (NullPointerException e){
+                head = null;
+                tail = null;
+            }
 
         }
 
@@ -163,9 +170,16 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>{
             }
         }
 
-        else if(i == cont){
+        else if(i == cont - 1){
 
             tail = tail.getPrev();
+            try {
+                tail.setNext(null);
+            }
+            catch (NullPointerException e){
+                head = null;
+                tail = null;
+            }
 
         }
 
@@ -182,6 +196,8 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>{
             aux.getPrev().setNext(aux.getNext());
 
         }
+
+        cont--;
 
     }
 
