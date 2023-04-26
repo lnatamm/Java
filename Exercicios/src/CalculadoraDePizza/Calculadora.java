@@ -31,7 +31,7 @@ public class Calculadora {
                 new Pessoa("Exemplo1", 5, new ArrayList<String>(Arrays.asList("Fala Baixo","Siciliana"))),
                 new Pessoa("Exemplo2", 5, new ArrayList<String>(Arrays.asList("Fala Baixo", "Frango Catupiry"))),
                 new Pessoa("Exemplo3", 4, new ArrayList<String>(Arrays.asList("Siciliana"))),
-                new Pessoa("Exemplo4", 4, new ArrayList<String>(Arrays.asList("Fala Mag")))
+                new Pessoa("Exemplo4", 4, new ArrayList<String>(Arrays.asList("Fala Mag"))),
         )
         );
 
@@ -290,6 +290,14 @@ public class Calculadora {
 
     }
 
+    public ArrayList<Pessoa> getPessoas() {
+        return pessoas;
+    }
+
+    public ArrayList<Pizza> getPizzas() {
+        return pizzas;
+    }
+
     public int getPedacos(){
         return pedacos;
     }
@@ -298,12 +306,60 @@ public class Calculadora {
         return qtdPizzas;
     }
 
-    public double getPrecoDividido(){
-        return precoDividido;
+    public ArrayList<Pizza> getPrioridades() {
+        return prioridades;
+    }
+
+    public ArrayList<Pizza> getRelacaoDePizzas() {
+        return relacaoDePizzas;
     }
 
     public double getPrecoTotal(){
         return precoTotal;
+    }
+
+    public double getPrecoDividido(){
+        return precoDividido;
+    }
+
+    public double getCota() {
+        return cota;
+    }
+
+    public void setPessoas(ArrayList<Pessoa> pessoas) {
+        this.pessoas = pessoas;
+    }
+
+    public void setPizzas(ArrayList<Pizza> pizzas) {
+        this.pizzas = pizzas;
+    }
+
+    public void setPedacos(int pedacos) {
+        this.pedacos = pedacos;
+    }
+
+    public void setQtdPizzas(int qtdPizzas) {
+        this.qtdPizzas = qtdPizzas;
+    }
+
+    public void setPrioridades(ArrayList<Pizza> prioridades) {
+        this.prioridades = prioridades;
+    }
+
+    public void setRelacaoDePizzas(ArrayList<Pizza> relacaoDePizzas) {
+        this.relacaoDePizzas = relacaoDePizzas;
+    }
+
+    public void setPrecoTotal(double precoTotal) {
+        this.precoTotal = precoTotal;
+    }
+
+    public void setPrecoDividido(double precoDividido) {
+        this.precoDividido = precoDividido;
+    }
+
+    public void setCota(double cota) {
+        this.cota = cota;
     }
 
     public void showPizzas(){
