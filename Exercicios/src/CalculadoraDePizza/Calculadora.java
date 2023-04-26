@@ -31,7 +31,7 @@ public class Calculadora {
                 new Pessoa("Exemplo1", 5, new ArrayList<String>(Arrays.asList("Fala Baixo","Siciliana"))),
                 new Pessoa("Exemplo2", 5, new ArrayList<String>(Arrays.asList("Fala Baixo", "Frango Catupiry"))),
                 new Pessoa("Exemplo3", 4, new ArrayList<String>(Arrays.asList("Siciliana"))),
-                new Pessoa("Exemplo4", 4, new ArrayList<String>(Arrays.asList("Fala Mag"))),
+                new Pessoa("Exemplo4", 4, new ArrayList<String>(Arrays.asList("Fala Mag")))
         )
         );
 
