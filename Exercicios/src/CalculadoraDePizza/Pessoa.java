@@ -6,55 +6,84 @@ public class Pessoa {
 
     private String nome;
 
-    private int pedacos;
+    private int pedacosSalgadas;
+
+    private ArrayList<String> votosSalgadas;
+
+    private int pedacosDoces;
+
+    private ArrayList<String> votosDoces;
 
     private double cota;
 
-    private ArrayList<String> votos;
 
-    public Pessoa(String nome, int pedacos, ArrayList<String> votos){
+    public Pessoa(String nome, int pedacosSalgadas, ArrayList<String> votosSalgadas, int pedacosDoces, ArrayList<String> votosDoces){
 
         this.nome = nome;
-        this.pedacos = pedacos;
+        this.pedacosSalgadas = pedacosSalgadas;
         cota = 0;
-        this.votos = votos;
+        this.votosSalgadas = votosSalgadas;
+        this.pedacosDoces = pedacosDoces;
+        this.votosDoces = votosDoces;
 
     }
 
-    public void decPedacos(int pedacos){
-        this.pedacos -= pedacos;
-    }
+
 
     public String getNome(){
         return nome;
     }
 
-    public int getPedacos(){
-        return pedacos;
+    public int getPedacosSalgadas(){
+        return pedacosSalgadas;
+    }
+
+    public ArrayList<String> getVotosSalgadas(){
+        return votosSalgadas;
+    }
+
+    public int getPedacosDoces() {
+        return pedacosDoces;
+    }
+
+    public ArrayList<String> getVotosDoces() {
+        return votosDoces;
     }
 
     public double getCota(){
         return cota;
     }
 
-    public ArrayList<String> getVotos(){
-        return votos;
-    }
-
     public void setNome(String nome){
         this.nome = nome;
     }
 
-    public void setPedacos(int pedacos){
-        this.pedacos = pedacos;
+    public void setPedacosSalgadas(int pedacosSalgadas){
+        this.pedacosSalgadas = pedacosSalgadas;
+    }
+
+    public void setVotosSalgadas(ArrayList<String> votosSalgadas){
+        this.votosSalgadas = votosSalgadas;
+    }
+
+    public void setPedacosDoces(int pedacosDoces) {
+        this.pedacosDoces = pedacosDoces;
+    }
+
+    public void setVotosDoces(ArrayList<String> votosDoces) {
+        this.votosDoces = votosDoces;
     }
 
     public void setCota(double cota){
         this.cota = cota;
     }
 
-    public void setVotos(ArrayList<String> votos){
-        this.votos = votos;
+    public void decPedacosSalgadas(int pedacosSalgadas){
+        this.pedacosSalgadas -= pedacosSalgadas;
+    }
+
+    public void decPedacosDoces(int pedacosDoces){
+        this.pedacosDoces -= pedacosDoces;
     }
 
 }
