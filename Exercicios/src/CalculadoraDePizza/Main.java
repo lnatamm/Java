@@ -87,7 +87,7 @@ public class Main {
 
                 for(String i: votosSalgadaTemp){
 
-                    if(!votosSalgada.contains(i)){
+                    if(!votosSalgada.contains(i) && !i.equals("")){
                         votosSalgada.add(i);
                     }
 
@@ -96,6 +96,12 @@ public class Main {
                 while (votosSalgada.size() > 2){
 
                     votosSalgada.remove(2);
+
+                }
+
+                if(votosSalgada.size() == 0){
+
+                    pedacosSalgadas = 0;
 
                 }
 
@@ -123,7 +129,7 @@ public class Main {
 
                 for(String i : votosDoceTemp){
 
-                    if(!votosDoce.contains(i)){
+                    if(!votosDoce.contains(i) && !i.equals("")){
                         votosDoce.add(i);
                     }
 
@@ -133,6 +139,10 @@ public class Main {
 
                     votosDoce.remove(2);
 
+                }
+
+                if(votosDoce.size() == 0){
+                    pedacosDoces = 0;
                 }
 
             }

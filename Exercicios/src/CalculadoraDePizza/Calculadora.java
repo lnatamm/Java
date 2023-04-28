@@ -205,21 +205,7 @@ public class Calculadora {
 
         for(int i = 0; i < pessoas.size(); i++){
 
-            if(pessoas.get(i).getVotosSalgadas().size() == 1) {
-
-                if (!pessoas.get(i).getVotosSalgadas().get(0).equals("")) {
-                    pedacosSalgadas += pessoas.get(i).getPedacosSalgadas();
-                }
-
-            }
-
-            if(pessoas.get(i).getVotosSalgadas().size() == 2){
-
-                if (!pessoas.get(i).getVotosSalgadas().get(0).equals("") || !pessoas.get(i).getVotosSalgadas().get(1).equals("")) {
-                    pedacosSalgadas += pessoas.get(i).getPedacosSalgadas();
-                }
-
-            }
+            pedacosSalgadas += pessoas.get(i).getPedacosSalgadas();
 
         }
 
@@ -404,21 +390,7 @@ public class Calculadora {
 
         for(int i = 0; i < pessoas.size(); i++){
 
-            if(pessoas.get(i).getVotosDoces().size() == 1) {
-
-                if (!pessoas.get(i).getVotosDoces().get(0).equals("")) {
-                    pedacosDoces += pessoas.get(i).getPedacosDoces();
-                }
-
-            }
-
-            if(pessoas.get(i).getVotosDoces().size() == 2){
-
-                if (!pessoas.get(i).getVotosDoces().get(0).equals("") || !pessoas.get(i).getVotosDoces().get(1).equals("")) {
-                    pedacosDoces += pessoas.get(i).getPedacosDoces();
-                }
-
-            }
+            pedacosDoces += pessoas.get(i).getPedacosDoces();
 
         }
 
@@ -533,7 +505,9 @@ public class Calculadora {
 
         for(int i = 0; i < pizzasDoces.size(); i++){
 
-            prioridadesDoces.add(pizzasDoces.get(i));
+            if(pizzasDoces.get(i).getQuantidade() > 0){
+                prioridadesDoces.add(pizzasDoces.get(i));
+            }
 
         }
 
@@ -552,6 +526,10 @@ public class Calculadora {
         while(tempPizzas > 0 && i < prioridadesDoces.size()){
 
             double divisao = prioridadesDoces.get(i).getQuantidade() / 8.0;
+
+            if(prioridadesDoces.size() == 1){
+                divisao = 1;
+            }
 
             int parteInteira = (int)Math.floor(divisao);
 

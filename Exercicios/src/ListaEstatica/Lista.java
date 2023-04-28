@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Lista<T> implements Iterable<T>{
 
-    private Object[] v;
+    private T[] v;
 
     private int cont;
 
