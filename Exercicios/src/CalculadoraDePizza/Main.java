@@ -1,8 +1,39 @@
 package CalculadoraDePizza;
-
+//Last Commit nesse repositório
 import java.util.*;
+import java.text.*;
 
 public class Main {
+
+
+    public static boolean inputResposta(String frase, Scanner sc){
+
+        String s = sc.nextLine();
+
+        s = Normalizer.normalize(s, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+
+        s = s.toLowerCase();
+
+        if(s.equals("sim") || s.equals("s")  || s.equals("yes")|| s.equals("y") || s.equals("nao") || s.equals("no") || s.equals("n")){
+
+            if(s.equals("sim") || s.equals("s")  || s.equals("yes")|| s.equals("y")){
+                return true;
+            }
+
+            else {
+                return false;
+            }
+
+        }
+
+        else {
+
+            System.out.println(frase);
+            return inputResposta(frase, sc);
+
+        }
+
+    }
 
     public static String inputString(String frase, Scanner sc){
 
@@ -139,9 +170,9 @@ public class Main {
         System.out.println("Preço total: R$" + calculadora.getPrecoTotal());
         System.out.println("Preço dividido: R$" + calculadora.getPrecoDividido());
         System.out.println("Preço a pagar: R$" + (calculadora.getPrecoTotal() - calculadora.getPrecoDividido()));
-        System.out.println("O preço está correto?");
-        String resposta = sc.nextLine();
-        if(!resposta.equals("Sim")){
+        System.out.println("O preço está correto? (Sim/Não/Yes/No/S/Y/N)");
+        boolean resposta = inputResposta("O preço está correto?", sc);
+        if(!resposta){
             System.out.print("\nDigite o novo preço total: ");
             calculadora.setPrecoTotal(Double.parseDouble(sc.nextLine()));
             System.out.println("Preço total: R$" + calculadora.getPrecoTotal());

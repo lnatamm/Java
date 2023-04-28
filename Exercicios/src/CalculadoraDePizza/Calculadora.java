@@ -1,5 +1,5 @@
 package CalculadoraDePizza;
-
+//Last Commit nesse repositório
 import java.math.*;
 import java.text.*;
 import java.util.*;
@@ -748,6 +748,7 @@ public class Calculadora {
         for(Pizza i : relacaoDePizzasSalgadas){
 
             precoTotal+=i.getPreco()*i.getQuantidade();
+            precoTotal = Double.parseDouble(df.format(precoTotal).replace(",", "."));
 
         }
 
@@ -896,7 +897,8 @@ public class Calculadora {
     }
 
     public void setPrecoTotal(double precoTotal) {
-        this.precoTotal = precoTotal;
+        DecimalFormat df = new DecimalFormat("#.00");
+        this.precoTotal = Double.parseDouble(df.format(precoTotal).replace(",", "."));
         definePrecoDividido();
         defineCota();
         defineCotaPessoa();
@@ -989,7 +991,7 @@ public class Calculadora {
             for(String j : i.getVotosSalgadas()){
                 System.out.println("-" + j);
             }
-            System.out.println("Votos de Pìzzas Doces:");
+            System.out.println("Votos de Pizzas Doces:");
             for(String j : i.getVotosDoces()){
                 System.out.println("-" + j);
             }
