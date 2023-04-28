@@ -139,6 +139,15 @@ public class Main {
         System.out.println("Preço total: R$" + calculadora.getPrecoTotal());
         System.out.println("Preço dividido: R$" + calculadora.getPrecoDividido());
         System.out.println("Preço a pagar: R$" + (calculadora.getPrecoTotal() - calculadora.getPrecoDividido()));
+        System.out.println("O preço está correto?");
+        String resposta = sc.nextLine();
+        if(!resposta.equals("Sim")){
+            System.out.print("\nDigite o novo preço total: ");
+            calculadora.setPrecoTotal(Double.parseDouble(sc.nextLine()));
+            System.out.println("Preço total: R$" + calculadora.getPrecoTotal());
+            System.out.println("Preço dividido: R$" + calculadora.getPrecoDividido());
+            System.out.println("Preço a pagar: R$" + (calculadora.getPrecoTotal() - calculadora.getPrecoDividido()));
+        }
         System.out.println("-----------------------\n");
         System.out.println("Pessoas:");
         System.out.println("-----------------------\n");

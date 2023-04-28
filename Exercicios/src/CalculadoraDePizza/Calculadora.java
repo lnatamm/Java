@@ -95,8 +95,6 @@ public class Calculadora {
 
         definePrecoTotal();
 
-        definePrecoTotal();
-
         definePrecoDividido();
 
         defineCota();
@@ -191,8 +189,6 @@ public class Calculadora {
 
         definePrecoTotal();
 
-        definePrecoTotal();
-
         definePrecoDividido();
 
         defineCota();
@@ -281,9 +277,9 @@ public class Calculadora {
         
         pedacosSalgadas = 0;
 
-        for(int i = 0; i < pessoas.size(); i++){
+        for(Pessoa i : pessoas){
 
-            pedacosSalgadas += pessoas.get(i).getPedacosSalgadas();
+            pedacosSalgadas += i.getPedacosSalgadas();
 
         }
 
@@ -297,10 +293,10 @@ public class Calculadora {
 
     private Pizza getPizzaSalgadas(String sabor){
 
-        for(int i = 0; i < pizzasSalgadas.size(); i++){
+        for(Pizza i : pizzasSalgadas){
 
-            if(sabor.equals(pizzasSalgadas.get(i).getSabor())){
-                return pizzasSalgadas.get(i);
+            if(sabor.equals(i.getSabor())){
+                return i;
             }
 
         }
@@ -311,59 +307,59 @@ public class Calculadora {
 
     private void incrementaPizzasSalgadas(){
 
-        ArrayList<Integer> qtdAux = new ArrayList<>();
+        ArrayList<Pessoa> pessoasAux = new ArrayList<>();
 
-        for(int i = 0; i < pessoas.size(); i++){
+        for(Pessoa i : pessoas){
 
-            qtdAux.add(pessoas.get(i).getPedacosSalgadas());
+            pessoasAux.add(new Pessoa(i.getNome(), i.getPedacosSalgadas(), i.getVotosSalgadas(), i.getPedacosDoces(), i.getVotosDoces()));
 
         }
 
-        for(int i = 0; i < pessoas.size(); i++){
+        for(Pessoa i : pessoasAux){
 
-            for(int j = 0; j < pessoas.get(i).getVotosSalgadas().size(); j++){
+            for(String j : i.getVotosSalgadas()){
 
-                for(int k = 0; k < pizzasSalgadas.size(); k++){
+                for(Pizza k : pizzasSalgadas){
 
-                    if(pessoas.get(i).getVotosSalgadas().get(j).equals(pizzasSalgadas.get(k).getSabor())){
+                    if(j.equals(k.getSabor())){
 
-                        double divisao = qtdAux.get(i) / (pessoas.get(i).getVotosSalgadas().size() * 1.0);
+                        double divisao = i.getPedacosSalgadas() / (i.getVotosSalgadas().size() * 1.0);
 
                         BigDecimal bdValor = new BigDecimal(divisao);
                         if (bdValor.setScale(0, RoundingMode.DOWN).compareTo(bdValor) != 0) {
                             //tem decimal
 
-                            if(pessoas.get(i).getVotosSalgadas().size() > 1){
+                            if(i.getVotosSalgadas().size() > 1){
 
                                 int divisaoInteira;
 
                                 try{
 
-                                    if(pizzasSalgadas.get(k).getQuantidade() == getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).getQuantidade()){
+                                    if(k.getQuantidade() == getPizzaSalgadas(i.getVotosSalgadas().get(1)).getQuantidade()){
 
-                                        pizzasSalgadas.get(k).incQuantidade(divisao);
-                                        getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).incQuantidade(divisao);
-                                        pessoas.get(i).getVotosSalgadas().remove(1);
+                                        k.incQuantidade(divisao);
+                                        getPizzaSalgadas(i.getVotosSalgadas().get(1)).incQuantidade(divisao);
+                                        i.getVotosSalgadas().remove(1);
                                         break;
 
                                     }
 
-                                    else if(pizzasSalgadas.get(k).getQuantidade() > getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).getQuantidade()){
+                                    else if(k.getQuantidade() > getPizzaSalgadas(i.getVotosSalgadas().get(1)).getQuantidade()){
 
-                                        divisaoInteira = Math.ceilDiv(qtdAux.get(i), pessoas.get(i).getVotosSalgadas().size());
-                                        pizzasSalgadas.get(k).incQuantidade(divisaoInteira);
+                                        divisaoInteira = Math.ceilDiv(i.getPedacosSalgadas(), i.getVotosSalgadas().size());
+                                        k.incQuantidade(divisaoInteira);
 
                                     }
 
                                     else{
 
-                                        divisaoInteira = Math.floorDiv(qtdAux.get(i), pessoas.get(i).getVotosSalgadas().size());
-                                        pizzasSalgadas.get(k).incQuantidade(divisaoInteira);
+                                        divisaoInteira = Math.floorDiv(i.getPedacosSalgadas(), i.getVotosSalgadas().size());
+                                        k.incQuantidade(divisaoInteira);
 
                                     }
 
-                                    pessoas.get(i).getVotosSalgadas().remove(0);
-                                    qtdAux.set(i, qtdAux.get(i) - divisaoInteira);
+                                    i.getVotosSalgadas().remove(0);
+                                    i.decPedacosSalgadas(divisaoInteira);
 
                                 }
 
@@ -375,7 +371,7 @@ public class Calculadora {
 
                         } else {
                             //não tem decimal
-                            pizzasSalgadas.get(k).incQuantidade(qtdAux.get(i) / pessoas.get(i).getVotosSalgadas().size());
+                            k.incQuantidade(i.getPedacosSalgadas() / i.getVotosSalgadas().size());
                         }
 
                     }
@@ -390,9 +386,9 @@ public class Calculadora {
 
     private void deRoundingSalgadas(){
 
-        for(int i = 0; i < pizzasSalgadas.size(); i++){
+        for(Pizza i : pizzasSalgadas){
 
-            pizzasSalgadas.get(i).setQuantidade(Math.ceil(pizzasSalgadas.get(i).getQuantidade()));
+            i.setQuantidade(Math.ceil(i.getQuantidade()));
 
         }
 
@@ -404,10 +400,10 @@ public class Calculadora {
 
         prioridadesSalgadas = new ArrayList<>();
 
-        for(int i = 0; i < pizzasSalgadas.size(); i++){
+        for(Pizza i : pizzasSalgadas){
 
-            if(pizzasSalgadas.get(i).getQuantidade() > 0) {
-                prioridadesSalgadas.add(pizzasSalgadas.get(i));
+            if(i.getQuantidade() > 0) {
+                prioridadesSalgadas.add(i);
             }
 
         }
@@ -546,11 +542,11 @@ public class Calculadora {
 
         boolean contem;
 
-        for(int i = 0; i < pessoas.size(); i++){
+        for(Pessoa i : pessoas){
 
             contem = false;
 
-            for(String j : pessoas.get(i).getVotosDoces()){
+            for(String j : i.getVotosDoces()){
 
                 for(Pizza k : pizzasDoces){
 
@@ -565,11 +561,11 @@ public class Calculadora {
             }
 
             if(contem){
-                pedacosDoces += pessoas.get(i).getPedacosDoces();
+                pedacosDoces += i.getPedacosDoces();
             }
 
             else{
-                pessoas.get(i).setPedacosDoces(0);
+                i.setPedacosDoces(0);
             }
 
         }
@@ -584,10 +580,10 @@ public class Calculadora {
 
     private Pizza getPizzaDoces(String sabor){
 
-        for(int i = 0; i < pizzasDoces.size(); i++){
+        for(Pizza i : pizzasDoces){
 
-            if(sabor.equals(pizzasDoces.get(i).getSabor())){
-                return pizzasDoces.get(i);
+            if(sabor.equals(i.getSabor())){
+                return i;
             }
 
         }
@@ -669,9 +665,9 @@ public class Calculadora {
 
     private void deRoundingDoces(){
 
-        for(int i = 0; i < pizzasDoces.size(); i++){
+        for(Pizza i : pizzasDoces){
 
-            pizzasDoces.get(i).setQuantidade(Math.ceil(pizzasDoces.get(i).getQuantidade()));
+            i.setQuantidade(Math.ceil(i.getQuantidade()));
 
         }
 
@@ -683,10 +679,10 @@ public class Calculadora {
 
         prioridadesDoces = new ArrayList<>();
 
-        for(int i = 0; i < pizzasDoces.size(); i++){
+        for(Pizza i : pizzasDoces){
 
-            if(pizzasDoces.get(i).getQuantidade() > 0){
-                prioridadesDoces.add(pizzasDoces.get(i));
+            if(i.getQuantidade() > 0){
+                prioridadesDoces.add(i);
             }
 
         }
@@ -749,15 +745,15 @@ public class Calculadora {
 
         precoTotal = 0;
 
-        for(int i = 0; i < relacaoDePizzasSalgadas.size(); i++){
+        for(Pizza i : relacaoDePizzasSalgadas){
 
-            precoTotal+=relacaoDePizzasSalgadas.get(i).getPreco()*relacaoDePizzasSalgadas.get(i).getQuantidade();
+            precoTotal+=i.getPreco()*i.getQuantidade();
 
         }
 
-        for(int i = 0; i < relacaoDePizzasDoces.size(); i++){
+        for(Pizza i : relacaoDePizzasDoces){
 
-            precoTotal+=relacaoDePizzasDoces.get(i).getPreco()*relacaoDePizzasDoces.get(i).getQuantidade();
+            precoTotal+=i.getPreco()*i.getQuantidade();
 
         }
 
@@ -791,9 +787,9 @@ public class Calculadora {
 
         DecimalFormat df = new DecimalFormat("#.00");
 
-        for(int i = 0; i < pessoas.size(); i++){
+        for(Pessoa i : pessoas){
 
-            pessoas.get(i).setCota(Double.parseDouble(df.format(cota * (pessoas.get(i).getPedacosSalgadas() + pessoas.get(i).getPedacosDoces())).replace(",", ".")));
+            i.setCota(Double.parseDouble(df.format(cota * (i.getPedacosSalgadas() + i.getPedacosDoces())).replace(",", ".")));
 
         }
 
@@ -901,6 +897,9 @@ public class Calculadora {
 
     public void setPrecoTotal(double precoTotal) {
         this.precoTotal = precoTotal;
+        definePrecoDividido();
+        defineCota();
+        defineCotaPessoa();
     }
 
     public void setPrecoDividido(double precoDividido) {
@@ -913,12 +912,12 @@ public class Calculadora {
 
     public void showPizzasSalgadas(){
 
-        for(int i = 0; i < prioridadesSalgadas.size(); i++){
+        for(Pizza i : prioridadesSalgadas){
 
-            if(prioridadesSalgadas.get(i).getQuantidade() > 0){
+            if(i.getQuantidade() > 0){
 
-                System.out.println("Sabor: " + prioridadesSalgadas.get(i).getSabor());
-                System.out.println("Pedaços: " + prioridadesSalgadas.get(i).getQuantidade() + "\n");
+                System.out.println("Sabor: " + i.getSabor());
+                System.out.println("Pedaços: " + i.getQuantidade() + "\n");
 
             }
 
@@ -930,12 +929,12 @@ public class Calculadora {
 
     public void showRelacaoSalgadas(){
 
-        for(int i = 0; i < relacaoDePizzasSalgadas.size(); i++){
+        for(Pizza i : relacaoDePizzasSalgadas){
 
-            if(relacaoDePizzasSalgadas.get(i).getQuantidade() > 0){
+            if(i.getQuantidade() > 0){
 
-                System.out.println("Sabor: " + relacaoDePizzasSalgadas.get(i).getSabor());
-                System.out.println("Quantidade: " + relacaoDePizzasSalgadas.get(i).getQuantidade()+ "\n");
+                System.out.println("Sabor: " + i.getSabor());
+                System.out.println("Quantidade: " + i.getQuantidade()+ "\n");
 
             }
 
@@ -947,12 +946,12 @@ public class Calculadora {
 
     public void showPizzasDoces(){
 
-        for(int i = 0; i < prioridadesDoces.size(); i++){
+        for(Pizza i : prioridadesDoces){
 
-            if(prioridadesDoces.get(i).getQuantidade() > 0){
+            if(i.getQuantidade() > 0){
 
-                System.out.println("Sabor: " + prioridadesDoces.get(i).getSabor());
-                System.out.println("Pedaços: " + prioridadesDoces.get(i).getQuantidade() + "\n");
+                System.out.println("Sabor: " + i.getSabor());
+                System.out.println("Pedaços: " + i.getQuantidade() + "\n");
 
             }
 
@@ -964,12 +963,12 @@ public class Calculadora {
 
     public void showRelacaoDoces(){
 
-        for(int i = 0; i < relacaoDePizzasDoces.size(); i++){
+        for(Pizza i : relacaoDePizzasDoces){
 
-            if(relacaoDePizzasDoces.get(i).getQuantidade() > 0){
+            if(i.getQuantidade() > 0){
 
-                System.out.println("Sabor: " + relacaoDePizzasDoces.get(i).getSabor());
-                System.out.println("Quantidade: " + relacaoDePizzasDoces.get(i).getQuantidade()+ "\n");
+                System.out.println("Sabor: " + i.getSabor());
+                System.out.println("Quantidade: " + i.getQuantidade()+ "\n");
 
             }
 
@@ -994,8 +993,13 @@ public class Calculadora {
             for(String j : i.getVotosDoces()){
                 System.out.println("-" + j);
             }
-            System.out.println("Cota: R$" + i.getCota() + "\n");
-            
+            if(!(i.getNome().equals("Duda") || i.getNome().equals("duda") || i.getNome().equals("Dudinha"))) {
+                System.out.println("Cota: R$" + i.getCota() + "\n");
+            }
+            else {
+                System.out.println("Cota: Deixa que eu pago pra vc mozao! ♥ :) \n");
+            }
+
         }
 
         System.out.println("-----------------------\n");

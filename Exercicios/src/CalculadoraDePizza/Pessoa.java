@@ -22,8 +22,15 @@ public class Pessoa {
         this.nome = nome;
         this.pedacosSalgadas = pedacosSalgadas;
         cota = 0;
-        this.votosSalgadas = votosSalgadas;
+        this.votosSalgadas = new ArrayList<>();
+        for(String i : votosSalgadas) {
+            this.votosSalgadas.add(i);
+        }
         this.pedacosDoces = pedacosDoces;
+        this.votosDoces = new ArrayList<>();
+        for(String i : votosDoces){
+            this.votosDoces.add(i);
+        }
         this.votosDoces = votosDoces;
 
     }
