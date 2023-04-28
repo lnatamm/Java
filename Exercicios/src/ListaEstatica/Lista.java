@@ -20,13 +20,13 @@ public class Lista<T> implements Iterable<T>{
 
         Object[] auxV = this.v;
 
-        this.v = new Object[v.length + v.length / 2];
-
-        for(int i = 0; i < auxV.length; i++){
-
-            this.v[i] = auxV[i];
-
-        }
+//        this.v = new Object[v.length + v.length / 2];
+//
+//        for(int i = 0; i < auxV.length; i++){
+//
+//            this.v[i] = auxV[i];
+//
+//        }
 
     }
 

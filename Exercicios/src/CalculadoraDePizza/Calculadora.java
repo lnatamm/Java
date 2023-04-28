@@ -981,13 +981,21 @@ public class Calculadora {
 
     public void showPessoas(){
 
-        for(int i = 0; i < pessoas.size(); i++){
+        for(Pessoa i : pessoas){
 
-            System.out.println("Nome: " + pessoas.get(i).getNome());
-            System.out.println("Quantidade de Pedaços Salgados: " + pessoas.get(i).getPedacosSalgadas());
-            System.out.println("Quantidade de Pedaços Doces:" + pessoas.get(i).getPedacosDoces());
-            System.out.println("Cota: R$" + pessoas.get(i).getCota() + "\n");
-
+            System.out.println("Nome: " + i.getNome());
+            System.out.println("Quantidade de Pedaços Salgados: " + i.getPedacosSalgadas());
+            System.out.println("Quantidade de Pedaços Doces:" + i.getPedacosDoces());
+            System.out.println("Votos de Pizzas Salgadas:");
+            for(String j : i.getVotosSalgadas()){
+                System.out.println("-" + j);
+            }
+            System.out.println("Votos de Pìzzas Doces:");
+            for(String j : i.getVotosDoces()){
+                System.out.println("-" + j);
+            }
+            System.out.println("Cota: R$" + i.getCota() + "\n");
+            
         }
 
         System.out.println("-----------------------\n");
