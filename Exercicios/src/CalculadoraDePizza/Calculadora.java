@@ -34,6 +34,73 @@ public class Calculadora {
 
     private double cota;
 
+    public Calculadora(ArrayList<Pessoa> pessoas){
+
+        this.pessoas = pessoas;
+
+        pizzasSalgadas = new ArrayList<Pizza>(Arrays.asList(
+                //Inserir aqui as pizzas e os seus respectivos preços da seguinte forma: "new Pizza("Sabor", Preço)"
+                new Pizza("Fala Baixo", 79.9),
+                new Pizza("Siciliana", 80.9),
+                new Pizza("Fala Mag", 81.9),
+                new Pizza("Frango Catupiry", 67.9),
+                new Pizza("Portuguesa", 71.9),
+                new Pizza("Calabresa", 67.9),
+                new Pizza("Californication", 67.9),
+                new Pizza("Marguerita", 67.9),
+                new Pizza("Mussarela", 67.9),
+                new Pizza("Mango Chutney", 67.9),
+                new Pizza("Frango Barbecue", 67.9),
+                new Pizza("Calabresa Cheddar", 78.9),
+                new Pizza("Fala Baixo Cheddar", 79.9),
+                new Pizza("Queijos", 86.9),
+                new Pizza("Cala Catu", 79.9)
+        )
+        );
+
+        pizzasDoces = new ArrayList<Pizza>(Arrays.asList(
+                new Pizza("Bisladen", 81.9),
+                new Pizza("Chocobrothers", 78.9),
+                new Pizza("Tworros", 71.9)
+        )
+        );
+
+        definePedacosSalgadasTemp();
+
+        defineQtdPizzasSalgadas();
+
+        definePedacosSalgadasDef();
+
+        incrementaPizzasSalgadas();
+
+        definePrioridadesSalgadas();
+
+        defineRelacaoSalgadas();
+
+        definePedacosDocesTemp();
+
+        defineQtdPizzasDoces();
+
+        definePedacosDocesDef();
+
+        incrementaPizzasDoces();
+
+        definePrioridadesDoces();
+
+        defineRelacaoDoces();
+
+        definePrecoTotal();
+
+        definePrecoTotal();
+
+        definePrecoDividido();
+
+        defineCota();
+
+        defineCotaPessoa();
+
+    }
+
     public Calculadora(){
 
         pessoas = new ArrayList<Pessoa>(Arrays.asList(
@@ -134,9 +201,25 @@ public class Calculadora {
 
     private void definePedacosSalgadasTemp(){
 
+        pedacosSalgadas = 0;
+
         for(int i = 0; i < pessoas.size(); i++){
 
-            pedacosSalgadas+=pessoas.get(i).getPedacosSalgadas();
+            if(pessoas.get(i).getVotosSalgadas().size() == 1) {
+
+                if (!pessoas.get(i).getVotosSalgadas().get(0).equals("")) {
+                    pedacosSalgadas += pessoas.get(i).getPedacosSalgadas();
+                }
+
+            }
+
+            if(pessoas.get(i).getVotosSalgadas().size() == 2){
+
+                if (!pessoas.get(i).getVotosSalgadas().get(0).equals("") || !pessoas.get(i).getVotosSalgadas().get(1).equals("")) {
+                    pedacosSalgadas += pessoas.get(i).getPedacosSalgadas();
+                }
+
+            }
 
         }
 
@@ -251,7 +334,9 @@ public class Calculadora {
 
         for(int i = 0; i < pizzasSalgadas.size(); i++){
 
-            prioridadesSalgadas.add(pizzasSalgadas.get(i));
+            if(pizzasSalgadas.get(i).getQuantidade() > 0) {
+                prioridadesSalgadas.add(pizzasSalgadas.get(i));
+            }
 
         }
 
@@ -270,6 +355,10 @@ public class Calculadora {
         while(tempPizzas > 0 && i < prioridadesSalgadas.size()){
 
             double divisao = prioridadesSalgadas.get(i).getQuantidade() / 8.0;
+
+            if(prioridadesSalgadas.size() == 1){
+                divisao = 1;
+            }
 
             int parteInteira = (int)Math.floor(divisao);
 
@@ -311,9 +400,25 @@ public class Calculadora {
 
     private void definePedacosDocesTemp(){
 
+        pedacosDoces = 0;
+
         for(int i = 0; i < pessoas.size(); i++){
 
-            pedacosDoces+=pessoas.get(i).getPedacosDoces();
+            if(pessoas.get(i).getVotosDoces().size() == 1) {
+
+                if (!pessoas.get(i).getVotosDoces().get(0).equals("")) {
+                    pedacosDoces += pessoas.get(i).getPedacosDoces();
+                }
+
+            }
+
+            if(pessoas.get(i).getVotosDoces().size() == 2){
+
+                if (!pessoas.get(i).getVotosDoces().get(0).equals("") || !pessoas.get(i).getVotosDoces().get(1).equals("")) {
+                    pedacosDoces += pessoas.get(i).getPedacosDoces();
+                }
+
+            }
 
         }
 
