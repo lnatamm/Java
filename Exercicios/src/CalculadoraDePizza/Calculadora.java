@@ -71,6 +71,8 @@ public class Calculadora {
 
         definePedacosSalgadasDef();
 
+        filtraVotosSalgadas();
+
         incrementaPizzasSalgadas();
 
         definePrioridadesSalgadas();
@@ -82,6 +84,8 @@ public class Calculadora {
         defineQtdPizzasDoces();
 
         definePedacosDocesDef();
+
+        filtraVotosDoces();
 
         incrementaPizzasDoces();
 
@@ -163,6 +167,8 @@ public class Calculadora {
 
         definePedacosSalgadasDef();
 
+        filtraVotosSalgadas();
+
         incrementaPizzasSalgadas();
 
         definePrioridadesSalgadas();
@@ -174,6 +180,8 @@ public class Calculadora {
         defineQtdPizzasDoces();
 
         definePedacosDocesDef();
+
+        filtraVotosDoces();
 
         incrementaPizzasDoces();
 
@@ -193,6 +201,76 @@ public class Calculadora {
 
     }
 
+    private void filtraVotosSalgadas(){
+
+        for(Pessoa i : pessoas){
+
+            int j = 0;
+
+            while(j < i.getVotosSalgadas().size()){
+
+                boolean contem = false;
+
+                for(Pizza k : pizzasSalgadas){
+
+                    if(k.getSabor().equals(i.getVotosSalgadas().get(j))){
+                        contem = true;
+                        break;
+                    }
+
+                }
+
+                if(!contem){
+
+                    i.getVotosSalgadas().remove(i.getVotosSalgadas().get(j));
+                    j--;
+
+                }
+
+                j++;
+
+            }
+
+            if(i.getVotosSalgadas().size() == 0){
+
+                i.setPedacosSalgadas(0);
+
+            }
+
+            else{
+
+                ArrayList<String> votosSalgadaTemp = new ArrayList<>();
+
+                for(String k : i.getVotosSalgadas()){
+
+                    votosSalgadaTemp.add(k);
+
+                }
+
+                i.setVotosSalgadas(new ArrayList<String>());
+
+                for(String k : votosSalgadaTemp){
+
+                    if(!i.getVotosSalgadas().contains(k)){
+
+                        i.getVotosSalgadas().add(k);
+
+                    }
+
+                }
+
+                while (i.getVotosSalgadas().size() > 2){
+
+                    i.getVotosSalgadas().remove(2);
+
+                }
+
+            }
+
+        }
+
+    }
+
     private void defineQtdPizzasSalgadas(){
 
         qtdPizzasSalgadas = Math.ceilDiv(pedacosSalgadas, 8);
@@ -200,7 +278,7 @@ public class Calculadora {
     }
 
     private void definePedacosSalgadasTemp(){
-
+        
         pedacosSalgadas = 0;
 
         for(int i = 0; i < pessoas.size(); i++){
@@ -259,31 +337,39 @@ public class Calculadora {
 
                                 int divisaoInteira;
 
-                                if(pizzasSalgadas.get(k).getQuantidade() == getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).getQuantidade()){
+                                try{
 
-                                    pizzasSalgadas.get(k).incQuantidade(divisao);
-                                    getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).incQuantidade(divisao);
-                                    pessoas.get(i).getVotosSalgadas().remove(1);
-                                    break;
+                                    if(pizzasSalgadas.get(k).getQuantidade() == getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).getQuantidade()){
+
+                                        pizzasSalgadas.get(k).incQuantidade(divisao);
+                                        getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).incQuantidade(divisao);
+                                        pessoas.get(i).getVotosSalgadas().remove(1);
+                                        break;
+
+                                    }
+
+                                    else if(pizzasSalgadas.get(k).getQuantidade() > getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).getQuantidade()){
+
+                                        divisaoInteira = Math.ceilDiv(qtdAux.get(i), pessoas.get(i).getVotosSalgadas().size());
+                                        pizzasSalgadas.get(k).incQuantidade(divisaoInteira);
+
+                                    }
+
+                                    else{
+
+                                        divisaoInteira = Math.floorDiv(qtdAux.get(i), pessoas.get(i).getVotosSalgadas().size());
+                                        pizzasSalgadas.get(k).incQuantidade(divisaoInteira);
+
+                                    }
+
+                                    pessoas.get(i).getVotosSalgadas().remove(0);
+                                    qtdAux.set(i, qtdAux.get(i) - divisaoInteira);
 
                                 }
 
-                                else if(pizzasSalgadas.get(k).getQuantidade() > getPizzaSalgadas(pessoas.get(i).getVotosSalgadas().get(1)).getQuantidade()){
-
-                                    divisaoInteira = Math.ceilDiv(qtdAux.get(i), pessoas.get(i).getVotosSalgadas().size());
-                                    pizzasSalgadas.get(k).incQuantidade(divisaoInteira);
-
+                                catch(NullPointerException e){
+                                    
                                 }
-
-                                else{
-
-                                    divisaoInteira = Math.floorDiv(qtdAux.get(i), pessoas.get(i).getVotosSalgadas().size());
-                                    pizzasSalgadas.get(k).incQuantidade(divisaoInteira);
-
-                                }
-
-                                pessoas.get(i).getVotosSalgadas().remove(0);
-                                qtdAux.set(i, qtdAux.get(i) - divisaoInteira);
 
                             }
 
@@ -378,6 +464,76 @@ public class Calculadora {
 
     }
 
+    private void filtraVotosDoces(){
+        
+        for(Pessoa i : pessoas){
+
+            int j = 0;
+
+            while(j < i.getVotosDoces().size()){
+
+                boolean contem = false;
+
+                for(Pizza k : pizzasDoces){
+
+                    if(k.getSabor().equals(i.getVotosDoces().get(j))){
+                        contem = true;
+                        break;
+                    }
+
+                }
+
+                if(!contem){
+
+                    i.getVotosDoces().remove(i.getVotosDoces().get(j));
+                    j--;
+
+                }
+
+                j++;
+
+            }
+
+            if(i.getVotosDoces().size() == 0){
+
+                i.setPedacosDoces(0);
+
+            }
+
+            else{
+
+                ArrayList<String> votosDoceTemp = new ArrayList<>();
+
+                for(String k : i.getVotosDoces()){
+
+                    votosDoceTemp.add(k);
+
+                }
+
+                i.setVotosDoces(new ArrayList<String>());
+
+                for(String k : votosDoceTemp){
+
+                    if(!i.getVotosDoces().contains(k)){
+
+                        i.getVotosDoces().add(k);
+
+                    }
+
+                }
+
+                while (i.getVotosDoces().size() > 2){
+
+                    i.getVotosDoces().remove(2);
+
+                }
+
+            }
+
+        }
+
+    }
+
     private void defineQtdPizzasDoces(){
 
         qtdPizzasDoces = Math.ceilDiv(pedacosDoces, 8);
@@ -388,9 +544,33 @@ public class Calculadora {
 
         pedacosDoces = 0;
 
+        boolean contem;
+
         for(int i = 0; i < pessoas.size(); i++){
 
-            pedacosDoces += pessoas.get(i).getPedacosDoces();
+            contem = false;
+
+            for(String j : pessoas.get(i).getVotosDoces()){
+
+                for(Pizza k : pizzasDoces){
+
+                    if(k.getSabor().equals(j)){
+
+                        contem = true;
+
+                    }
+
+                }
+
+            }
+
+            if(contem){
+                pedacosDoces += pessoas.get(i).getPedacosDoces();
+            }
+
+            else{
+                pessoas.get(i).setPedacosDoces(0);
+            }
 
         }
 

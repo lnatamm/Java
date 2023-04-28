@@ -67,9 +67,9 @@ public class Main {
 
         while(controle == 1){
 
-            System.out.print("Nome: ");
+            System.out.print("\nNome: ");
 
-            String nome = inputString("Nome: ", sc);
+            String nome = inputString("\nNome: ", sc);
 
             System.out.print("\nQuantidade de Pedaços(Pizza Salgada): ");
 
@@ -81,29 +81,7 @@ public class Main {
 
                 System.out.print("\nDigite seus Votos (Pizza Salgada): ");
 
-                votosSalgada = new ArrayList<>();
-
-                ArrayList<String> votosSalgadaTemp = new ArrayList<>(Arrays.asList(inputString("\nDigite seus Votos (Pizza Salgada): ", sc).split(", ")));
-
-                for(String i: votosSalgadaTemp){
-
-                    if(!votosSalgada.contains(i) && !i.equals("")){
-                        votosSalgada.add(i);
-                    }
-
-                }
-
-                while (votosSalgada.size() > 2){
-
-                    votosSalgada.remove(2);
-
-                }
-
-                if(votosSalgada.size() == 0){
-
-                    pedacosSalgadas = 0;
-
-                }
+                votosSalgada = new ArrayList<>(Arrays.asList(inputString("\nDigite seus Votos (Pizza Salgada): ", sc).split(", ")));
 
             }
 
@@ -123,27 +101,7 @@ public class Main {
 
                 System.out.print("\nDigite seus Votos (Pizza Doce): ");
 
-                votosDoce = new ArrayList<>();
-
-                ArrayList<String> votosDoceTemp = new ArrayList<>(Arrays.asList(inputString("\nDigite seus Votos (Pizza Doce): ", sc).split(", ")));
-
-                for(String i : votosDoceTemp){
-
-                    if(!votosDoce.contains(i) && !i.equals("")){
-                        votosDoce.add(i);
-                    }
-
-                }
-
-                while (votosDoce.size() > 2){
-
-                    votosDoce.remove(2);
-
-                }
-
-                if(votosDoce.size() == 0){
-                    pedacosDoces = 0;
-                }
+                votosDoce = new ArrayList<>(Arrays.asList(inputString("\nDigite seus Votos (Pizza Doce): ", sc).split(", ")));
 
             }
 
