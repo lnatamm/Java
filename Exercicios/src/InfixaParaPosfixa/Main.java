@@ -1,11 +1,40 @@
 package InfixaParaPosfixa;
 
-import java.util.EmptyStackException;
-import java.util.Scanner;
-
-import PilhaDinamica.Pilha;
+import java.util.*;
 
 public class Main {
+
+    public static boolean temParentese(String s){
+
+        for(int i = 0; i < s.length(); i++){
+
+            if(s.charAt(i) == '(' || s.charAt(i) == ')'){
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+
+    public static int operador(char c){
+
+        if (c == '+' || c == '-') {
+            return 0;
+        }
+
+        else if(c == '*' || c == '/') {
+            return 1;
+        }
+
+        else if(c == '^'){
+            return 2;
+        }
+
+        return -1;
+
+    }
 
     public static void main(String[] args) {
         
@@ -20,39 +49,91 @@ public class Main {
 
             Pilha<Character> operadores = new Pilha<>();
 
-            for(int j = 0; j < infixa.length(); j++){
+            Pilha<Character> aux = new Pilha<>();
 
-                if(Character.isLetterOrDigit(infixa.charAt(j))){
+            if(!temParentese(infixa)) {
 
-                    posfixa += infixa.charAt(j);
+                for (int j = 0; j < infixa.length(); j++) {
+
+                    if(Character.isLetterOrDigit(infixa.charAt(j))){
+
+                        posfixa+=infixa.charAt(j);
+
+                    }
+
+                    else {
+
+                        while (!operadores.isEmpty() && operador(infixa.charAt(j)) <= operador(operadores.peek())){
+
+                            posfixa+=operadores.pop();
+
+                        }
+
+                        operadores.push(infixa.charAt(j));
+
+                    }
 
                 }
 
-                else{
+                while (!operadores.isEmpty()){
 
-                    try{
+                    posfixa+=operadores.pop();
 
-                        if(operadores.peek().equals("^")){
+                }
+
+                System.out.println(posfixa);
+
+            }
+
+            else {
+
+                for (int j = 0; j < infixa.length(); j++) {
+
+                    if(Character.isLetterOrDigit(infixa.charAt(j))){
+
+                        posfixa+=infixa.charAt(j);
+
+                    }
+
+                    else if(infixa.charAt(j) == '('){
+
+                        operadores.push('(');
+
+                    }
+
+                    else if(infixa.charAt(j) == ')'){
+
+                        while (!operadores.isEmpty() && operadores.peek() != '(') {
 
                             posfixa += operadores.pop();
 
                         }
 
-                        else if(operadores.peek().equals("*") || operadores.peek().equals("/")){
-
-                        }
-
-                        else{
-
-                        }
+                        operadores.pop();
 
                     }
 
-                    catch(EmptyStackException e){
+                    else {
+
+                        while (!operadores.isEmpty() && operador(infixa.charAt(j)) <= operador(operadores.peek())){
+
+                            posfixa+=operadores.pop();
+
+                        }
+
+                        operadores.push(infixa.charAt(j));
 
                     }
 
                 }
+
+                while (!operadores.isEmpty()){
+
+                    posfixa+=operadores.pop();
+
+                }
+
+                System.out.println(posfixa);
 
             }
 

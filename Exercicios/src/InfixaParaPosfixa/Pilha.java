@@ -82,6 +82,12 @@ public class Pilha<T> {
 
     }
 
+    public boolean isEmpty(){
+
+        return top == null;
+
+    }
+
     public void clear(){
 
         top = null;
@@ -103,7 +109,7 @@ public class Pilha<T> {
 
         }
 
-        return s + curr.getPrev();
+        return s + curr.getData();
 
     }
 

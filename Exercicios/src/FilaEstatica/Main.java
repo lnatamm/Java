@@ -4,7 +4,7 @@ public class Main {
     
     public static void main(String[] args) {
         
-        Fila<Integer> fila = new Fila<>();
+        Fila fila = new Fila();
 
         fila.enqueue(1);
         fila.enqueue(2);

@@ -1,6 +1,6 @@
 package FilaEstatica;
 
-public class Fila<T> {
+public class Fila {
     
     private Object[] v;
 
@@ -12,7 +12,7 @@ public class Fila<T> {
 
     public Fila(){
 
-        v = (T[])new Object[10];
+        v = new Object[10];
         end = -1;
         start = 0;
         cont = 0;
@@ -22,7 +22,7 @@ public class Fila<T> {
     private void createEspace(){
 
         Object[] aux = v;
-        v = (T[])new Object[v.length + (v.length / 2)];
+        v = new Object[v.length + (v.length / 2)];
         if(end > start){
             for(int i = start; i <= end; i++){
 
@@ -61,7 +61,7 @@ public class Fila<T> {
 
     }
 
-    public void enqueue(T data){
+    public void enqueue(Object data){
         if(end + 1 == v.length){
             if(start != 0){
                 end = 0;
@@ -94,9 +94,9 @@ public class Fila<T> {
         }
     }
 
-    public T dequeue(){
+    public Object dequeue(){
 
-        T aux = (T)v[start];
+        Object aux = v[start];
 
         if(end > start){
 
