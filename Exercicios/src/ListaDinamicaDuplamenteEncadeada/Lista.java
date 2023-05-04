@@ -128,14 +128,26 @@ public class Lista<T> implements Iterable<T>{
         if(head.getData().equals(n)){
 
             head = head.getNext();
-            head.setPrev(null);
+            try {
+                head.setPrev(null);
+            }
+            catch (NullPointerException e){
+                head = null;
+                tail = null;
+            }
 
         }
 
         else if(tail.getData().equals(n)){
 
             tail = tail.getPrev();
-            tail.setPrev(null);
+            try {
+                tail.setPrev(null);
+            }
+            catch (NullPointerException e){
+                head = null;
+                tail = null;
+            }
 
         }
 
@@ -175,6 +187,7 @@ public class Lista<T> implements Iterable<T>{
                 head = null;
                 tail = null;
             }
+
         }
 
         else if(i == cont - 1){
