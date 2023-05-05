@@ -1,8 +1,38 @@
 package PilhaDinamica;
 
+import Fila.Fila;
+
 import java.util.*;
 
-public class Pilha<T> {
+public class Pilha<T> implements Iterable<T>{
+
+    @Override
+    public Iterator<T> iterator() {
+        return new PilhaIterator();
+    }
+
+    private class PilhaIterator implements Iterator<T> {
+
+        private Node<T> curr;
+
+        public PilhaIterator(){
+
+            curr = top;
+
+        }
+        @Override
+        public boolean hasNext() {
+            return curr != null;
+        }
+
+        @Override
+        public T next() {
+            T data = curr.getData();
+            curr = curr.getPrev();
+            return data;
+        }
+
+    }
 
     private Node<T> top;
 
@@ -80,6 +110,10 @@ public class Pilha<T> {
 
         }
 
+    }
+
+    public boolean isEmpty(){
+        return top == null;
     }
 
     public void clear(){

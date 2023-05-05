@@ -1,6 +1,6 @@
 package FilaDinamicaDePrioridadeNaoOrdenada;
 
-import java.util.EmptyStackException;
+import java.util.*;
 
 public class Fila<T> {
 
@@ -121,6 +121,73 @@ public class Fila<T> {
 
     }
 
+    public T dequeue(T n){
+
+        Node<T> node;
+
+        if(first == null){
+
+            throw new EmptyStackException();
+
+        }
+
+        else {
+
+            if (n.equals(first.getData())) {
+
+                node = first;
+                first = first.getNext();
+                try {
+                    first.setPrev(null);
+                }
+                catch (NullPointerException e){
+                    first = null;
+                    last = null;
+                }
+
+                cont--;
+                return node.getData();
+
+            }
+
+            else if (n.equals(last.getData())) {
+
+                node = last;
+                last = last.getPrev();
+                try{
+                    last.setNext(null);
+                }
+                catch (NullPointerException e){
+                    first = null;
+                    last = null;
+                }
+
+                cont--;
+                return node.getData();
+
+            }
+
+            else {
+
+                Node<T> aux = first;
+
+                while (!aux.getData().equals(n)){
+
+                    aux = aux.getNext();
+
+                }
+
+                node = aux;
+                aux.getPrev().setNext(aux.getNext());
+                cont--;
+                return node.getData();
+
+            }
+
+        }
+
+    }
+
     public T peek(){
 
         if(first == null){
@@ -135,6 +202,10 @@ public class Fila<T> {
 
         }
 
+    }
+
+    public boolean isEmpty(){
+        return first == null;
     }
 
     @Override

@@ -12,8 +12,8 @@ public class Main {
         fila.enqueue("David", 3);
         fila.enqueue("Luana", 2);
         System.out.println(fila);
-        System.out.println(fila.dequeue());
-        System.out.println(fila.dequeue());
+        System.out.println(fila.dequeue("Sebastião"));
+        System.out.println(fila.dequeue(4));
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());

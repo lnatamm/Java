@@ -15,8 +15,8 @@ public class Main {
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());
+        System.out.println(fila.dequeue("Luana"));
         fila.enqueue("Dani", 1);
-        System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());
