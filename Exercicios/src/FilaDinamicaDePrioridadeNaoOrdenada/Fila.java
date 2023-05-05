@@ -14,7 +14,7 @@ public class Fila<T> {
 
         first = null;
         last = null;
-        cont++;
+        cont = 0;
 
     }
 

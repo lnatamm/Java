@@ -2,7 +2,35 @@ package FilaDoRecreio;
 
 import java.util.*;
 
-public class Fila<T> {
+public class Fila<T> implements Iterable<T>{
+
+    @Override
+    public Iterator<T> iterator() {
+        return new FilaIterator();
+    }
+
+    private class FilaIterator implements Iterator<T> {
+
+        private Node<T> curr;
+
+        public FilaIterator(){
+
+            curr = first;
+
+        }
+        @Override
+        public boolean hasNext() {
+            return curr != null;
+        }
+
+        @Override
+        public T next() {
+            T data = curr.getData();
+            curr = curr.getNext();
+            return data;
+        }
+
+    }
 
     private Node<T> first;
 

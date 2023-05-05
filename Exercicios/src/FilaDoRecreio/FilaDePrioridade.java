@@ -1,8 +1,36 @@
 package FilaDoRecreio;
 
-import java.util.EmptyStackException;
+import java.util.*;
 
-public class FilaDePrioridade<T> {
+public class FilaDePrioridade<T> implements Iterable<T>{
+
+    @Override
+    public Iterator<T> iterator() {
+        return new FilaIterator();
+    }
+
+    private class FilaIterator implements Iterator<T> {
+
+        private NodePrioridade<T> curr;
+
+        public FilaIterator(){
+
+            curr = first;
+
+        }
+        @Override
+        public boolean hasNext() {
+            return curr != null;
+        }
+
+        @Override
+        public T next() {
+            T data = curr.getData();
+            curr = curr.getNext();
+            return data;
+        }
+
+    }
 
     private NodePrioridade<T> first;
 
@@ -14,7 +42,7 @@ public class FilaDePrioridade<T> {
 
         first = null;
         last = null;
-        cont++;
+        cont = 0;
 
     }
 
@@ -38,7 +66,7 @@ public class FilaDePrioridade<T> {
 
         else {
 
-            if(first.getPriority() > node.getPriority()){
+            if(first.getPriority() < node.getPriority()){
 
                 node.setNext(first);
                 first.setPrev(node);
@@ -47,7 +75,7 @@ public class FilaDePrioridade<T> {
 
             }
 
-            else if(last.getPriority() <= node.getPriority()){
+            else if(last.getPriority() >= node.getPriority()){
 
                 node.setPrev(last);
                 last.setNext(node);
@@ -60,7 +88,7 @@ public class FilaDePrioridade<T> {
 
                 NodePrioridade<T> aux = first;
 
-                while (aux.getPriority() <= node.getPriority()){
+                while (aux.getPriority() >= node.getPriority()){
 
                     aux = aux.getNext();
 
@@ -112,6 +140,12 @@ public class FilaDePrioridade<T> {
             return first.getData();
 
         }
+
+    }
+
+    public boolean isEmpty(){
+
+        return first == null;
 
     }
 
