@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786194ea-8fbb-4603-8b2a-839aaef07dca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Provas/Provas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Provas/Provas.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "D:/Projetos/Calculadora da Execucao Penal",
+    "last_opened_file_path": "D:/Repositorio/Java/Exercicios",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,6 +94,7 @@
       <workItem from="1677856752085" duration="207000" />
       <workItem from="1677857043574" duration="89000" />
       <workItem from="1677857198456" duration="111000" />
+      <workItem from="1683859033434" duration="49000" />
     </task>
     <servers />
   </component>
