@@ -1,6 +1,6 @@
 package ArvoreBinariaDeBusca;
 public class Tree<T extends Comparable<T>> {
-    public Node<T> root;
+    private Node<T> root;
     public Tree(){
         root = null;
     }
@@ -68,18 +68,14 @@ public class Tree<T extends Comparable<T>> {
         if(root.getLeft() == null){
             return root.getData();
         }
-        else {
-            return min(root.getLeft());
-        }
+        return min(root.getLeft());
     }
 
     private T max(Node<T> root){
         if(root.getRight() == null){
             return root.getData();
         }
-        else {
-            return max(root.getRight());
-        }
+        return max(root.getRight());
     }
 
     public T min(){
@@ -88,6 +84,31 @@ public class Tree<T extends Comparable<T>> {
 
     public T max(){
         return max(root);
+    }
+
+    private Node<T> get(T data, Node<T> root){
+        if(root != null){
+            if(root.getData().equals(data)){
+                return root;
+            }
+            else{
+                if(data.compareTo(root.getData()) < 0){
+                    if(root.getLeft() != null){
+                        return get(data, root.getLeft());
+                    }
+                }
+                else if(data.compareTo(root.getData()) > 0){
+                    if(root.getRight() != null){
+                        return get(data, root.getRight());
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    private Node<T> get(T data){
+        return get(data, root);
     }
 
     private void remove(T data, Node<T> root, Node<T> parent){
@@ -154,6 +175,10 @@ public class Tree<T extends Comparable<T>> {
         if(root != null){
             remove(data, root, null);
         }
+    }
+
+    public void clear(){
+        root = null;
     }
 
     private String preOrdem(Node<T> root, String s){
