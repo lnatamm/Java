@@ -14,7 +14,7 @@ public class Main {
         arvore.add(3);
         arvore.add(5);
         arvore.add(7);
-        System.out.println(arvore.getNextInOrder(7));
+        System.out.println();
 
     }
     
