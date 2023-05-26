@@ -1,14 +1,12 @@
 package ArvoreAVL;
 
-import ArvoreBinariaDeBusca.Node;
-
 public class Tree<T extends Comparable<T>> {
-    private ArvoreBinariaDeBusca.Node<T> root;
+    private Node<T> root;
     public Tree(){
         root = null;
     }
     public void add(T data){
-        ArvoreBinariaDeBusca.Node<T> node = new ArvoreBinariaDeBusca.Node(data);
+        Node<T> node = new Node(data);
         if(root == null){
             root = node;
         }
@@ -16,10 +14,10 @@ public class Tree<T extends Comparable<T>> {
             add(data, root);
         }
     }
-    private void add(T data, ArvoreBinariaDeBusca.Node<T> root){
+    private void add(T data, Node<T> root){
         if(data.compareTo(root.getData()) < 0){
             if(root.getLeft() == null){
-                root.setLeft(new ArvoreBinariaDeBusca.Node(data));
+                root.setLeft(new Node(data));
             }
             else{
                 add(data, root.getLeft());
@@ -27,7 +25,7 @@ public class Tree<T extends Comparable<T>> {
         }
         else if(data.compareTo(root.getData()) > 0){
             if(root.getRight() == null){
-                root.setRight(new ArvoreBinariaDeBusca.Node(data));
+                root.setRight(new Node(data));
             }
             else{
                 add(data, root.getRight());
@@ -35,7 +33,7 @@ public class Tree<T extends Comparable<T>> {
         }
     }
 
-    private void remove(T data, ArvoreBinariaDeBusca.Node<T> root, ArvoreBinariaDeBusca.Node<T> parent){
+    private void remove(T data, Node<T> root, Node<T> parent){
         if(root.getData().equals(data)){
             if(root.getLeft() == null && root.getRight() == null){
                 if(!root.equals(this.root)){
@@ -112,7 +110,7 @@ public class Tree<T extends Comparable<T>> {
         return search(data, root);
     }
 
-    private boolean search(T data, ArvoreBinariaDeBusca.Node<T> root){
+    private boolean search(T data, Node<T> root){
         if(data.equals(root.getData())){
             return true;
         }
@@ -137,14 +135,14 @@ public class Tree<T extends Comparable<T>> {
         return false;
     }
 
-    private T min(ArvoreBinariaDeBusca.Node<T> root){
+    private T min(Node<T> root){
         if(root.getLeft() == null){
             return root.getData();
         }
         return min(root.getLeft());
     }
 
-    private T max(ArvoreBinariaDeBusca.Node<T> root){
+    private T max(Node<T> root){
         if(root.getRight() == null){
             return root.getData();
         }
@@ -159,7 +157,7 @@ public class Tree<T extends Comparable<T>> {
         return max(root);
     }
 
-    private ArvoreBinariaDeBusca.Node<T> get(T data, ArvoreBinariaDeBusca.Node<T> root){
+    private Node<T> get(T data, Node<T> root){
         if(root != null){
             if(root.getData().equals(data)){
                 return root;
@@ -180,11 +178,11 @@ public class Tree<T extends Comparable<T>> {
         return null;
     }
 
-    private ArvoreBinariaDeBusca.Node<T> get(T data){
+    private Node<T> get(T data){
         return get(data, root);
     }
 
-    private int height(ArvoreBinariaDeBusca.Node<T> root, int left, int right){
+    private int height(Node<T> root, int left, int right){
         if(root.getLeft() != null){
             left = height(root.getLeft(), ++left, right);
         }
@@ -194,7 +192,7 @@ public class Tree<T extends Comparable<T>> {
         return Math.max(left, right);
     }
 
-    private int height(ArvoreBinariaDeBusca.Node<T> root){
+    private int height(Node<T> root){
         int left;
         int right;
         if(root != null) {
@@ -216,11 +214,11 @@ public class Tree<T extends Comparable<T>> {
         return 0;
     }
 
-    private int leftHeight(ArvoreBinariaDeBusca.Node<T> root){
+    private int leftHeight(Node<T> root){
         return height(root.getLeft()) + 1;
     }
 
-    private int rightHeight(ArvoreBinariaDeBusca.Node<T> root){
+    private int rightHeight(Node<T> root){
         return height(root.getRight()) + 1;
     }
 
@@ -236,7 +234,7 @@ public class Tree<T extends Comparable<T>> {
         return height(root);
     }
 
-    private String preOrdem(ArvoreBinariaDeBusca.Node<T> root, String s){
+    private String preOrdem(Node<T> root, String s){
         s += root.getData();
         if(root.getLeft() != null){
             s = preOrdem(root.getLeft(), s);
@@ -247,7 +245,7 @@ public class Tree<T extends Comparable<T>> {
         return s;
     }
 
-    private String emOrdem(ArvoreBinariaDeBusca.Node<T> root, String s){
+    private String emOrdem(Node<T> root, String s){
         if(root.getLeft() != null){
             s = emOrdem(root.getLeft(), s);
         }
@@ -258,7 +256,7 @@ public class Tree<T extends Comparable<T>> {
         return s;
     }
 
-    private String posOrdem(ArvoreBinariaDeBusca.Node<T> root, String s){
+    private String posOrdem(Node<T> root, String s){
         if(root.getLeft() != null){
             s = posOrdem(root.getLeft(), s);
         }
