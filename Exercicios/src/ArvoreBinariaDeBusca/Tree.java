@@ -32,6 +32,76 @@ public class Tree<T extends Comparable<T>> {
         }
     }
 
+    private void remove(T data, Node<T> root, Node<T> parent){
+        if(root.getData().equals(data)){
+            if(root.getLeft() == null && root.getRight() == null){
+                if(!root.equals(this.root)){
+                    if(root.equals(parent.getLeft())){
+                        parent.setLeft(null);
+                    }
+                    else{
+                        parent.setRight(null);
+                    }
+                }
+                else {
+                    this.root = null;
+                }
+            }
+            else if(root.getLeft() != null && root.getRight() == null){
+                if(!root.equals(this.root)){
+                    if(root.equals(parent.getLeft())){
+                        parent.setLeft(root.getLeft());
+                    }
+                    else {
+                        parent.setRight(root.getLeft());
+                    }
+                }
+                else{
+                    this.root = root.getLeft();
+                }
+            }
+            else if(root.getLeft() == null){
+                if(!root.equals(this.root)) {
+                    if (root.equals(parent.getLeft())) {
+                        parent.setLeft(root.getRight());
+                    }
+                    else {
+                        parent.setRight(root.getRight());
+                    }
+                }
+                else{
+                    this.root = root.getRight();
+                }
+            }
+            else {
+                root.setData(min(root.getRight()));
+                remove(root.getData(), root.getRight(), root);
+            }
+        }
+        else {
+            if(data.compareTo(root.getData()) < 0){
+                if(root.getLeft() != null){
+                    remove(data, root.getLeft(), root);
+                }
+            }
+            else if(data.compareTo(root.getData()) > 0){
+                if(root.getRight() != null){
+                    remove(data, root.getRight(), root);
+                }
+            }
+        }
+    }
+
+    public void remove(T data){
+        if(root != null){
+            remove(data, root, null);
+        }
+    }
+
+    public void clear(){
+        root = null;
+    }
+
     public boolean search(T data){
         if(root == null){
             return false;
@@ -111,74 +181,48 @@ public class Tree<T extends Comparable<T>> {
         return get(data, root);
     }
 
-    private void remove(T data, Node<T> root, Node<T> parent){
-        if(root.getData().equals(data)){
-            if(root.getLeft() == null && root.getRight() == null){
-                if(!root.equals(this.root)){
-                    if(root.equals(parent.getLeft())){
-                        parent.setLeft(null);
-                    }
-                    else{
-                        parent.setRight(null);
-                    }
-                }
-                else {
-                    this.root = null;
-                }
-            }
-            else if(root.getLeft() != null && root.getRight() == null){
-                if(!root.equals(this.root)){
-                    if(root.equals(parent.getLeft())){
-                        parent.setLeft(root.getLeft());
-                    }
-                    else {
-                        parent.setRight(root.getLeft());
-                    }
-                }
-                else{
-                    this.root = root.getLeft();
-                }
-            }
-            else if(root.getLeft() == null){
-                if(!root.equals(this.root)) {
-                    if (root.equals(parent.getLeft())) {
-                        parent.setLeft(root.getRight());
-                    }
-                    else {
-                        parent.setRight(root.getRight());
-                    }
-                }
-                else{
-                    this.root = root.getRight();
-                }
-            }
-            else {
-                root.setData(min(root.getRight()));
-                remove(root.getData(), root.getRight(), root);
-            }
+    private int height(Node<T> root, int left, int right){
+        if(root.getLeft() != null){
+            left = height(root.getLeft(), ++left, right);
         }
-        else {
-            if(data.compareTo(root.getData()) < 0){
-                if(root.getLeft() != null){
-                    remove(data, root.getLeft(), root);
-                }
-            }
-            else if(data.compareTo(root.getData()) > 0){
-                if(root.getRight() != null){
-                    remove(data, root.getRight(), root);
-                }
-            }
+        if(root.getRight() != null){
+            right = height(root.getRight(), left, ++right);
         }
+        return Math.max(left, right);
     }
 
-    public void remove(T data){
-        if(root != null){
-            remove(data, root, null);
+    private int height(Node<T> root){
+        int left;
+        int right;
+        if(root != null) {
+            if (root.getLeft() != null && root.getRight() != null) {
+                left = height(root.getLeft(), 0, 0);
+                right = height(root.getRight(), 0, 1);
+            } else if (root.getLeft() != null) {
+                left = height(root.getLeft(), 0, 0);
+                right = 0;
+            } else if (root.getRight() != null) {
+                left = 0;
+                right = height(root.getRight(), 0, 0);
+            } else {
+                left = 0;
+                right = 0;
+            }
+            return Math.max(left, right) + 1;
         }
+        return 0;
     }
 
-    public void clear(){
-        root = null;
+    public int leftHeight(){
+        return height(root.getLeft());
+    }
+
+    public int rightHeight(){
+        return height(root.getRight());
+    }
+
+    public int height(){
+        return height(root);
     }
 
     private String preOrdem(Node<T> root, String s){
