@@ -196,29 +196,37 @@ public class Tree<T extends Comparable<T>> {
         int right;
         if(root != null) {
             if (root.getLeft() != null && root.getRight() != null) {
-                left = height(root.getLeft(), 0, 0);
-                right = height(root.getRight(), 0, 1);
+                left = height(root.getLeft(), 1, 1);
+                right = height(root.getRight(), 1, 1);
             } else if (root.getLeft() != null) {
-                left = height(root.getLeft(), 0, 0);
+                left = height(root.getLeft(), 1, 1);
                 right = 0;
             } else if (root.getRight() != null) {
                 left = 0;
-                right = height(root.getRight(), 0, 0);
+                right = height(root.getRight(), 1, 1);
             } else {
                 left = 0;
                 right = 0;
             }
-            return Math.max(left, right) + 1;
+            return Math.max(left, right);
         }
         return 0;
     }
 
+    private int leftHeight(Node<T> root){
+        return height(root.getLeft()) + 1;
+    }
+
+    private int rightHeight(Node<T> root){
+        return height(root.getRight()) + 1;
+    }
+
     public int leftHeight(){
-        return height(root.getLeft());
+        return leftHeight(root);
     }
 
     public int rightHeight(){
-        return height(root.getRight());
+        return rightHeight(root);
     }
 
     public int height(){
