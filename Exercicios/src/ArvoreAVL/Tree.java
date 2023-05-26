@@ -11,26 +11,60 @@ public class Tree<T extends Comparable<T>> {
             root = node;
         }
         else{
+            //root = add(data, root);
             add(data, root);
         }
     }
+    //return Node<T>
     private void add(T data, Node<T> root){
         if(data.compareTo(root.getData()) < 0){
             if(root.getLeft() == null){
                 root.setLeft(new Node(data));
+                root.incFator();
             }
             else{
+                //root.setLeft(add(data, root.getLeft()));
                 add(data, root.getLeft());
+                if(root.getLeft().getFator() != 0) {
+                    root.incFator();
+                }
             }
         }
         else if(data.compareTo(root.getData()) > 0){
             if(root.getRight() == null){
                 root.setRight(new Node(data));
+                root.incFator();
             }
             else{
+                //root.setRight(add(data, root.getRight()));
                 add(data, root.getRight());
+                if(root.getRight().getFator() != 0) {
+                    root.decFator();
+                }
             }
         }
+        //balanceamento
+        if(root.getFator() >= 2){
+            if(root.getLeft().getFator() >= 0){
+                //RSD
+                System.out.println("RSD");
+            }
+            else{
+                //RDD
+                System.out.println("RDD");
+            }
+        }
+        else if(root.getFator() <= -2){
+            if(root.getRight().getFator() <= 0){
+                //RSE
+                System.out.println("RSE");
+            }
+            else{
+                //RDE
+                System.out.println("RDE");
+            }
+        }
+        //return root;
     }
 
     private void remove(T data, Node<T> root, Node<T> parent){
@@ -274,7 +308,7 @@ public class Tree<T extends Comparable<T>> {
             s = toString(root.getLeft(), s);
         }
         //Em Ordem:
-        s += root.getData();
+        s += root.getFator();
         if(root.getRight() != null){
             s = toString(root.getRight(), s);
         }

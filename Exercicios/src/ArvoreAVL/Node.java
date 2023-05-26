@@ -7,10 +7,21 @@ public class Node <T extends Comparable<T>>{
 
     private Node<T> right;
 
+    private int fator;
+
     public Node(T data){
         this.data = data;
         left = null;
         right = null;
+        fator = 0;
+    }
+
+    public void incFator(){
+        fator++;
+    }
+
+    public void decFator(){
+        fator--;
     }
 
     public T getData(){
@@ -25,6 +36,10 @@ public class Node <T extends Comparable<T>>{
         return right;
     }
 
+    public int getFator(){
+        return fator;
+    }
+
     public void setData(T data){
         this.data = data;
     }
@@ -35,6 +50,10 @@ public class Node <T extends Comparable<T>>{
 
     public void setRight(Node<T> right){
         this.right = right;
+    }
+
+    public void setFator(int fator){
+        this.fator = fator;
     }
 
 }
