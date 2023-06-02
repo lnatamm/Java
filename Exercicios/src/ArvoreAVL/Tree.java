@@ -2,8 +2,10 @@ package ArvoreAVL;
 
 public class Tree<T extends Comparable<T>> {
     private Node<T> root;
+    private boolean flag;
     public Tree(){
         root = null;
+        flag = true;
     }
 
     private Node<T> simpleLeftRotation(Node<T> root){
@@ -16,6 +18,8 @@ public class Tree<T extends Comparable<T>> {
             subTree.setLeft(root);
             root.setRight(null);
         }
+        defineFactor(subTree);
+        defineFactor(root);
         return subTree;
     }
 
@@ -34,6 +38,8 @@ public class Tree<T extends Comparable<T>> {
             subTree.setRight(root);
             root.setLeft(null);
         }
+        defineFactor(subTree);
+        defineFactor(root);
         return subTree;
     }
 
@@ -43,9 +49,7 @@ public class Tree<T extends Comparable<T>> {
     }
 
     private void defineFactor(Node<T> root){
-        int esquerda = height(root.getLeft());
-        int direita = height(root.getRight());
-        root.setFactor(esquerda - direita);
+        root.setFactor(leftHeight(root) - rightHeight(root));
     }
 
     public void add(T data){
@@ -55,6 +59,7 @@ public class Tree<T extends Comparable<T>> {
         }
         else{
             root = add(data, root);
+            flag = true;
             //add(data, root);
         }
     }
@@ -64,12 +69,21 @@ public class Tree<T extends Comparable<T>> {
             if(root.getLeft() == null){
                 root.setLeft(new Node(data));
                 root.incFactor();
+                if(root.getFactor() == 0){
+                    flag = false;
+                }
             }
             else{
                 root.setLeft(add(data, root.getLeft()));
                 //add(data, root.getLeft());
-                if(root.getLeft().getFactor() != 0) {
+                /*if(root.getLeft().getFactor() != 0) {
                     root.incFactor();
+                }*/
+                if(flag){
+                    root.incFactor();
+                    if(root.getFactor() == 0){
+                        flag = false;
+                    }
                 }
             }
         }
@@ -77,12 +91,21 @@ public class Tree<T extends Comparable<T>> {
             if(root.getRight() == null){
                 root.setRight(new Node(data));
                 root.decFactor();
+                if(root.getFactor() == 0){
+                    flag = false;
+                }
             }
             else{
                 root.setRight(add(data, root.getRight()));
                 //add(data, root.getRight());
-                if(root.getRight().getFactor() != 0) {
+                /*if(root.getRight().getFactor() != 0) {
                     root.decFactor();
+                }*/
+                if(flag){
+                    root.decFactor();
+                    if(root.getFactor() == 0){
+                        flag = false;
+                    }
                 }
             }
         }
@@ -259,7 +282,7 @@ public class Tree<T extends Comparable<T>> {
         return null;
     }
 
-    private Node<T> get(T data){
+    public Node<T> get(T data){
         return get(data, root);
     }
 
@@ -280,26 +303,30 @@ public class Tree<T extends Comparable<T>> {
             if (root.getLeft() != null && root.getRight() != null) {
                 left = height(root.getLeft(), 1, 1);
                 right = height(root.getRight(), 1, 1);
+                System.out.print("");
             } else if (root.getLeft() != null) {
-                left = height(root.getLeft(), 1, 1);
-                right = 1;
+                left = height(root.getLeft(), 1, 0);
+                right = 0;
+                System.out.print("");
             } else if (root.getRight() != null) {
-                left = 1;
-                right = height(root.getRight(), 1, 1);
+                left = 0;
+                right = height(root.getRight(), 0, 1);
+                System.out.print("");
             } else {
-                left = 1;
-                right = 1;
+                left = 0;
+                right = 0;
+                System.out.print("");
             }
             return Math.max(left, right);
         }
-        return 0;
+        return -1;
     }
 
-    private int leftHeight(Node<T> root){
+    public int leftHeight(Node<T> root){
         return height(root.getLeft()) + 1;
     }
 
-    private int rightHeight(Node<T> root){
+    public int rightHeight(Node<T> root){
         return height(root.getRight()) + 1;
     }
 
@@ -355,7 +382,8 @@ public class Tree<T extends Comparable<T>> {
             s = toString(root.getLeft(), s);
         }
         //Em Ordem:
-        s += root.getFactor() + " ";
+        //s += root.getData() + ": Altura Esquerda: " + leftHeight(root) +  " Altura Direita:  " + rightHeight(root) + "\n";
+        s += root.getData() + " Fator: " + root.getFactor() + "\n";
         if(root.getRight() != null){
             s = toString(root.getRight(), s);
         }
