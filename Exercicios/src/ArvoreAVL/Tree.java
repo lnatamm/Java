@@ -58,25 +58,19 @@ public class Tree<T extends Comparable<T>> {
             root = node;
         }
         else{
-            try {
-                root = add(data, root);
-            }
-            catch (Exception e){
-
-            }
-            //flag = true;
+            root = add(data, root);
+            flag = true;
             //add(data, root);
         }
     }
     //return Node<T>
-    private Node<T> add(T data, Node<T> root) throws Exception{
+    private Node<T> add(T data, Node<T> root){
         if(data.compareTo(root.getData()) < 0){
             if(root.getLeft() == null){
                 root.setLeft(new Node(data));
                 root.incFactor();
                 if(root.getFactor() == 0){
-                    //flag = false;
-                    throw new Exception();
+                    flag = false;
                 }
             }
             else{
@@ -85,15 +79,11 @@ public class Tree<T extends Comparable<T>> {
                 /*if(root.getLeft().getFactor() != 0) {
                     root.incFactor();
                 }*/
-                /*if(flag){
+                if(flag){
                     root.incFactor();
                     if(root.getFactor() == 0){
                         flag = false;
                     }
-                }*/
-                root.incFactor();
-                if(root.getFactor() == 0){
-                    throw new Exception();
                 }
             }
         }
@@ -102,8 +92,7 @@ public class Tree<T extends Comparable<T>> {
                 root.setRight(new Node(data));
                 root.decFactor();
                 if(root.getFactor() == 0){
-                    //flag = false;
-                    throw new Exception();
+                    flag = false;
                 }
             }
             else{
@@ -112,15 +101,11 @@ public class Tree<T extends Comparable<T>> {
                 /*if(root.getRight().getFactor() != 0) {
                     root.decFactor();
                 }*/
-                /*if(flag){
+                if(flag){
                     root.decFactor();
                     if(root.getFactor() == 0){
                         flag = false;
                     }
-                }*/
-                root.decFactor();
-                if(root.getFactor() == 0){
-                    throw new Exception();
                 }
             }
         }
