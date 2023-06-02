@@ -42,6 +42,12 @@ public class Tree<T extends Comparable<T>> {
         return simpleRightRotation(root);
     }
 
+    private void defineFactor(Node<T> root){
+        int esquerda = height(root.getLeft());
+        int direita = height(root.getRight());
+        root.setFactor(esquerda - direita);
+    }
+
     public void add(T data){
         Node<T> node = new Node(data);
         if(root == null){
@@ -85,24 +91,24 @@ public class Tree<T extends Comparable<T>> {
             if(root.getLeft().getFactor() >= 0){
                 //RSD
                 System.out.println("RSD");
-                return simpleRightRotation(root);
+                root = simpleRightRotation(root);
             }
             else{
                 //RDD
                 System.out.println("RDD");
-                return doubleRightRotation(root);
+                root = doubleRightRotation(root);
             }
         }
         else if(root.getFactor() <= -2){
             if(root.getRight().getFactor() <= 0){
                 //RSE
                 System.out.println("RSE");
-                return simpleLeftRotation(root);
+                root = simpleLeftRotation(root);
             }
             else{
                 //RDE
                 System.out.println("RDE");
-                return doubleLeftRotation(root);
+                root = doubleLeftRotation(root);
             }
         }
         return root;
