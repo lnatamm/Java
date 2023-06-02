@@ -5,66 +5,107 @@ public class Tree<T extends Comparable<T>> {
     public Tree(){
         root = null;
     }
+
+    private Node<T> simpleLeftRotation(Node<T> root){
+        Node<T> subTree = root.getRight();
+        if(subTree.getLeft() != null){
+            root.setRight(subTree.getLeft());
+            subTree.setLeft(root);
+        }
+        else{
+            subTree.setLeft(root);
+            root.setRight(null);
+        }
+        return subTree;
+    }
+
+    private Node<T> doubleLeftRotation(Node<T> root){
+        root.setRight(simpleRightRotation(root.getRight()));
+        return simpleLeftRotation(root);
+    }
+
+    private Node<T> simpleRightRotation(Node<T> root){
+        Node<T> subTree = root.getLeft();
+        if(subTree.getRight() != null){
+            root.setLeft(subTree.getRight());
+            subTree.setRight(root);
+        }
+        else{
+            subTree.setRight(root);
+            root.setLeft(null);
+        }
+        return subTree;
+    }
+
+    private Node<T> doubleRightRotation(Node<T> root){
+        root.setLeft(simpleLeftRotation(root.getLeft()));
+        return simpleRightRotation(root);
+    }
+
     public void add(T data){
         Node<T> node = new Node(data);
         if(root == null){
             root = node;
         }
         else{
-            //root = add(data, root);
-            add(data, root);
+            root = add(data, root);
+            //add(data, root);
         }
     }
     //return Node<T>
-    private void add(T data, Node<T> root){
+    private Node<T> add(T data, Node<T> root){
         if(data.compareTo(root.getData()) < 0){
             if(root.getLeft() == null){
                 root.setLeft(new Node(data));
-                root.incFator();
+                root.incFactor();
             }
             else{
-                //root.setLeft(add(data, root.getLeft()));
-                add(data, root.getLeft());
-                if(root.getLeft().getFator() != 0) {
-                    root.incFator();
+                root.setLeft(add(data, root.getLeft()));
+                //add(data, root.getLeft());
+                if(root.getLeft().getFactor() != 0) {
+                    root.incFactor();
                 }
             }
         }
         else if(data.compareTo(root.getData()) > 0){
             if(root.getRight() == null){
                 root.setRight(new Node(data));
-                root.incFator();
+                root.decFactor();
             }
             else{
-                //root.setRight(add(data, root.getRight()));
-                add(data, root.getRight());
-                if(root.getRight().getFator() != 0) {
-                    root.decFator();
+                root.setRight(add(data, root.getRight()));
+                //add(data, root.getRight());
+                if(root.getRight().getFactor() != 0) {
+                    root.decFactor();
                 }
             }
         }
         //balanceamento
-        if(root.getFator() >= 2){
-            if(root.getLeft().getFator() >= 0){
+        if(root.getFactor() >= 2){
+            if(root.getLeft().getFactor() >= 0){
                 //RSD
                 System.out.println("RSD");
+                return simpleRightRotation(root);
             }
             else{
                 //RDD
                 System.out.println("RDD");
+                return doubleRightRotation(root);
             }
         }
-        else if(root.getFator() <= -2){
-            if(root.getRight().getFator() <= 0){
+        else if(root.getFactor() <= -2){
+            if(root.getRight().getFactor() <= 0){
                 //RSE
                 System.out.println("RSE");
+                return simpleLeftRotation(root);
             }
             else{
                 //RDE
                 System.out.println("RDE");
+                return doubleLeftRotation(root);
             }
         }
-        //return root;
+        return root;
     }
 
     private void remove(T data, Node<T> root, Node<T> parent){
@@ -235,13 +276,13 @@ public class Tree<T extends Comparable<T>> {
                 right = height(root.getRight(), 1, 1);
             } else if (root.getLeft() != null) {
                 left = height(root.getLeft(), 1, 1);
-                right = 0;
+                right = 1;
             } else if (root.getRight() != null) {
-                left = 0;
+                left = 1;
                 right = height(root.getRight(), 1, 1);
             } else {
-                left = 0;
-                right = 0;
+                left = 1;
+                right = 1;
             }
             return Math.max(left, right);
         }
@@ -269,7 +310,7 @@ public class Tree<T extends Comparable<T>> {
     }
 
     private String preOrdem(Node<T> root, String s){
-        s += root.getData();
+        s += root.getData() + " ";
         if(root.getLeft() != null){
             s = preOrdem(root.getLeft(), s);
         }
@@ -283,7 +324,7 @@ public class Tree<T extends Comparable<T>> {
         if(root.getLeft() != null){
             s = emOrdem(root.getLeft(), s);
         }
-        s += root.getData();
+        s += root.getData() + " ";
         if(root.getRight() != null){
             s = emOrdem(root.getRight(), s);
         }
@@ -297,7 +338,7 @@ public class Tree<T extends Comparable<T>> {
         if(root.getRight() != null){
             s = posOrdem(root.getRight(), s);
         }
-        s += root.getData();
+        s += root.getData() + " ";
         return s;
     }
 
@@ -308,7 +349,7 @@ public class Tree<T extends Comparable<T>> {
             s = toString(root.getLeft(), s);
         }
         //Em Ordem:
-        s += root.getFator();
+        s += root.getFactor() + " ";
         if(root.getRight() != null){
             s = toString(root.getRight(), s);
         }

@@ -3,13 +3,12 @@ package ArvoreAVL;
 public class Main {
     public static void main(String[] args) {
         Tree<Integer> arvore = new Tree<>();
-        arvore.add(6);
-        arvore.add(8);
-        arvore.add(5);
-        arvore.add(4);
-        arvore.add(12);
-        arvore.add(2);
-        arvore.add(9);
-        System.out.println(arvore);
+        arvore.add(50);
+        arvore.add(20);
+        arvore.add(90);
+        arvore.add(10);
+        arvore.add(40);
+        arvore.add(30);
+        System.out.println(arvore.preOrdem());
     }
 }
