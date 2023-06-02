@@ -35,6 +35,9 @@ public class Main {
         for(int i = 0; i < n; i++){
             arvore.add(Integer.parseInt(sc.next()));
         }
+        arvore.remove(1);
+        arvore.remove(7);
+        arvore.remove(15);
         System.out.println(arvore);
     }
 }
