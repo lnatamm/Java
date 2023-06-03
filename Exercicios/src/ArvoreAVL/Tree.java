@@ -60,10 +60,8 @@ public class Tree<T extends Comparable<T>> {
         else{
             root = add(data, root);
             flag = true;
-            //add(data, root);
         }
     }
-    //return Node<T>
     private Node<T> add(T data, Node<T> root){
         if(data.compareTo(root.getData()) < 0){
             if(root.getLeft() == null){
@@ -75,10 +73,6 @@ public class Tree<T extends Comparable<T>> {
             }
             else{
                 root.setLeft(add(data, root.getLeft()));
-                //add(data, root.getLeft());
-                /*if(root.getLeft().getFactor() != 0) {
-                    root.incFactor();
-                }*/
                 if(flag){
                     root.incFactor();
                     if(root.getFactor() == 0){
@@ -97,10 +91,6 @@ public class Tree<T extends Comparable<T>> {
             }
             else{
                 root.setRight(add(data, root.getRight()));
-                //add(data, root.getRight());
-                /*if(root.getRight().getFactor() != 0) {
-                    root.decFactor();
-                }*/
                 if(flag){
                     root.decFactor();
                     if(root.getFactor() == 0){
@@ -112,25 +102,17 @@ public class Tree<T extends Comparable<T>> {
         //balanceamento
         if(root.getFactor() >= 2){
             if(root.getLeft().getFactor() >= 0){
-                //RSD
-                System.out.println("RSD");
                 root = simpleRightRotation(root);
             }
             else{
-                //RDD
-                System.out.println("RDD");
                 root = doubleRightRotation(root);
             }
         }
         else if(root.getFactor() <= -2){
             if(root.getRight().getFactor() <= 0){
-                //RSE
-                System.out.println("RSE");
                 root = simpleLeftRotation(root);
             }
             else{
-                //RDE
-                System.out.println("RDE");
                 root = doubleLeftRotation(root);
             }
         }
@@ -179,7 +161,6 @@ public class Tree<T extends Comparable<T>> {
                         }
                         return parent.getRight();
                     }
-
                 }
                 else{
                     this.root = root.getLeft();
@@ -191,7 +172,6 @@ public class Tree<T extends Comparable<T>> {
                 if(!root.equals(this.root)) {
                     if (root.equals(parent.getLeft())) {
                         parent.setLeft(root.getRight());
-
                         parent.decFactor();
                         if(parent.getFactor() != 0){
                             flag = false;
@@ -200,43 +180,28 @@ public class Tree<T extends Comparable<T>> {
                     }
                     else {
                         parent.setRight(root.getRight());
-
                         parent.incFactor();
                         if(parent.getFactor() != 0){
                             flag = false;
                         }
                         root = parent.getRight();
                     }
-
                 }
                 else{
                     this.root = root.getRight();
-
                     root.incFactor();
                     root = this.root;
                 }
             }
             else {
                 root.setData(min(root.getRight()));
-                /*if(parent != null) {
-                    //parent.setRight(remove(root.getData(), root.getRight(), root));
-                    //root = remove(root.getData(), root.getRight(), root);
-                    parent = remove(parent.getData(), root.getRight(), root);
-                }
-                else {
-                    //root = remove(root.getData(), root.getRight(), root);
-                    root = remove(root.getData(), root.getRight(), root);
-                }*/
                 root.setRight(remove(root.getData(), root.getRight(), root));
             }
         }
         else {
             if(data.compareTo(root.getData()) < 0){
                 if(root.getLeft() != null){
-                    //remove(data, root.getLeft(), root);
                     root.setLeft(remove(data, root.getLeft(), root));
-                    //parent = remove(parent.getData(), root.getLeft(), parent);
-
                     if(flag){
                         if(parent != null) {
                             parent.incFactor();
@@ -252,10 +217,7 @@ public class Tree<T extends Comparable<T>> {
             }
             else if(data.compareTo(root.getData()) > 0){
                 if(root.getRight() != null){
-                    //remove(data, root.getRight(), root);
                     root.setRight(remove(data, root.getRight(), root));
-                    //parent = remove(data, root.getRight(), root);
-
                     if(flag){
                         if(parent != null) {
                             parent.decFactor();
@@ -274,43 +236,18 @@ public class Tree<T extends Comparable<T>> {
         if(root != null) {
             if (root.getFactor() >= 2) {
                 if (root.getLeft().getFactor() >= 0) {
-                    //RSD
-                    System.out.println("RSD");
                     root = simpleRightRotation(root);
-                    //root = simpleRightRotation(root);
-                    //parent = simpleRightRotation(root);
-                    //root = simpleRightRotation(parent);
                 } else {
-                    //RDD
-                    System.out.println("RDD");
                     root = doubleRightRotation(root);
-                    //root = doubleRightRotation(root);
-                    //parent = doubleRightRotation(root);
-                    //root = doubleRightRotation(parent);
                 }
             } else if (root.getFactor() <= -2) {
                 if (root.getRight().getFactor() <= 0) {
-                    //RSE
-                    System.out.println("RSE");
                     root = simpleLeftRotation(root);
-                    //root = simpleLeftRotation(root);
-                    //parent = simpleLeftRotation(root);
-                    //root = simpleLeftRotation(parent);
                 } else {
-                    //RDE
-                    System.out.println("RDE");
                     root = doubleLeftRotation(root);
-                    //root = doubleLeftRotation(root);
-                    //parent = doubleLeftRotation(root);
-                    //root = doubleLeftRotation(parent);
                 }
             }
         }
-
-        //Adicionando:
-        /*if(parent != null) {
-            return parent;
-        }*/
         defineFactor(root);
         return root;
     }
