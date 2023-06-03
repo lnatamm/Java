@@ -403,6 +403,22 @@ public class Tree<T extends Comparable<T>> {
         return root == null;
     }
 
+    private void sort(List<T> list, Root<T> root){
+        if(root.getLeft() != null){
+            sort(list, root.getLeft());
+        }
+        list.add(root.getData());
+        if(root.getRight() != null){
+            sort(list, root.getRight());
+        }
+    }
+
+    public List<T> sort(List<T> list){
+        list = new List<>();
+        sort(list, root);
+        return list;
+    }
+
     private String preOrdem(Root<T> root, String s){
         s += root.getData() + " ";
         if(root.getLeft() != null){

@@ -7,6 +7,5 @@ public class Main {
         teste.add(12);
         teste.add(14);
         teste.add(25);
-        System.out.println(teste.contains(1));
     }
 }

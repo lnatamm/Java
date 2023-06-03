@@ -1,6 +1,9 @@
 package UltimateEstruturaDeDados;
 
-public class Multilist<T extends Comparable<T>> {
+import java.util.Comparator;
+import java.util.Iterator;
+
+public class Multilist<T extends Comparable<T>> implements Iterable<T> {
 
     private List<T> list;
 
@@ -9,6 +12,33 @@ public class Multilist<T extends Comparable<T>> {
     private Tree<T> tree;
 
     private int size;
+
+    private class iterator<T> implements Iterator<T>{
+        private Node<T> curr;
+
+        private int atual;
+
+        private int fim;
+
+        public iterator(Node<T> head, int cont){
+            curr = head;
+            atual = 0;
+            fim = cont;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return atual != fim;
+        }
+
+        @Override
+        public T next() {
+            T data = curr.getData();
+            curr = curr.getNext();
+            atual++;
+            return data;
+        }
+    }
 
     public Multilist(){
         list = new List<T>();
@@ -92,6 +122,10 @@ public class Multilist<T extends Comparable<T>> {
         return tree.min();
     }
 
+    public void sort(){
+        list = tree.sort(list);
+    }
+
     public String preOrder(){
         return tree.preOrdem();
     }
@@ -107,6 +141,11 @@ public class Multilist<T extends Comparable<T>> {
     @Override
     public String toString(){
         return tree.toString();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return list.iterator();
     }
 
 }
