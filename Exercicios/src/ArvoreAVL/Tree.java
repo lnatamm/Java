@@ -143,7 +143,6 @@ public class Tree<T extends Comparable<T>> {
                 if(!root.equals(this.root)){
                     if(root.equals(parent.getLeft())){
                         parent.setLeft(null);
-
                         parent.decFactor();
                     }
                     else{
@@ -158,29 +157,34 @@ public class Tree<T extends Comparable<T>> {
                 }
                 else {
                     this.root = null;
+
                 }
+                return null;
             }
             else if(root.getLeft() != null && root.getRight() == null){
                 if(!root.equals(this.root)){
                     if(root.equals(parent.getLeft())){
                         parent.setLeft(root.getLeft());
-
                         parent.decFactor();
+                        if(parent.getFactor() != 0){
+                            flag = false;
+                        }
+                        return parent.getLeft();
                     }
                     else {
                         parent.setRight(root.getLeft());
-
                         parent.incFactor();
+                        if(parent.getFactor() != 0){
+                            flag = false;
+                        }
+                        return parent.getRight();
                     }
 
-                    if(parent.getFactor() != 0){
-                        flag = false;
-                    }
                 }
                 else{
                     this.root = root.getLeft();
-
                     root.decFactor();
+                    return this.root;
                 }
             }
             else if(root.getLeft() == null){
@@ -189,37 +193,59 @@ public class Tree<T extends Comparable<T>> {
                         parent.setLeft(root.getRight());
 
                         parent.decFactor();
+                        if(parent.getFactor() != 0){
+                            flag = false;
+                        }
+                        root = parent.getLeft();
                     }
                     else {
                         parent.setRight(root.getRight());
 
                         parent.incFactor();
+                        if(parent.getFactor() != 0){
+                            flag = false;
+                        }
+                        root = parent.getRight();
                     }
-                    if(parent.getFactor() != 0){
-                        flag = false;
-                    }
+
                 }
                 else{
                     this.root = root.getRight();
 
-                    parent.incFactor();
+                    root.incFactor();
+                    root = this.root;
                 }
             }
             else {
                 root.setData(min(root.getRight()));
-                remove(root.getData(), root.getRight(), root);
+                /*if(parent != null) {
+                    //parent.setRight(remove(root.getData(), root.getRight(), root));
+                    //root = remove(root.getData(), root.getRight(), root);
+                    parent = remove(parent.getData(), root.getRight(), root);
+                }
+                else {
+                    //root = remove(root.getData(), root.getRight(), root);
+                    root = remove(root.getData(), root.getRight(), root);
+                }*/
+                root.setRight(remove(root.getData(), root.getRight(), root));
             }
         }
         else {
             if(data.compareTo(root.getData()) < 0){
                 if(root.getLeft() != null){
                     //remove(data, root.getLeft(), root);
-                    root = remove(data, root.getLeft(), root);
+                    root.setLeft(remove(data, root.getLeft(), root));
+                    //parent = remove(parent.getData(), root.getLeft(), parent);
 
                     if(flag){
-                        parent.incFactor();
-                        if(parent.getFactor() != 0){
-                            flag = false;
+                        if(parent != null) {
+                            parent.incFactor();
+                            if (parent.getFactor() != 0) {
+                                flag = false;
+                            }
+                        }
+                        else{
+                            root.decFactor();
                         }
                     }
                 }
@@ -227,46 +253,65 @@ public class Tree<T extends Comparable<T>> {
             else if(data.compareTo(root.getData()) > 0){
                 if(root.getRight() != null){
                     //remove(data, root.getRight(), root);
-                    root = remove(data, root.getRight(), root);
+                    root.setRight(remove(data, root.getRight(), root));
+                    //parent = remove(data, root.getRight(), root);
 
                     if(flag){
-                        parent.decFactor();
-                        if(parent.getFactor() != 0){
-                            flag = false;
+                        if(parent != null) {
+                            parent.decFactor();
+                            if (parent.getFactor() != 0) {
+                                flag = false;
+                            }
+                        }
+                        else{
+                            root.incFactor();
                         }
                     }
                 }
             }
         }
         //balanceamento
-        if(parent != null) {
-            if (parent.getFactor() >= 2) {
-                if (parent.getLeft().getFactor() >= 0) {
+        if(root != null) {
+            if (root.getFactor() >= 2) {
+                if (root.getLeft().getFactor() >= 0) {
                     //RSD
                     System.out.println("RSD");
-                    parent = simpleRightRotation(parent);
+                    root = simpleRightRotation(root);
+                    //root = simpleRightRotation(root);
+                    //parent = simpleRightRotation(root);
+                    //root = simpleRightRotation(parent);
                 } else {
                     //RDD
                     System.out.println("RDD");
-                    parent = doubleRightRotation(parent);
+                    root = doubleRightRotation(root);
+                    //root = doubleRightRotation(root);
+                    //parent = doubleRightRotation(root);
+                    //root = doubleRightRotation(parent);
                 }
-            } else if (parent.getFactor() <= -2) {
-                if (parent.getRight().getFactor() <= 0) {
+            } else if (root.getFactor() <= -2) {
+                if (root.getRight().getFactor() <= 0) {
                     //RSE
                     System.out.println("RSE");
-                    parent = simpleLeftRotation(parent);
+                    root = simpleLeftRotation(root);
+                    //root = simpleLeftRotation(root);
+                    //parent = simpleLeftRotation(root);
+                    //root = simpleLeftRotation(parent);
                 } else {
                     //RDE
                     System.out.println("RDE");
-                    parent = doubleLeftRotation(parent);
+                    root = doubleLeftRotation(root);
+                    //root = doubleLeftRotation(root);
+                    //parent = doubleLeftRotation(root);
+                    //root = doubleLeftRotation(parent);
                 }
             }
         }
 
         //Adicionando:
-        if(parent != null) {
+        /*if(parent != null) {
             return parent;
-        }
+        }*/
+        defineFactor(root);
         return root;
     }
 
@@ -417,6 +462,10 @@ public class Tree<T extends Comparable<T>> {
         return height(root);
     }
 
+    public boolean isEmpty(){
+        return root == null;
+    }
+
     private String preOrdem(Node<T> root, String s){
         s += root.getData() + " ";
         if(root.getLeft() != null){
@@ -477,6 +526,10 @@ public class Tree<T extends Comparable<T>> {
 
     public String posOrdem(){
         return posOrdem(root, "");
+    }
+
+    public T getRoot(){
+        return root.getData();
     }
 
     @Override
