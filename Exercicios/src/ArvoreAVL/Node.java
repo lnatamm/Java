@@ -24,6 +24,14 @@ public class Node <T extends Comparable<T>>{
         factor--;
     }
 
+    public void incFactor(int i){
+        factor += i;
+    }
+
+    public void decFactor(int i){
+        factor -= i;
+    }
+
     public T getData(){
         return data;
     }

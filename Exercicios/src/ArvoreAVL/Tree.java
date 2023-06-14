@@ -52,6 +52,28 @@ public class Tree<T extends Comparable<T>> {
         root.setFactor(leftHeight(root) - rightHeight(root));
     }
 
+    private void defineLeftFactor(Node root, Node subtree){
+        if(root.getLeft() != null){
+            subtree.incFactor(2);
+            subtree.getLeft().incFactor(2);
+        }
+        else{
+            subtree.incFactor();
+            subtree.getLeft().incFactor();
+        }
+    }
+
+    private void defineRightFactor(Node root, Node subtree){
+        if(root.getRight() != null){
+            subtree.decFactor(2);
+            subtree.getRight().decFactor(2);
+        }
+        else{
+            subtree.decFactor();
+            subtree.getRight().decFactor();
+        }
+    }
+
     public void add(T data){
         Node<T> node = new Node(data);
         if(root == null){
