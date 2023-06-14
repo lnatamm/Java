@@ -235,7 +235,7 @@ public class Tree<T extends Comparable<T>> {
     }
 
     private String preOrdem(Node<T> root, String s){
-        s += root.getData();
+        s += root.getData() + " ";
         if(root.getLeft() != null){
             s = preOrdem(root.getLeft(), s);
         }
@@ -249,7 +249,7 @@ public class Tree<T extends Comparable<T>> {
         if(root.getLeft() != null){
             s = emOrdem(root.getLeft(), s);
         }
-        s += root.getData();
+        s += root.getData() + " ";
         if(root.getRight() != null){
             s = emOrdem(root.getRight(), s);
         }
@@ -263,7 +263,7 @@ public class Tree<T extends Comparable<T>> {
         if(root.getRight() != null){
             s = posOrdem(root.getRight(), s);
         }
-        s += root.getData();
+        s += root.getData() + " ";
         return s;
     }
 
