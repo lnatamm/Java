@@ -18,6 +18,7 @@ public class Tree<T extends Comparable<T>> {
             subTree.setLeft(root);
             root.setRight(null);
         }
+        //defineLeftFactor(root, subTree);
         defineFactor(subTree);
         defineFactor(root);
         return subTree;
@@ -38,6 +39,7 @@ public class Tree<T extends Comparable<T>> {
             subTree.setRight(root);
             root.setLeft(null);
         }
+        //defineRightFactor(root, subTree);
         defineFactor(subTree);
         defineFactor(root);
         return subTree;
@@ -70,7 +72,7 @@ public class Tree<T extends Comparable<T>> {
         }
         else{
             subtree.decFactor();
-            subtree.getRight().decFactor();
+            subtree.getRight().decFactor(2);
         }
     }
 

@@ -75,8 +75,8 @@ public class Tree<T extends Comparable<T>> {
                 }
             }
             else {
-                root.setData(min(root.getRight()));
-                remove(root.getData(), root.getRight(), root);
+                root.setData(max(root.getLeft()));
+                remove(root.getData(), root.getLeft(), root);
             }
         }
         else {
