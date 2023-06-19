@@ -7,147 +7,87 @@ public class ListaEstatica <T>{
     private int cont;
 
     public ListaEstatica(){
-
-        this.v = new Object[10];
-
-        this.cont = 0;
-
+        v = new Object[10];
+        cont = 0;
     }
 
     private void createEspace(){
-
-        Object[] aux = this.v;
-
-        this.v = new Object[cont + cont / 2];
-
+        Object[] aux = v;
+        v = new Object[cont + cont / 2];
         for(int i = 0; i < cont; i++){
-
-            this.v[i] = aux[i];
-
+            v[i] = aux[i];
         }
-
     }
 
     public void add(T n){
-
         try{
-
-            this.v[cont] = n;
-
-            this.cont++;
-
+            v[cont] = n;
+            cont++;
         }
-
         catch (IndexOutOfBoundsException e){
-
             createEspace();
-
             add(n);
-
         }
-
     }
 
     public void add(int i, T n){
-
         try{
-
             for(int j = cont; j > i; j--){
-
-                this.v[j] = this.v[j - 1];
-
+                v[j] = v[j - 1];
             }
-
-            this.v[i] = n;
-
-            this.cont++;
-
+            v[i] = n;
+            cont++;
         }
-
         catch (IndexOutOfBoundsException e){
-
             createEspace();
-
             add(i, n);
-
         }
-
     }
 
     public int size(){
-
-        return this.cont;
-
+        return cont;
     }
 
     public void clear(){
-
-        this.cont = 0;
-
+        cont = 0;
     }
 
     public boolean contains(T n){
 
-        for(int i = 0; i < this.cont; i ++){
-
-            if(this.v[i].equals(n)){
-
+        for(int i = 0; i < cont; i ++){
+            if(v[i].equals(n)){
                 return true;
-
             }
-
         }
-
         return false;
-
     }
 
     public void remove(){
-
-        this.cont--;
-
+        cont--;
     }
 
     public void remove(int i){
 
         try {
-
-            for (int j = i; j < this.cont; j++) {
-
-                this.v[j] = this.v[j + 1];
-
+            for (int j = i; j < cont; j++) {
+                v[j] = v[j + 1];
             }
-
-            this.cont--;
-
+            cont--;
         }
-
-        catch (ArrayIndexOutOfBoundsException e){
-
-        }
-
+        catch (ArrayIndexOutOfBoundsException e){}
     }
 
     public T get(int i){
-
-        return (T)this.v[i];
-
+        return (T)v[i];
     }
 
     public int indexOf(T n){
-
-        for(int i = 0; i < this.cont; i ++){
-
-            if(this.v[i] == n){
-
+        for(int i = 0; i < cont; i ++){
+            if(v[i] == n){
                 return i;
-
             }
-
         }
-
         return -1;
-
     }
 
 }
