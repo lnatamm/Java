@@ -13,30 +13,19 @@ public class Pomekon {
 
     private double valorGolpe;
 
-    public Pomekon(int b, int a, int d, int l) {
-
-        this.bonus = b;
-
-        this.ataque = a;
-
-        this.defesa = d;
-
-        this.level = l;
-
+    public Pomekon(int bonus, int ataque, int defesa, int level) {
+        this.bonus = bonus;
+        this.ataque = ataque;
+        this.defesa = defesa;
+        this.level = level;
         if(this.level % 2 != 0) {
-
             this.bonus = 0;
-
         }
-
-        this.valorGolpe = ((this.ataque + this.defesa) / 2) + this.bonus;
-
+        valorGolpe = ((this.ataque + this.defesa) / 2) + this.bonus;
     }
 
     public double getValorGolpe() {
-
-        return this.valorGolpe;
-
+        return valorGolpe;
     }
 
 }
