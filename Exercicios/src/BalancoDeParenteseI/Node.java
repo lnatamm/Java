@@ -7,10 +7,8 @@ public class Node<T> {
     private Node<T> prev;
 
     public Node(T data){
-
         this.data = data;
         this.prev = null;
-
     }
 
     public T getData() {
