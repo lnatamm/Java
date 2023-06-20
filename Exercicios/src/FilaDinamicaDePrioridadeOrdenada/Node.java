@@ -11,12 +11,10 @@ public class Node <T>{
     private Node<T> prev;
 
     public Node(T data, int priority){
-
         this.data = data;
         this.priority = priority;
         this.next = null;
         this.prev = null;
-
     }
 
     public T getData() {

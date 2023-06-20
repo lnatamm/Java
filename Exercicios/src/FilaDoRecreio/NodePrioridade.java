@@ -11,12 +11,10 @@ public class NodePrioridade <T>{
     private NodePrioridade<T> prev;
 
     public NodePrioridade(T data, int priority){
-
         this.data = data;
         this.priority = priority;
         this.next = null;
         this.prev = null;
-
     }
 
     public T getData() {

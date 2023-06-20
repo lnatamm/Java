@@ -10,14 +10,11 @@ public class Fila<T> implements Iterable<T>{
     }
 
     private class FilaIterator implements Iterator<T> {
-
         private Node<T> curr;
-
-        public FilaIterator(){
-
+        public FilaIterator() {
             curr = first;
-
         }
+
         @Override
         public boolean hasNext() {
             return curr != null;
@@ -29,7 +26,6 @@ public class Fila<T> implements Iterable<T>{
             curr = curr.getNext();
             return data;
         }
-
     }
 
     private Node<T> first;
@@ -39,108 +35,68 @@ public class Fila<T> implements Iterable<T>{
     private int cont;
 
     public Fila(){
-
         first = null;
         last = null;
         cont = 0;
-
     }
 
     public int size(){
-
         return cont;
-
     }
 
     public void enqueue(T data, int priority){
-
         Node<T> node = new Node(data, priority);
-
         if(first == null){
-
             first = node;
             last = node;
             cont++;
-
         }
-
         else {
-
             if(first.getPriority() > node.getPriority()){
-
                 node.setNext(first);
                 first.setPrev(node);
                 first = node;
                 cont++;
-
             }
-
             else if(last.getPriority() <= node.getPriority()){
-
                 node.setPrev(last);
                 last.setNext(node);
                 last = node;
                 cont++;
-
             }
-
             else {
-
                 Node<T> aux = first;
-
                 while (aux.getPriority() <= node.getPriority()){
-
                     aux = aux.getNext();
-
                 }
-
                 aux.getPrev().setNext(node);
                 node.setPrev(aux.getPrev());
                 node.setNext(aux);
                 aux.setPrev(node);
                 cont++;
-
             }
-
         }
-
     }
 
     public T dequeue(){
-
         Node<T> node;
-
         if(first == null){
-
             throw new EmptyStackException();
-
         }
-
         else {
-
             node = first;
             first = first.getNext();
             cont--;
             return node.getData();
-
         }
-
     }
-
     public T dequeue(int i){
-
         Node<T> node;
-
         if(first == null){
-
             throw new EmptyStackException();
-
         }
-
         else {
-
             if (i == 0) {
-
                 node = first;
                 first = first.getNext();
                 try {
@@ -150,14 +106,10 @@ public class Fila<T> implements Iterable<T>{
                     first = null;
                     last = null;
                 }
-
                 cont--;
                 return node.getData();
-
             }
-
             else if (i == cont - 1) {
-
                 node = last;
                 last = last.getPrev();
                 try{
@@ -167,47 +119,28 @@ public class Fila<T> implements Iterable<T>{
                     first = null;
                     last = null;
                 }
-
                 cont--;
                 return node.getData();
-
             }
-
             else {
-
                 Node<T> aux = first;
-
                 for(int j = 0; j < i; j++){
-
                     aux = aux.getNext();
-
                 }
-
                 node = aux;
                 aux.getPrev().setNext(aux.getNext());
-
             }
-
             return node.getData();
-
         }
-
     }
 
     public T dequeue(T n){
-
         Node<T> node;
-
         if(first == null){
-
             throw new EmptyStackException();
-
         }
-
         else {
-
             if (n.equals(first.getData())) {
-
                 node = first;
                 first = first.getNext();
                 try {
@@ -217,14 +150,10 @@ public class Fila<T> implements Iterable<T>{
                     first = null;
                     last = null;
                 }
-
                 cont--;
                 return node.getData();
-
             }
-
             else if (n.equals(last.getData())) {
-
                 node = last;
                 last = last.getPrev();
                 try{
@@ -234,47 +163,29 @@ public class Fila<T> implements Iterable<T>{
                     first = null;
                     last = null;
                 }
-
                 cont--;
                 return node.getData();
-
             }
-
             else {
-
                 Node<T> aux = first;
-
                 while (!aux.getData().equals(n)){
-
                     aux = aux.getNext();
-
                 }
-
                 node = aux;
                 aux.getPrev().setNext(aux.getNext());
                 cont--;
                 return node.getData();
-
             }
-
         }
-
     }
 
     public T peek(){
-
         if(first == null){
-
             throw new EmptyStackException();
-
         }
-
         else {
-
             return first.getData();
-
         }
-
     }
 
     public boolean isEmpty(){
@@ -282,27 +193,17 @@ public class Fila<T> implements Iterable<T>{
     }
 
     @Override
-    public String toString(){
-
+    public String toString() {
         String s = "[";
-
         Node<T> curr = first;
-
-        if(first != null) {
-
+        if (first != null) {
             while (curr.getNext() != null) {
-
                 s += curr.getData() + " ";
                 curr = curr.getNext();
-
             }
-
             return s + curr.getData() + "]";
-
         }
-
         return "";
-
     }
 
 }

@@ -10,13 +10,10 @@ public class Fila<T> implements Iterable<T>{
     }
 
     private class FilaIterator implements Iterator<T> {
-
         private Node<T> curr;
 
         public FilaIterator(){
-
             curr = first;
-
         }
         @Override
         public boolean hasNext() {
@@ -29,7 +26,6 @@ public class Fila<T> implements Iterable<T>{
             curr = curr.getNext();
             return data;
         }
-
     }
 
     private Node<T> first;
@@ -39,54 +35,35 @@ public class Fila<T> implements Iterable<T>{
     private int cont;
 
     public Fila(){
-
         first = null;
         last = null;
         cont = 0;
-
     }
 
     public int size(){
-
         return cont;
-
     }
 
     public void enqueue(T data){
-
         Node<T> node = new Node<>(data);
-
         if(first == null){
-
             first = node;
             last = node;
-
         }
-
         else {
-
             node.setPrev(last);
             last.setNext(node);
             last = node;
-
         }
-
         cont++;
-
     }
 
     public T dequeue(){
-
         Node<T> node;
-
         if(first == null){
-
             throw new EmptyStackException();
-
         }
-
         else {
-
             node = first;
             first = first.getNext();
             try {
@@ -96,52 +73,32 @@ public class Fila<T> implements Iterable<T>{
                 first = null;
                 last = null;
             }
-
             cont--;
             return node.getData();
-
         }
-
     }
 
     public T peek(){
-
         if(first == null){
-
             throw new EmptyStackException();
-
         }
-
         else {
-
             return first.getData();
-
         }
-
     }
 
     @Override
     public String toString(){
-
         String s = "[";
-
         Node<T> curr = first;
-
         if(first != null) {
-
             while (curr.getNext() != null) {
-
                 s += curr.getData() + " ";
                 curr = curr.getNext();
-
             }
-
             return s + curr.getData() + "]";
-
         }
-
         return "";
-
     }
 
 }

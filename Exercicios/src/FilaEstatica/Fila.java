@@ -1,7 +1,7 @@
 package FilaEstatica;
 
 public class Fila {
-    
+
     private Object[] v;
 
     private int end;
@@ -10,190 +10,118 @@ public class Fila {
 
     private int cont;
 
-    public Fila(){
-
+    public Fila() {
         v = new Object[10];
         end = -1;
         start = 0;
         cont = 0;
-
     }
 
-    private void createEspace(){
-
+    private void createEspace() {
         Object[] aux = v;
         v = new Object[v.length + (v.length / 2)];
-        if(end > start){
-            for(int i = start; i <= end; i++){
-
+        if (end > start) {
+            for (int i = start; i <= end; i++) {
                 v[i] = aux[i];
-
             }
-        }
-        else{
-
+        } else {
             int j = 0;
-
-            for(int i = start; i < aux.length; i++){
-
+            for (int i = start; i < aux.length; i++) {
                 v[j] = aux[i];
                 j++;
-
             }
-
-            for(int i = 0; i <= end; i++){
-
+            for (int i = 0; i <= end; i++) {
                 v[j] = aux[i];
                 j++;
-
             }
-
         }
-
         start = 0;
         end = aux.length - 1;
-
     }
 
-    public int size(){
-
+    public int size() {
         return cont;
-
     }
 
-    public void enqueue(Object data){
-        if(end + 1 == v.length){
-            if(start != 0){
+    public void enqueue(Object data) {
+        if (end + 1 == v.length) {
+            if (start != 0) {
                 end = 0;
                 v[end] = data;
                 cont++;
-            }
-            else{
+            } else {
                 createEspace();
                 enqueue(data);
             }
-            
-        }
-        else if(end == -1){
+
+        } else if (end == -1) {
 
             end++;
             v[end] = data;
             cont++;
 
-        }
-        else{
-            if(end + 1 != start && end + 1 != v.length){
+        } else {
+            if (end + 1 != start && end + 1 != v.length) {
                 end++;
                 v[end] = data;
                 cont++;
-            }
-            else{
+            } else {
                 createEspace();
                 enqueue(data);
             }
         }
     }
 
-    public Object dequeue(){
-
+    public Object dequeue() {
         Object aux = v[start];
-
-        if(end > start){
-
-            if(start != end){
-
+        if (end > start) {
+            if (start != end) {
                 start++;
                 cont--;
-
-            }
-
-            else{
-
+            } else {
                 start = 0;
                 end = -1;
                 cont = 0;
                 return null;
-
             }
-
-        }
-
-        else if(end < start){
-
-            if(start + 1 == v.length){
-                
+        } else if (end < start) {
+            if (start + 1 == v.length) {
                 start = 0;
                 cont--;
-
-            }
-
-            else{
-
+            } else {
                 start++;
                 cont--;
-
             }
-
-        }
-
-        else{
-
+        } else {
             start = 0;
             end = -1;
             cont = 0;
             return null;
-
         }
-
         System.out.println();
-
         return aux;
-
     }
 
     @Override
-    public String toString(){
-
+    public String toString() {
         String s = "";
-
-        if(end != -1) {
-
+        if (end != -1) {
             if (end > start) {
-
                 for (int i = start; i <= end; i++) {
-
                     s += v[i] + " ";
-
                 }
-
-            }
-
-            else if(end < start){
-
+            } else if (end < start) {
                 for (int i = start; i < v.length; i++) {
-
                     s += v[i] + " ";
-
                 }
-
                 for (int i = 0; i <= end; i++) {
-
                     s += v[i] + " ";
-
                 }
-
-            }
-
-            else {
-
+            } else {
                 s += v[start];
-
             }
-
         }
-
         return s;
-
     }
 
 }
