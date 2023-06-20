@@ -5,27 +5,19 @@ public class Cidadao {
     private int nota;
 
     public Cidadao(int nota){
-
-        this.nota = nota;
-
+        nota = nota;
     }
 
     public Cidadao(){
-
-        this.nota = 0;
-
+        nota = 0;
     }
 
-    public int getNota(){
-
-        return this.nota;
-
+    public int getNota() {
+        return nota;
     }
 
     public void setNota(int nota){
-
         this.nota = nota;
-
     }
 
 }
