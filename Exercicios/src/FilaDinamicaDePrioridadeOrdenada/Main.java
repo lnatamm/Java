@@ -3,7 +3,6 @@ package FilaDinamicaDePrioridadeOrdenada;
 public class Main {
 
     public static void main(String[] args) {
-
         Fila<String> fila = new Fila<>();
         fila.enqueue("João", 2);
         fila.enqueue("Marcos", 2);
@@ -19,7 +18,6 @@ public class Main {
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());
         System.out.println(fila);
-
     }
 
 }
