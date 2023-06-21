@@ -12,57 +12,35 @@ public class Jipe {
     private int jipes;
 
     public Jipe() {
-
-        this.estado = "";
-
-        this.passageiros = 0;
-
-        this.turistas = 0;
-
-        this.jipes = 0;
-
+        estado = "";
+        passageiros = 0;
+        turistas = 0;
+        jipes = 0;
     }
 
     public void setEstado(String estado) {
-
         this.estado = estado;
-
     }
 
     public void setPassageiros(int passageiros) {
-
         this.passageiros = passageiros;
-
-        if (this.estado.equals("SALIDA")) {
-
-            this.jipes++;
-
-            this.turistas += this.passageiros;
-
+        if (estado.equals("SALIDA")) {
+            jipes++;
+            turistas += passageiros;
         }
-
         if (this.estado.equals("VUELTA")) {
-
-            this.jipes--;
-
-            this.turistas -= this.passageiros;
-
+            jipes--;
+            turistas -= passageiros;
         }
-
     }
 
     public String getEstado() {
-
-        return this.estado;
-
+        return estado;
     }
 
     public void exibir() {
-
-        System.out.println(this.turistas);
-
-        System.out.println(this.jipes);
-
+        System.out.println(turistas);
+        System.out.println(jipes);
     }
 
 }

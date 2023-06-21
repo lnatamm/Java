@@ -7,35 +7,24 @@ public class Televisao {
     private int canal;
 
     public Televisao(){
-
-        this.volume = 0;
-
-        this.canal = 0;
-
+        volume = 0;
+        canal = 0;
     }
 
     public int getVolume(){
-
-        return this.volume;
-
+        return volume;
     }
 
     public int getCanal(){
-
-        return this.canal;
-
+        return canal;
     }
 
     public void setVolume(int volume){
-
         this.volume = volume;
-
     }
 
     public void setCanal(int canal){
-
         this.canal = canal;
-
     }
 
 }

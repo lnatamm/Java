@@ -9,11 +9,9 @@ public class Node<T extends Comparable<T>> {
     private Node<T> prev;
 
     public Node(T data){
-
         this.data = data;
-        this.next = null;
-        this.prev = null;
-
+        next = null;
+        prev = null;
     }
 
     public T getData() {

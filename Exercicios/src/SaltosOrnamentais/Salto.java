@@ -5,21 +5,15 @@ public class Salto {
     private double grauDificuldade;
 
     public Salto(double grauDificuldade){
-
         this.grauDificuldade = grauDificuldade;
-
     }
 
     public double getGrauDificuldade(){
-
-        return this.grauDificuldade;
-
+        return grauDificuldade;
     }
 
     public void setGrauDificuldade(double grauDificuldade){
-
         this.grauDificuldade = grauDificuldade;
-
     }
 
 }

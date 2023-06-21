@@ -9,11 +9,9 @@ public class NodeFila<T> {
     private NodeFila<T> prev;
 
     public NodeFila(T data){
-
         this.data = data;
-        this.next = null;
-        this.prev = null;
-
+        next = null;
+        prev = null;
     }
 
     public T getData() {

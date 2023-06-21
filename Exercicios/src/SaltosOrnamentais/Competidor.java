@@ -9,55 +9,37 @@ public class Competidor {
     private double nota;
 
     public Competidor(){
-
-        this.nome = "";
-
-        this.nota = 0;
-
+        nome = "";
+        nota = 0;
     }
 
     public Competidor(String nome){
-
         this.nome = nome;
-
-        this.nota = 0;
-
+        nota = 0;
     }
 
     public String getNome(){
-
-        return this.nome;
-
+        return nome;
     }
 
     public void setNome(String nome){
-
         this.nome = nome;
-
     }
 
     public Salto getSalto(){
-
-        return this.salto;
-
+        return salto;
     }
 
     public void setSalto(Salto salto){
-
         this.salto = salto;
-
     }
 
     public double getNota(){
-
-        return this.nota;
-
+        return nota;
     }
 
     public void setNota(double nota){
-
         this.nota = nota;
-
     }
 
 }
