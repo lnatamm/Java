@@ -9,11 +9,9 @@ public class Lista<T> {
     private int cont;
 
     public Lista(){
-
         head = null;
         tail = null;
         cont = 0;
-
     }
 
     public int size(){return 0;}

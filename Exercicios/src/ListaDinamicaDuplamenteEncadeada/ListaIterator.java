@@ -7,9 +7,7 @@ public class ListaIterator<T> implements Iterator<T> {
     private Node<T> curr;
 
     public ListaIterator(Node<T> head){
-
         curr = head;
-
     }
 
     @Override

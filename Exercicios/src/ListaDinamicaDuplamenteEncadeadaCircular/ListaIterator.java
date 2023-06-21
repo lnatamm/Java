@@ -12,11 +12,9 @@ public class ListaIterator<T> implements Iterator<T> {
 
 
     public ListaIterator(Node<T> head, int cont){
-
         curr = head;
         atual = 0;
         fim = cont;
-
     }
 
     @Override

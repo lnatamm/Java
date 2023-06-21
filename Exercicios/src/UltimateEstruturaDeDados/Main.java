@@ -9,7 +9,6 @@ public class Main {
         for(int i = 0; i < 40000; ++i){
             teste.add(i);
         }
-
         System.out.println(teste.search(2684));
         System.out.println(teste.pop());
         System.out.println(teste.dequeue());
